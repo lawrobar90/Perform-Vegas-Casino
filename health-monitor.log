@@ -1,0 +1,2049 @@
+[2025-12-12 09:41:19] \033[0;32m🚀 Vegas Casino Health Monitor Started\033[0m
+[2025-12-12 09:41:19] Health endpoint: http://localhost:8080/health
+[2025-12-12 09:41:19] Max restart attempts: 3
+[2025-12-12 09:41:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:41:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:41:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:41:19] \033[0;32m⏰ Uptime: 0h 0m - Status: healthy\033[0m
+[2025-12-12 09:41:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:42:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:42:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:42:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:42:19] \033[0;32m⏰ Uptime: 0h 1m - Status: healthy\033[0m
+[2025-12-12 09:42:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:43:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:43:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:43:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:43:19] \033[0;32m⏰ Uptime: 0h 2m - Status: healthy\033[0m
+[2025-12-12 09:43:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:44:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:44:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:44:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:44:19] \033[0;32m⏰ Uptime: 0h 3m - Status: healthy\033[0m
+[2025-12-12 09:44:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:45:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:45:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:45:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:45:19] \033[0;32m⏰ Uptime: 0h 4m - Status: healthy\033[0m
+[2025-12-12 09:45:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:46:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:46:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:46:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:46:19] \033[0;32m⏰ Uptime: 0h 5m - Status: healthy\033[0m
+[2025-12-12 09:46:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:47:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:47:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:47:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:47:19] \033[0;32m⏰ Uptime: 0h 6m - Status: healthy\033[0m
+[2025-12-12 09:47:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:48:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:48:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:48:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:48:19] \033[0;32m⏰ Uptime: 0h 7m - Status: healthy\033[0m
+[2025-12-12 09:48:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:49:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:49:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:49:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:49:19] \033[0;32m⏰ Uptime: 0h 8m - Status: healthy\033[0m
+[2025-12-12 09:49:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:50:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:50:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:50:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:50:19] \033[0;32m⏰ Uptime: 0h 9m - Status: healthy\033[0m
+[2025-12-12 09:50:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:51:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:51:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:51:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:51:19] \033[0;32m⏰ Uptime: 0h 10m - Status: healthy\033[0m
+[2025-12-12 09:51:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:52:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:52:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:52:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:52:19] \033[0;32m⏰ Uptime: 0h 11m - Status: healthy\033[0m
+[2025-12-12 09:52:19] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:53:19] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:53:19] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:53:19] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:53:20] \033[0;32m⏰ Uptime: 0h 12m - Status: healthy\033[0m
+[2025-12-12 09:53:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:54:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:54:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:54:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:54:20] \033[0;32m⏰ Uptime: 0h 13m - Status: healthy\033[0m
+[2025-12-12 09:54:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:55:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:55:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:55:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:55:20] \033[0;32m⏰ Uptime: 0h 14m - Status: healthy\033[0m
+[2025-12-12 09:55:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:56:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:56:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:56:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:56:20] \033[0;32m⏰ Uptime: 0h 15m - Status: healthy\033[0m
+[2025-12-12 09:56:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:57:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:57:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:57:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:57:20] \033[0;32m⏰ Uptime: 0h 16m - Status: healthy\033[0m
+[2025-12-12 09:57:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:58:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:58:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:58:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:58:20] \033[0;32m⏰ Uptime: 0h 17m - Status: healthy\033[0m
+[2025-12-12 09:58:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 09:59:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 09:59:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 09:59:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 09:59:20] \033[0;32m⏰ Uptime: 0h 18m - Status: healthy\033[0m
+[2025-12-12 09:59:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:00:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:00:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:00:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:00:20] \033[0;32m⏰ Uptime: 0h 19m - Status: healthy\033[0m
+[2025-12-12 10:00:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:01:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:01:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:01:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:01:20] \033[0;32m⏰ Uptime: 0h 20m - Status: healthy\033[0m
+[2025-12-12 10:01:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:02:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:02:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:02:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:02:20] \033[0;32m⏰ Uptime: 0h 21m - Status: healthy\033[0m
+[2025-12-12 10:02:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:03:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:03:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:03:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:03:20] \033[0;32m⏰ Uptime: 0h 22m - Status: healthy\033[0m
+[2025-12-12 10:03:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:04:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:04:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:04:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:04:20] \033[0;32m⏰ Uptime: 0h 23m - Status: healthy\033[0m
+[2025-12-12 10:04:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:05:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:05:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:05:20] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:05:20] \033[0;32m⏰ Uptime: 0h 24m - Status: healthy\033[0m
+[2025-12-12 10:05:20] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:06:20] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:06:20] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:06:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:06:21] \033[0;32m⏰ Uptime: 0h 25m - Status: healthy\033[0m
+[2025-12-12 10:06:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:07:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:07:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:07:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:07:21] \033[0;32m⏰ Uptime: 0h 26m - Status: healthy\033[0m
+[2025-12-12 10:07:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:08:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:08:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:08:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:08:21] \033[0;32m⏰ Uptime: 0h 27m - Status: healthy\033[0m
+[2025-12-12 10:08:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:09:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:09:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:09:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:09:21] \033[0;32m⏰ Uptime: 0h 28m - Status: healthy\033[0m
+[2025-12-12 10:09:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:10:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:10:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:10:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:10:21] \033[0;32m⏰ Uptime: 0h 29m - Status: healthy\033[0m
+[2025-12-12 10:10:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:11:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:11:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:11:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:11:21] \033[0;32m⏰ Uptime: 0h 30m - Status: healthy\033[0m
+[2025-12-12 10:11:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:12:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:12:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:12:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:12:21] \033[0;32m⏰ Uptime: 0h 31m - Status: healthy\033[0m
+[2025-12-12 10:12:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:13:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:13:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:13:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:13:21] \033[0;32m⏰ Uptime: 0h 32m - Status: healthy\033[0m
+[2025-12-12 10:13:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:14:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:14:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:14:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:14:21] \033[0;32m⏰ Uptime: 0h 33m - Status: healthy\033[0m
+[2025-12-12 10:14:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:15:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:15:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:15:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:15:21] \033[0;32m⏰ Uptime: 0h 34m - Status: healthy\033[0m
+[2025-12-12 10:15:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:16:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:16:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:16:21] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:16:21] \033[0;32m⏰ Uptime: 0h 35m - Status: healthy\033[0m
+[2025-12-12 10:16:21] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:17:21] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:17:21] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:17:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:17:22] \033[0;32m⏰ Uptime: 0h 36m - Status: healthy\033[0m
+[2025-12-12 10:17:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:18:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:18:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:18:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:18:22] \033[0;32m⏰ Uptime: 0h 37m - Status: healthy\033[0m
+[2025-12-12 10:18:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:19:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:19:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:19:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:19:22] \033[0;32m⏰ Uptime: 0h 38m - Status: healthy\033[0m
+[2025-12-12 10:19:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:20:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:20:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:20:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:20:22] \033[0;32m⏰ Uptime: 0h 39m - Status: healthy\033[0m
+[2025-12-12 10:20:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:21:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:21:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:21:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:21:22] \033[0;32m⏰ Uptime: 0h 40m - Status: healthy\033[0m
+[2025-12-12 10:21:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:22:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:22:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:22:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:22:22] \033[0;32m⏰ Uptime: 0h 41m - Status: healthy\033[0m
+[2025-12-12 10:22:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:23:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:23:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:23:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:23:22] \033[0;32m⏰ Uptime: 0h 42m - Status: healthy\033[0m
+[2025-12-12 10:23:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:24:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:24:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:24:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:24:22] \033[0;32m⏰ Uptime: 0h 43m - Status: healthy\033[0m
+[2025-12-12 10:24:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:25:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:25:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:25:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:25:22] \033[0;32m⏰ Uptime: 0h 44m - Status: healthy\033[0m
+[2025-12-12 10:25:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:26:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:26:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:26:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:26:22] \033[0;32m⏰ Uptime: 0h 45m - Status: healthy\033[0m
+[2025-12-12 10:26:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:27:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:27:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:27:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:27:22] \033[0;32m⏰ Uptime: 0h 46m - Status: healthy\033[0m
+[2025-12-12 10:27:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:28:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:28:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:28:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:28:22] \033[0;32m⏰ Uptime: 0h 47m - Status: healthy\033[0m
+[2025-12-12 10:28:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:29:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:29:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:29:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:29:22] \033[0;32m⏰ Uptime: 0h 48m - Status: healthy\033[0m
+[2025-12-12 10:29:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:30:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:30:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:30:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:30:22] \033[0;32m⏰ Uptime: 0h 49m - Status: healthy\033[0m
+[2025-12-12 10:30:22] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:31:22] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:31:22] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:31:22] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:31:23] \033[0;32m⏰ Uptime: 0h 50m - Status: healthy\033[0m
+[2025-12-12 10:31:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:32:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:32:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:32:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:32:23] \033[0;32m⏰ Uptime: 0h 51m - Status: healthy\033[0m
+[2025-12-12 10:32:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:33:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:33:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:33:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:33:23] \033[0;32m⏰ Uptime: 0h 52m - Status: healthy\033[0m
+[2025-12-12 10:33:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:34:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:34:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:34:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:34:23] \033[0;32m⏰ Uptime: 0h 53m - Status: healthy\033[0m
+[2025-12-12 10:34:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:35:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:35:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:35:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:35:23] \033[0;32m⏰ Uptime: 0h 54m - Status: healthy\033[0m
+[2025-12-12 10:35:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:36:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:36:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:36:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:36:23] \033[0;32m⏰ Uptime: 0h 55m - Status: healthy\033[0m
+[2025-12-12 10:36:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:37:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:37:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:37:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:37:23] \033[0;32m⏰ Uptime: 0h 56m - Status: healthy\033[0m
+[2025-12-12 10:37:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:38:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:38:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:38:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:38:23] \033[0;32m⏰ Uptime: 0h 57m - Status: healthy\033[0m
+[2025-12-12 10:38:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:39:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:39:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:39:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:39:23] \033[0;32m⏰ Uptime: 0h 58m - Status: healthy\033[0m
+[2025-12-12 10:39:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:40:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:40:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:40:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:40:23] \033[0;32m⏰ Uptime: 0h 59m - Status: healthy\033[0m
+[2025-12-12 10:40:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:41:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:41:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:41:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:41:23] \033[0;32m⏰ Uptime: 1h 0m - Status: healthy\033[0m
+[2025-12-12 10:41:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:42:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:42:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:42:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:42:23] \033[0;32m⏰ Uptime: 1h 1m - Status: healthy\033[0m
+[2025-12-12 10:42:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:43:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:43:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:43:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:43:23] \033[0;32m⏰ Uptime: 1h 2m - Status: healthy\033[0m
+[2025-12-12 10:43:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:44:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:44:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:44:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:44:23] \033[0;32m⏰ Uptime: 1h 3m - Status: healthy\033[0m
+[2025-12-12 10:44:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:45:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:45:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:45:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:45:23] \033[0;32m⏰ Uptime: 1h 4m - Status: healthy\033[0m
+[2025-12-12 10:45:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:46:23] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:46:23] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:46:23] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:46:23] \033[0;32m⏰ Uptime: 1h 5m - Status: healthy\033[0m
+[2025-12-12 10:46:23] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:47:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:47:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:47:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:47:24] \033[0;32m⏰ Uptime: 1h 6m - Status: healthy\033[0m
+[2025-12-12 10:47:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:48:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:48:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:48:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:48:24] \033[0;32m⏰ Uptime: 1h 7m - Status: healthy\033[0m
+[2025-12-12 10:48:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:49:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:49:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:49:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:49:24] \033[0;32m⏰ Uptime: 1h 8m - Status: healthy\033[0m
+[2025-12-12 10:49:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:50:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:50:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:50:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:50:24] \033[0;32m⏰ Uptime: 1h 9m - Status: healthy\033[0m
+[2025-12-12 10:50:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:51:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:51:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:51:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:51:24] \033[0;32m⏰ Uptime: 1h 10m - Status: healthy\033[0m
+[2025-12-12 10:51:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:52:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:52:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:52:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:52:24] \033[0;32m⏰ Uptime: 1h 11m - Status: healthy\033[0m
+[2025-12-12 10:52:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:53:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:53:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:53:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:53:24] \033[0;32m⏰ Uptime: 1h 12m - Status: healthy\033[0m
+[2025-12-12 10:53:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:54:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:54:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:54:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:54:24] \033[0;32m⏰ Uptime: 1h 13m - Status: healthy\033[0m
+[2025-12-12 10:54:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:55:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:55:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:55:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:55:24] \033[0;32m⏰ Uptime: 1h 14m - Status: healthy\033[0m
+[2025-12-12 10:55:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:56:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:56:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:56:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:56:24] \033[0;32m⏰ Uptime: 1h 15m - Status: healthy\033[0m
+[2025-12-12 10:56:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:57:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:57:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:57:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:57:24] \033[0;32m⏰ Uptime: 1h 16m - Status: healthy\033[0m
+[2025-12-12 10:57:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:58:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:58:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:58:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:58:24] \033[0;32m⏰ Uptime: 1h 17m - Status: healthy\033[0m
+[2025-12-12 10:58:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 10:59:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 10:59:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 10:59:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 10:59:24] \033[0;32m⏰ Uptime: 1h 18m - Status: healthy\033[0m
+[2025-12-12 10:59:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:00:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:00:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:00:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:00:24] \033[0;32m⏰ Uptime: 1h 19m - Status: healthy\033[0m
+[2025-12-12 11:00:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:01:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:01:24] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:01:24] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:01:24] \033[0;32m⏰ Uptime: 1h 20m - Status: healthy\033[0m
+[2025-12-12 11:01:24] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:02:24] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:02:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:02:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:02:25] \033[0;32m⏰ Uptime: 1h 21m - Status: healthy\033[0m
+[2025-12-12 11:02:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:03:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:03:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:03:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:03:25] \033[0;32m⏰ Uptime: 1h 22m - Status: healthy\033[0m
+[2025-12-12 11:03:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:04:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:04:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:04:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:04:25] \033[0;32m⏰ Uptime: 1h 23m - Status: healthy\033[0m
+[2025-12-12 11:04:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:05:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:05:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:05:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:05:25] \033[0;32m⏰ Uptime: 1h 24m - Status: healthy\033[0m
+[2025-12-12 11:05:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:06:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:06:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:06:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:06:25] \033[0;32m⏰ Uptime: 1h 25m - Status: healthy\033[0m
+[2025-12-12 11:06:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:07:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:07:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:07:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:07:25] \033[0;32m⏰ Uptime: 1h 26m - Status: healthy\033[0m
+[2025-12-12 11:07:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:08:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:08:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:08:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:08:25] \033[0;32m⏰ Uptime: 1h 27m - Status: healthy\033[0m
+[2025-12-12 11:08:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:09:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:09:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:09:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:09:25] \033[0;32m⏰ Uptime: 1h 28m - Status: healthy\033[0m
+[2025-12-12 11:09:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:10:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:10:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:10:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:10:25] \033[0;32m⏰ Uptime: 1h 29m - Status: healthy\033[0m
+[2025-12-12 11:10:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:11:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:11:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:11:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:11:25] \033[0;32m⏰ Uptime: 1h 30m - Status: healthy\033[0m
+[2025-12-12 11:11:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:12:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:12:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:12:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:12:25] \033[0;32m⏰ Uptime: 1h 31m - Status: healthy\033[0m
+[2025-12-12 11:12:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:13:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:13:25] \033[0;32m📊 Server process running (PID: 1355787
+1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:13:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:13:25] \033[0;32m⏰ Uptime: 1h 32m - Status: healthy\033[0m
+[2025-12-12 11:13:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:14:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:14:25] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:14:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:14:25] \033[0;32m⏰ Uptime: 1h 33m - Status: healthy\033[0m
+[2025-12-12 11:14:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:15:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:15:25] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:15:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:15:25] \033[0;32m⏰ Uptime: 1h 34m - Status: healthy\033[0m
+[2025-12-12 11:15:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:16:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:16:25] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:16:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:16:25] \033[0;32m⏰ Uptime: 1h 35m - Status: healthy\033[0m
+[2025-12-12 11:16:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:17:25] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:17:25] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:17:25] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:17:25] \033[0;32m⏰ Uptime: 1h 36m - Status: healthy\033[0m
+[2025-12-12 11:17:25] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:18:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:18:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:18:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:18:26] \033[0;32m⏰ Uptime: 1h 37m - Status: healthy\033[0m
+[2025-12-12 11:18:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:19:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:19:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:19:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:19:26] \033[0;32m⏰ Uptime: 1h 38m - Status: healthy\033[0m
+[2025-12-12 11:19:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:20:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:20:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:20:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:20:26] \033[0;32m⏰ Uptime: 1h 39m - Status: healthy\033[0m
+[2025-12-12 11:20:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:21:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:21:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:21:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:21:26] \033[0;32m⏰ Uptime: 1h 40m - Status: healthy\033[0m
+[2025-12-12 11:21:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:22:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:22:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:22:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:22:26] \033[0;32m⏰ Uptime: 1h 41m - Status: healthy\033[0m
+[2025-12-12 11:22:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:23:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:23:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:23:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:23:26] \033[0;32m⏰ Uptime: 1h 42m - Status: healthy\033[0m
+[2025-12-12 11:23:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:24:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:24:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:24:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:24:26] \033[0;32m⏰ Uptime: 1h 43m - Status: healthy\033[0m
+[2025-12-12 11:24:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:25:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:25:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:25:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:25:26] \033[0;32m⏰ Uptime: 1h 44m - Status: healthy\033[0m
+[2025-12-12 11:25:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:26:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:26:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:26:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:26:26] \033[0;32m⏰ Uptime: 1h 45m - Status: healthy\033[0m
+[2025-12-12 11:26:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:27:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:27:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:27:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:27:26] \033[0;32m⏰ Uptime: 1h 46m - Status: healthy\033[0m
+[2025-12-12 11:27:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:28:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:28:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:28:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:28:26] \033[0;32m⏰ Uptime: 1h 47m - Status: healthy\033[0m
+[2025-12-12 11:28:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:29:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:29:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:29:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:29:26] \033[0;32m⏰ Uptime: 1h 48m - Status: healthy\033[0m
+[2025-12-12 11:29:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:30:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:30:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:30:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:30:26] \033[0;32m⏰ Uptime: 1h 49m - Status: healthy\033[0m
+[2025-12-12 11:30:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:31:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:31:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:31:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:31:26] \033[0;32m⏰ Uptime: 1h 50m - Status: healthy\033[0m
+[2025-12-12 11:31:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:32:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:32:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:32:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:32:26] \033[0;32m⏰ Uptime: 1h 51m - Status: healthy\033[0m
+[2025-12-12 11:32:26] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:33:26] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:33:26] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:33:26] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:33:27] \033[0;32m⏰ Uptime: 1h 52m - Status: healthy\033[0m
+[2025-12-12 11:33:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:34:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:34:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:34:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:34:27] \033[0;32m⏰ Uptime: 1h 53m - Status: healthy\033[0m
+[2025-12-12 11:34:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:35:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:35:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:35:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:35:27] \033[0;32m⏰ Uptime: 1h 54m - Status: healthy\033[0m
+[2025-12-12 11:35:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:36:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:36:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:36:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:36:27] \033[0;32m⏰ Uptime: 1h 55m - Status: healthy\033[0m
+[2025-12-12 11:36:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:37:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:37:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:37:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:37:27] \033[0;32m⏰ Uptime: 1h 56m - Status: healthy\033[0m
+[2025-12-12 11:37:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:38:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:38:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:38:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:38:27] \033[0;32m⏰ Uptime: 1h 57m - Status: healthy\033[0m
+[2025-12-12 11:38:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:39:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:39:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:39:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:39:27] \033[0;32m⏰ Uptime: 1h 58m - Status: healthy\033[0m
+[2025-12-12 11:39:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:40:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:40:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:40:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:40:27] \033[0;32m⏰ Uptime: 1h 59m - Status: healthy\033[0m
+[2025-12-12 11:40:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:41:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:41:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:41:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:41:27] \033[0;32m⏰ Uptime: 2h 0m - Status: healthy\033[0m
+[2025-12-12 11:41:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:42:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:42:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:42:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:42:27] \033[0;32m⏰ Uptime: 2h 1m - Status: healthy\033[0m
+[2025-12-12 11:42:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:43:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:43:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:43:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:43:27] \033[0;32m⏰ Uptime: 2h 2m - Status: healthy\033[0m
+[2025-12-12 11:43:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:44:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:44:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:44:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:44:27] \033[0;32m⏰ Uptime: 2h 3m - Status: healthy\033[0m
+[2025-12-12 11:44:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:45:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:45:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:45:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:45:27] \033[0;32m⏰ Uptime: 2h 4m - Status: healthy\033[0m
+[2025-12-12 11:45:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:46:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:46:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:46:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:46:27] \033[0;32m⏰ Uptime: 2h 5m - Status: healthy\033[0m
+[2025-12-12 11:46:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:47:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:47:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:47:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:47:27] \033[0;32m⏰ Uptime: 2h 6m - Status: healthy\033[0m
+[2025-12-12 11:47:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:48:27] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:48:27] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:48:27] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:48:27] \033[0;32m⏰ Uptime: 2h 7m - Status: healthy\033[0m
+[2025-12-12 11:48:27] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:49:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:49:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:49:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:49:28] \033[0;32m⏰ Uptime: 2h 8m - Status: healthy\033[0m
+[2025-12-12 11:49:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:50:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:50:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:50:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:50:28] \033[0;32m⏰ Uptime: 2h 9m - Status: healthy\033[0m
+[2025-12-12 11:50:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:51:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:51:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:51:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:51:28] \033[0;32m⏰ Uptime: 2h 10m - Status: healthy\033[0m
+[2025-12-12 11:51:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:52:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:52:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:52:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:52:28] \033[0;32m⏰ Uptime: 2h 11m - Status: healthy\033[0m
+[2025-12-12 11:52:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:53:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:53:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:53:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:53:28] \033[0;32m⏰ Uptime: 2h 12m - Status: healthy\033[0m
+[2025-12-12 11:53:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:54:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:54:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:54:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:54:28] \033[0;32m⏰ Uptime: 2h 13m - Status: healthy\033[0m
+[2025-12-12 11:54:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:55:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:55:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:55:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:55:28] \033[0;32m⏰ Uptime: 2h 14m - Status: healthy\033[0m
+[2025-12-12 11:55:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:56:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:56:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:56:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:56:28] \033[0;32m⏰ Uptime: 2h 15m - Status: healthy\033[0m
+[2025-12-12 11:56:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:57:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:57:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:57:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:57:28] \033[0;32m⏰ Uptime: 2h 16m - Status: healthy\033[0m
+[2025-12-12 11:57:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:58:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:58:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:58:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:58:28] \033[0;32m⏰ Uptime: 2h 17m - Status: healthy\033[0m
+[2025-12-12 11:58:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 11:59:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 11:59:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 11:59:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 11:59:28] \033[0;32m⏰ Uptime: 2h 18m - Status: healthy\033[0m
+[2025-12-12 11:59:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:00:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:00:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:00:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:00:28] \033[0;32m⏰ Uptime: 2h 19m - Status: healthy\033[0m
+[2025-12-12 12:00:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:01:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:01:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:01:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:01:28] \033[0;32m⏰ Uptime: 2h 20m - Status: healthy\033[0m
+[2025-12-12 12:01:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:02:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:02:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:02:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:02:28] \033[0;32m⏰ Uptime: 2h 21m - Status: healthy\033[0m
+[2025-12-12 12:02:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:03:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:03:28] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:03:28] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:03:28] \033[0;32m⏰ Uptime: 2h 22m - Status: healthy\033[0m
+[2025-12-12 12:03:28] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:04:28] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:04:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:04:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:04:29] \033[0;32m⏰ Uptime: 2h 23m - Status: healthy\033[0m
+[2025-12-12 12:04:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:05:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:05:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:05:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:05:29] \033[0;32m⏰ Uptime: 2h 24m - Status: healthy\033[0m
+[2025-12-12 12:05:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:06:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:06:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:06:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:06:29] \033[0;32m⏰ Uptime: 2h 25m - Status: healthy\033[0m
+[2025-12-12 12:06:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:07:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:07:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:07:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:07:29] \033[0;32m⏰ Uptime: 2h 26m - Status: healthy\033[0m
+[2025-12-12 12:07:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:08:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:08:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:08:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:08:29] \033[0;32m⏰ Uptime: 2h 27m - Status: healthy\033[0m
+[2025-12-12 12:08:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:09:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:09:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:09:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:09:29] \033[0;32m⏰ Uptime: 2h 28m - Status: healthy\033[0m
+[2025-12-12 12:09:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:10:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:10:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:10:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:10:29] \033[0;32m⏰ Uptime: 2h 29m - Status: healthy\033[0m
+[2025-12-12 12:10:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:11:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:11:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:11:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:11:29] \033[0;32m⏰ Uptime: 2h 30m - Status: healthy\033[0m
+[2025-12-12 12:11:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:12:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:12:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:12:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:12:29] \033[0;32m⏰ Uptime: 2h 31m - Status: healthy\033[0m
+[2025-12-12 12:12:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:13:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:13:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:13:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:13:29] \033[0;32m⏰ Uptime: 2h 32m - Status: healthy\033[0m
+[2025-12-12 12:13:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:14:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:14:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:14:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:14:29] \033[0;32m⏰ Uptime: 2h 33m - Status: healthy\033[0m
+[2025-12-12 12:14:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:15:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:15:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:15:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:15:29] \033[0;32m⏰ Uptime: 2h 34m - Status: healthy\033[0m
+[2025-12-12 12:15:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:16:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:16:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:16:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:16:29] \033[0;32m⏰ Uptime: 2h 35m - Status: healthy\033[0m
+[2025-12-12 12:16:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:17:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:17:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:17:29] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:17:29] \033[0;32m⏰ Uptime: 2h 36m - Status: healthy\033[0m
+[2025-12-12 12:17:29] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:18:29] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:18:29] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:18:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:18:30] \033[0;32m⏰ Uptime: 2h 37m - Status: healthy\033[0m
+[2025-12-12 12:18:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:19:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:19:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:19:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:19:30] \033[0;32m⏰ Uptime: 2h 38m - Status: healthy\033[0m
+[2025-12-12 12:19:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:20:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:20:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:20:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:20:30] \033[0;32m⏰ Uptime: 2h 39m - Status: healthy\033[0m
+[2025-12-12 12:20:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:21:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:21:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:21:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:21:30] \033[0;32m⏰ Uptime: 2h 40m - Status: healthy\033[0m
+[2025-12-12 12:21:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:22:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:22:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:22:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:22:30] \033[0;32m⏰ Uptime: 2h 41m - Status: healthy\033[0m
+[2025-12-12 12:22:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:23:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:23:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:23:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:23:30] \033[0;32m⏰ Uptime: 2h 42m - Status: healthy\033[0m
+[2025-12-12 12:23:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:24:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:24:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:24:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:24:30] \033[0;32m⏰ Uptime: 2h 43m - Status: healthy\033[0m
+[2025-12-12 12:24:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:25:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:25:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:25:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:25:30] \033[0;32m⏰ Uptime: 2h 44m - Status: healthy\033[0m
+[2025-12-12 12:25:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:26:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:26:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:26:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:26:30] \033[0;32m⏰ Uptime: 2h 45m - Status: healthy\033[0m
+[2025-12-12 12:26:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:27:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:27:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:27:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:27:30] \033[0;32m⏰ Uptime: 2h 46m - Status: healthy\033[0m
+[2025-12-12 12:27:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:28:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:28:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:28:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:28:30] \033[0;32m⏰ Uptime: 2h 47m - Status: healthy\033[0m
+[2025-12-12 12:28:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:29:30] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:29:30] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:29:30] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:29:30] \033[0;32m⏰ Uptime: 2h 48m - Status: healthy\033[0m
+[2025-12-12 12:29:30] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:30:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:30:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:30:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:30:31] \033[0;32m⏰ Uptime: 2h 49m - Status: healthy\033[0m
+[2025-12-12 12:30:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:31:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:31:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:31:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:31:31] \033[0;32m⏰ Uptime: 2h 50m - Status: healthy\033[0m
+[2025-12-12 12:31:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:32:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:32:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:32:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:32:31] \033[0;32m⏰ Uptime: 2h 51m - Status: healthy\033[0m
+[2025-12-12 12:32:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:33:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:33:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:33:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:33:31] \033[0;32m⏰ Uptime: 2h 52m - Status: healthy\033[0m
+[2025-12-12 12:33:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:34:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:34:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:34:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:34:31] \033[0;32m⏰ Uptime: 2h 53m - Status: healthy\033[0m
+[2025-12-12 12:34:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:35:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:35:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:35:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:35:31] \033[0;32m⏰ Uptime: 2h 54m - Status: healthy\033[0m
+[2025-12-12 12:35:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:36:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:36:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:36:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:36:31] \033[0;32m⏰ Uptime: 2h 55m - Status: healthy\033[0m
+[2025-12-12 12:36:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:37:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:37:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:37:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:37:31] \033[0;32m⏰ Uptime: 2h 56m - Status: healthy\033[0m
+[2025-12-12 12:37:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:38:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:38:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:38:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:38:31] \033[0;32m⏰ Uptime: 2h 57m - Status: healthy\033[0m
+[2025-12-12 12:38:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:39:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:39:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:39:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:39:31] \033[0;32m⏰ Uptime: 2h 58m - Status: healthy\033[0m
+[2025-12-12 12:39:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:40:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:40:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:40:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:40:31] \033[0;32m⏰ Uptime: 2h 59m - Status: healthy\033[0m
+[2025-12-12 12:40:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:41:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:41:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:41:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:41:31] \033[0;32m⏰ Uptime: 3h 0m - Status: healthy\033[0m
+[2025-12-12 12:41:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:42:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:42:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:42:31] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:42:31] \033[0;32m⏰ Uptime: 3h 1m - Status: healthy\033[0m
+[2025-12-12 12:42:31] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:43:31] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:43:31] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:43:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:43:32] \033[0;32m⏰ Uptime: 3h 2m - Status: healthy\033[0m
+[2025-12-12 12:43:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:44:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:44:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:44:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:44:32] \033[0;32m⏰ Uptime: 3h 3m - Status: healthy\033[0m
+[2025-12-12 12:44:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:45:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:45:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:45:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:45:32] \033[0;32m⏰ Uptime: 3h 4m - Status: healthy\033[0m
+[2025-12-12 12:45:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:46:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:46:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:46:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:46:32] \033[0;32m⏰ Uptime: 3h 5m - Status: healthy\033[0m
+[2025-12-12 12:46:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:47:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:47:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:47:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:47:32] \033[0;32m⏰ Uptime: 3h 6m - Status: healthy\033[0m
+[2025-12-12 12:47:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:48:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:48:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:48:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:48:32] \033[0;32m⏰ Uptime: 3h 7m - Status: healthy\033[0m
+[2025-12-12 12:48:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:49:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:49:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:49:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:49:32] \033[0;32m⏰ Uptime: 3h 8m - Status: healthy\033[0m
+[2025-12-12 12:49:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:50:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:50:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:50:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:50:32] \033[0;32m⏰ Uptime: 3h 9m - Status: healthy\033[0m
+[2025-12-12 12:50:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:51:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:51:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:51:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:51:32] \033[0;32m⏰ Uptime: 3h 10m - Status: healthy\033[0m
+[2025-12-12 12:51:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:52:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:52:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:52:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:52:32] \033[0;32m⏰ Uptime: 3h 11m - Status: healthy\033[0m
+[2025-12-12 12:52:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:53:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:53:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:53:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:53:32] \033[0;32m⏰ Uptime: 3h 12m - Status: healthy\033[0m
+[2025-12-12 12:53:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:54:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:54:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:54:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:54:32] \033[0;32m⏰ Uptime: 3h 13m - Status: healthy\033[0m
+[2025-12-12 12:54:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:55:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:55:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:55:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:55:32] \033[0;32m⏰ Uptime: 3h 14m - Status: healthy\033[0m
+[2025-12-12 12:55:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:56:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:56:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:56:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:56:32] \033[0;32m⏰ Uptime: 3h 15m - Status: healthy\033[0m
+[2025-12-12 12:56:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:57:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:57:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:57:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:57:32] \033[0;32m⏰ Uptime: 3h 16m - Status: healthy\033[0m
+[2025-12-12 12:57:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:58:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:58:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:58:32] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:58:32] \033[0;32m⏰ Uptime: 3h 17m - Status: healthy\033[0m
+[2025-12-12 12:58:32] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 12:59:32] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 12:59:32] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 12:59:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 12:59:33] \033[0;32m⏰ Uptime: 3h 18m - Status: healthy\033[0m
+[2025-12-12 12:59:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:00:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:00:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:00:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:00:33] \033[0;32m⏰ Uptime: 3h 19m - Status: healthy\033[0m
+[2025-12-12 13:00:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:01:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:01:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:01:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:01:33] \033[0;32m⏰ Uptime: 3h 20m - Status: healthy\033[0m
+[2025-12-12 13:01:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:02:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:02:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:02:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:02:33] \033[0;32m⏰ Uptime: 3h 21m - Status: healthy\033[0m
+[2025-12-12 13:02:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:03:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:03:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:03:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:03:33] \033[0;32m⏰ Uptime: 3h 22m - Status: healthy\033[0m
+[2025-12-12 13:03:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:04:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:04:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:04:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:04:33] \033[0;32m⏰ Uptime: 3h 23m - Status: healthy\033[0m
+[2025-12-12 13:04:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:05:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:05:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:05:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:05:33] \033[0;32m⏰ Uptime: 3h 24m - Status: healthy\033[0m
+[2025-12-12 13:05:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:06:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:06:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:06:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:06:33] \033[0;32m⏰ Uptime: 3h 25m - Status: healthy\033[0m
+[2025-12-12 13:06:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:07:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:07:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:07:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:07:33] \033[0;32m⏰ Uptime: 3h 26m - Status: healthy\033[0m
+[2025-12-12 13:07:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:08:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:08:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:08:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:08:33] \033[0;32m⏰ Uptime: 3h 27m - Status: healthy\033[0m
+[2025-12-12 13:08:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:09:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:09:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:09:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:09:33] \033[0;32m⏰ Uptime: 3h 28m - Status: healthy\033[0m
+[2025-12-12 13:09:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:10:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:10:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:10:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:10:33] \033[0;32m⏰ Uptime: 3h 29m - Status: healthy\033[0m
+[2025-12-12 13:10:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:11:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:11:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:11:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:11:33] \033[0;32m⏰ Uptime: 3h 30m - Status: healthy\033[0m
+[2025-12-12 13:11:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:12:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:12:33] \033[0;32m📊 Server process running (PID: 1365881
+1365882
+1365982)\033[0m
+[2025-12-12 13:12:33] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:12:33] \033[0;32m⏰ Uptime: 3h 31m - Status: healthy\033[0m
+[2025-12-12 13:12:33] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:13:33] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:13:34] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:13:34] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:13:34] \033[0;32m⏰ Uptime: 3h 32m - Status: healthy\033[0m
+[2025-12-12 13:13:34] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:14:34] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:14:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:14:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:14:35] \033[0;32m⏰ Uptime: 3h 33m - Status: healthy\033[0m
+[2025-12-12 13:14:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:15:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:15:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:15:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:15:35] \033[0;32m⏰ Uptime: 3h 34m - Status: healthy\033[0m
+[2025-12-12 13:15:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:16:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:16:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:16:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:16:35] \033[0;32m⏰ Uptime: 3h 35m - Status: healthy\033[0m
+[2025-12-12 13:16:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:17:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:17:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:17:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:17:35] \033[0;32m⏰ Uptime: 3h 36m - Status: healthy\033[0m
+[2025-12-12 13:17:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:18:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:18:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:18:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:18:35] \033[0;32m⏰ Uptime: 3h 37m - Status: healthy\033[0m
+[2025-12-12 13:18:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:19:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:19:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:19:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:19:35] \033[0;32m⏰ Uptime: 3h 38m - Status: healthy\033[0m
+[2025-12-12 13:19:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:20:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:20:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:20:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:20:35] \033[0;32m⏰ Uptime: 3h 39m - Status: healthy\033[0m
+[2025-12-12 13:20:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:21:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:21:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:21:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:21:35] \033[0;32m⏰ Uptime: 3h 40m - Status: healthy\033[0m
+[2025-12-12 13:21:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:22:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:22:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:22:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:22:35] \033[0;32m⏰ Uptime: 3h 41m - Status: healthy\033[0m
+[2025-12-12 13:22:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:23:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:23:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:23:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:23:35] \033[0;32m⏰ Uptime: 3h 42m - Status: healthy\033[0m
+[2025-12-12 13:23:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:24:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:24:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:24:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:24:35] \033[0;32m⏰ Uptime: 3h 43m - Status: healthy\033[0m
+[2025-12-12 13:24:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:25:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:25:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:25:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:25:35] \033[0;32m⏰ Uptime: 3h 44m - Status: healthy\033[0m
+[2025-12-12 13:25:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:26:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:26:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:26:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:26:35] \033[0;32m⏰ Uptime: 3h 45m - Status: healthy\033[0m
+[2025-12-12 13:26:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:27:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:27:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:27:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:27:36] \033[0;32m⏰ Uptime: 3h 46m - Status: healthy\033[0m
+[2025-12-12 13:27:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:28:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:28:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:28:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:28:36] \033[0;32m⏰ Uptime: 3h 47m - Status: healthy\033[0m
+[2025-12-12 13:28:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:29:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:29:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:29:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:29:36] \033[0;32m⏰ Uptime: 3h 48m - Status: healthy\033[0m
+[2025-12-12 13:29:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:30:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:30:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:30:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:30:36] \033[0;32m⏰ Uptime: 3h 49m - Status: healthy\033[0m
+[2025-12-12 13:30:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:31:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:31:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:31:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:31:36] \033[0;32m⏰ Uptime: 3h 50m - Status: healthy\033[0m
+[2025-12-12 13:31:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:32:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:32:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:32:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:32:36] \033[0;32m⏰ Uptime: 3h 51m - Status: healthy\033[0m
+[2025-12-12 13:32:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:33:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:33:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:33:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:33:36] \033[0;32m⏰ Uptime: 3h 52m - Status: healthy\033[0m
+[2025-12-12 13:33:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:34:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:34:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:34:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:34:36] \033[0;32m⏰ Uptime: 3h 53m - Status: healthy\033[0m
+[2025-12-12 13:34:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:35:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:35:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:35:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:35:36] \033[0;32m⏰ Uptime: 3h 54m - Status: healthy\033[0m
+[2025-12-12 13:35:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:36:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:36:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:36:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:36:36] \033[0;32m⏰ Uptime: 3h 55m - Status: healthy\033[0m
+[2025-12-12 13:36:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:37:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:37:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:37:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:37:36] \033[0;32m⏰ Uptime: 3h 56m - Status: healthy\033[0m
+[2025-12-12 13:37:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:38:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:38:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:38:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:38:36] \033[0;32m⏰ Uptime: 3h 57m - Status: healthy\033[0m
+[2025-12-12 13:38:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:39:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:39:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:39:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:39:36] \033[0;32m⏰ Uptime: 3h 58m - Status: healthy\033[0m
+[2025-12-12 13:39:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:40:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:40:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:40:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:40:37] \033[0;32m⏰ Uptime: 3h 59m - Status: healthy\033[0m
+[2025-12-12 13:40:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:41:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:41:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:41:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:41:37] \033[0;32m⏰ Uptime: 4h 0m - Status: healthy\033[0m
+[2025-12-12 13:41:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:42:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:42:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:42:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:42:37] \033[0;32m⏰ Uptime: 4h 1m - Status: healthy\033[0m
+[2025-12-12 13:42:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:43:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:43:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:43:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:43:37] \033[0;32m⏰ Uptime: 4h 2m - Status: healthy\033[0m
+[2025-12-12 13:43:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:44:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:44:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:44:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:44:37] \033[0;32m⏰ Uptime: 4h 3m - Status: healthy\033[0m
+[2025-12-12 13:44:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:45:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:45:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:45:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:45:37] \033[0;32m⏰ Uptime: 4h 4m - Status: healthy\033[0m
+[2025-12-12 13:45:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:46:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:46:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:46:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:46:37] \033[0;32m⏰ Uptime: 4h 5m - Status: healthy\033[0m
+[2025-12-12 13:46:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:47:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:47:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:47:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:47:37] \033[0;32m⏰ Uptime: 4h 6m - Status: healthy\033[0m
+[2025-12-12 13:47:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:48:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:48:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:48:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:48:37] \033[0;32m⏰ Uptime: 4h 7m - Status: healthy\033[0m
+[2025-12-12 13:48:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:49:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:49:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:49:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:49:37] \033[0;32m⏰ Uptime: 4h 8m - Status: healthy\033[0m
+[2025-12-12 13:49:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:50:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:50:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:50:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:50:38] \033[0;32m⏰ Uptime: 4h 9m - Status: healthy\033[0m
+[2025-12-12 13:50:38] \033[0;32m✅ Server is healthy\033[0m
+..\033[0m
+[2025-12-12 13:22:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:22:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:22:35] \033[0;32m⏰ Uptime: 3h 41m - Status: healthy\033[0m
+[2025-12-12 13:22:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:23:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:23:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:23:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:23:35] \033[0;32m⏰ Uptime: 3h 42m - Status: healthy\033[0m
+[2025-12-12 13:23:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:24:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:24:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:24:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:24:35] \033[0;32m⏰ Uptime: 3h 43m - Status: healthy\033[0m
+[2025-12-12 13:24:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:25:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:25:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:25:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:25:35] \033[0;32m⏰ Uptime: 3h 44m - Status: healthy\033[0m
+[2025-12-12 13:25:35] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:26:35] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:26:35] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:26:35] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:26:35] \033[0;32m⏰ Uptime: 3h 45m - Status: healthy\033[0m
+[2025-12-12 13:26:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:27:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:27:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:27:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:27:36] \033[0;32m⏰ Uptime: 3h 46m - Status: healthy\033[0m
+[2025-12-12 13:27:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:28:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:28:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:28:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:28:36] \033[0;32m⏰ Uptime: 3h 47m - Status: healthy\033[0m
+[2025-12-12 13:28:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:29:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:29:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:29:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:29:36] \033[0;32m⏰ Uptime: 3h 48m - Status: healthy\033[0m
+[2025-12-12 13:29:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:30:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:30:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:30:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:30:36] \033[0;32m⏰ Uptime: 3h 49m - Status: healthy\033[0m
+[2025-12-12 13:30:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:31:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:31:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:31:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:31:36] \033[0;32m⏰ Uptime: 3h 50m - Status: healthy\033[0m
+[2025-12-12 13:31:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:32:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:32:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:32:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:32:36] \033[0;32m⏰ Uptime: 3h 51m - Status: healthy\033[0m
+[2025-12-12 13:32:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:33:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:33:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:33:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:33:36] \033[0;32m⏰ Uptime: 3h 52m - Status: healthy\033[0m
+[2025-12-12 13:33:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:34:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:34:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:34:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:34:36] \033[0;32m⏰ Uptime: 3h 53m - Status: healthy\033[0m
+[2025-12-12 13:34:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:35:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:35:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:35:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:35:36] \033[0;32m⏰ Uptime: 3h 54m - Status: healthy\033[0m
+[2025-12-12 13:35:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:36:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:36:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:36:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:36:36] \033[0;32m⏰ Uptime: 3h 55m - Status: healthy\033[0m
+[2025-12-12 13:36:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:37:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:37:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:37:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:37:36] \033[0;32m⏰ Uptime: 3h 56m - Status: healthy\033[0m
+[2025-12-12 13:37:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:38:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:38:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:38:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:38:36] \033[0;32m⏰ Uptime: 3h 57m - Status: healthy\033[0m
+[2025-12-12 13:38:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:39:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:39:36] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:39:36] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:39:36] \033[0;32m⏰ Uptime: 3h 58m - Status: healthy\033[0m
+[2025-12-12 13:39:36] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:40:36] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:40:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:40:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:40:37] \033[0;32m⏰ Uptime: 3h 59m - Status: healthy\033[0m
+[2025-12-12 13:40:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:41:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:41:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:41:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:41:37] \033[0;32m⏰ Uptime: 4h 0m - Status: healthy\033[0m
+[2025-12-12 13:41:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:42:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:42:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:42:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:42:37] \033[0;32m⏰ Uptime: 4h 1m - Status: healthy\033[0m
+[2025-12-12 13:42:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:43:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:43:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:43:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:43:37] \033[0;32m⏰ Uptime: 4h 2m - Status: healthy\033[0m
+[2025-12-12 13:43:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:44:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:44:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:44:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:44:37] \033[0;32m⏰ Uptime: 4h 3m - Status: healthy\033[0m
+[2025-12-12 13:44:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:45:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:45:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:45:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:45:37] \033[0;32m⏰ Uptime: 4h 4m - Status: healthy\033[0m
+[2025-12-12 13:45:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:46:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:46:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:46:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:46:37] \033[0;32m⏰ Uptime: 4h 5m - Status: healthy\033[0m
+[2025-12-12 13:46:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:47:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:47:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:47:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:47:37] \033[0;32m⏰ Uptime: 4h 6m - Status: healthy\033[0m
+[2025-12-12 13:47:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:48:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:48:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:48:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:48:37] \033[0;32m⏰ Uptime: 4h 7m - Status: healthy\033[0m
+[2025-12-12 13:48:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:49:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:49:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:49:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:49:37] \033[0;32m⏰ Uptime: 4h 8m - Status: healthy\033[0m
+[2025-12-12 13:49:37] \033[0;32m✅ Server is healthy\033[0m
+[2025-12-12 13:50:37] \033[1;33m🔍 Performing health check...\033[0m
+[2025-12-12 13:50:37] \033[0;32m📊 Server process running (PID: 1365982
+1398591
+1398597)\033[0m
+[2025-12-12 13:50:37] \033[0;32m💚 Health endpoint responding (HTTP 200)\033[0m
+[2025-12-12 13:50:38] \033[0;32m⏰ Uptime: 4h 9m - Status: healthy\033[0m
+[2025-12-12 13:50:38] \033[0;32m✅ Server is healthy\033[0m
