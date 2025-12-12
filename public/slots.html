@@ -355,22 +355,29 @@
         
         .jackpot-alert {
             background: linear-gradient(135deg, 
-                rgba(115, 190, 40, 0.9) 0%, 
-                rgba(255, 210, 63, 0.9) 100%);
+                rgba(115, 190, 40, 0.95) 0%, 
+                rgba(255, 210, 63, 0.95) 100%);
             border: 2px solid #73BE28;
             box-shadow: 
                 0 0 40px rgba(115, 190, 40, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 2000px rgba(0, 0, 0, 0.6); /* Dark overlay backdrop */
             animation: jackpot-glow 2s ease-in-out infinite alternate;
         }
         
         @keyframes jackpot-glow {
             0% { 
-                box-shadow: 0 0 40px rgba(115, 190, 40, 0.6);
+                box-shadow: 
+                    0 0 40px rgba(115, 190, 40, 0.6),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                    0 0 0 2000px rgba(0, 0, 0, 0.6);
                 transform: scale(1);
             }
             100% { 
-                box-shadow: 0 0 60px rgba(115, 190, 40, 0.8);
+                box-shadow: 
+                    0 0 60px rgba(115, 190, 40, 0.8),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                    0 0 0 2000px rgba(0, 0, 0, 0.7);
                 transform: scale(1.02);
             }
         }
@@ -734,7 +741,7 @@
         /* === MAIN CONTAINER === */
         .slot-machine-container {
             padding: clamp(2rem, 4vh, 4rem);
-            padding-right: clamp(200px, 22vw, 280px);
+            /* Removed padding-right - analytics overlays naturally */
             height: 100%;
             width: 100%;
             display: flex;
@@ -1065,7 +1072,7 @@
             position: fixed;
             right: clamp(10px, 2vw, 25px);
             top: clamp(120px, 15vh, 180px);
-            z-index: 50;
+            z-index: 100;
             background: 
                 linear-gradient(145deg, rgba(15, 25, 40, 0.95), rgba(20, 30, 48, 0.9));
             color: white;
@@ -1627,7 +1634,7 @@
             }
             
             .slot-machine-container {
-                padding-right: clamp(180px, 20vw, 220px);
+                /* No padding - let analytics overlay naturally */
             }
             
             .side-analytics {
@@ -1968,15 +1975,15 @@
                     </div>
                 </div>
 
+                <!-- Win Popup Overlay (Hidden by default) -->
+                <div id="jackpotBanner" class="jackpot-alert rounded-lg p-3 text-center hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 min-w-80 max-w-md">
+                    <div class="text-lg sm:text-2xl font-bold text-white mb-2">🎉 PERFORMANCE BREAKTHROUGH! 🎉</div>
+                    <div class="text-base sm:text-lg text-white" id="jackpotAmount">💰0</div>
+                    <div class="text-xs sm:text-sm text-white/80">Full-Stack Observability Achieved!</div>
+                </div>
+
                 <!-- Central Slot Machine -->
                 <div class="slot-machine-container rounded-xl relative">
-                            
-                            <!-- Achievement Banner (Hidden by default) -->
-                            <div id="jackpotBanner" class="jackpot-alert rounded-lg p-3 mb-4 text-center hidden">
-                                <div class="text-lg sm:text-2xl font-bold text-white mb-2">🎉 PERFORMANCE BREAKTHROUGH! 🎉</div>
-                                <div class="text-base sm:text-lg text-white" id="jackpotAmount">💰0</div>
-                                <div class="text-xs sm:text-sm text-white/80">Full-Stack Observability Achieved!</div>
-                            </div>
                             
                             <!-- Slot Reels Container with Premium Frame -->
                             <div class="slot-reels-container">
