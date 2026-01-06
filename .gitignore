@@ -1,0 +1,33 @@
+# Logs
+*.log
+app.log
+error.log
+server.log
+health-monitor.log
+
+# Runtime generated logs
+vegas-cheat-logs/*.log
+
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Runtime files
+*.pid
+*.tmp
+
+# Build outputs
+dist/
+build/
