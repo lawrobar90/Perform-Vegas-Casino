@@ -515,17 +515,25 @@ function proxyJson(targetPort, req, res) {
 const DEFAULT_START_BALANCE = 1000;
 const users = new Map(); // key: username, value: { username, balance }
 
-function getOrCreateUser(username) {
+function getOrCreateUser(username, initialBalance = null) {
   const key = (username || 'Anonymous').trim() || 'Anonymous';
   if (!users.has(key)) {
-    users.set(key, { username: key, balance: DEFAULT_START_BALANCE });
+    const balance = initialBalance !== null ? initialBalance : DEFAULT_START_BALANCE;
+    users.set(key, { username: key, balance: balance });
+    console.log(`[USER-INIT] Created user ${key} with balance: $${balance}`);
   }
   return users.get(key);
 }
 
-function updateUserBalance(username, delta) {
+function updateUserBalance(username, delta, setBalance = null) {
   const user = getOrCreateUser(username);
-  user.balance = Math.max(0, (user.balance || 0) + Number(delta || 0));
+  if (setBalance !== null) {
+    user.balance = Math.max(0, Number(setBalance));
+    console.log(`[BALANCE-SET] ${username} balance set to: $${user.balance}`);
+  } else {
+    user.balance = Math.max(0, (user.balance || 0) + Number(delta || 0));
+    console.log(`[BALANCE-UPDATE] ${username} balance ${delta >= 0 ? '+' : ''}${delta} = $${user.balance}`);
+  }
   return user.balance;
 }
 
@@ -1340,12 +1348,33 @@ app.post('/api/slots/spin', dynatraceMiddleware(SERVICE_NAMES.slots), async (req
     const Username = (req.body && (req.body.Username || req.body.userId || req.body.username)) || 'Anonymous';
     const BetAmount = Number((req.body && (req.body.BetAmount ?? req.body.betAmount)) || 10);
     
+    // Extract balance from frontend request (use originalBalance if available, otherwise balance)
+    const frontendBalance = req.body.balance || req.body.Balance || null;
+    const frontendNewBalance = req.body.newBalance || null;
+    
+    console.log('[SLOTS-SPIN] Request data:', {
+      Username,
+      BetAmount,
+      frontendBalance,
+      frontendNewBalance,
+      'req.body.balance': req.body.balance,
+      'req.body.newBalance': req.body.newBalance
+    });
+    
     // Extract cheating information
     const CheatActive = req.body.CheatActive || false;
     const CheatType = req.body.CheatType || null;
     const CheatDetails = req.body.CheatDetails || null;
+
+    // Use frontend balance if provided, otherwise create with default
+    const user = getOrCreateUser(Username, frontendBalance);
     
-    const user = getOrCreateUser(Username);
+    // Sync server balance with frontend if frontend provided a balance
+    if (frontendBalance !== null && user.balance !== frontendBalance) {
+      console.log(`[BALANCE-SYNC] Syncing ${Username} balance from server:$${user.balance} to frontend:$${frontendBalance}`);
+      updateUserBalance(Username, 0, frontendBalance); // Set balance to frontend value
+    }
+    
     const balanceBefore = user.balance;
     
     if (user.balance < BetAmount) return res.status(400).json({ error: 'Insufficient balance', balance: user.balance });
@@ -1463,7 +1492,20 @@ app.post('/api/roulette/spin', dynatraceMiddleware(SERVICE_NAMES.roulette), asyn
     startChildService(SERVICE_NAMES.roulette, path.join('services','roulette-service.js'));
     const Username = (req.body && (req.body.Username || req.body.userId || req.body.username)) || 'Anonymous';
     const BetAmount = Number((req.body && (req.body.BetAmount ?? req.body.betAmount)) || 10);
-    const user = getOrCreateUser(Username);
+    
+    // Extract balance from frontend request
+    const frontendBalance = req.body.balance || req.body.Balance || null;
+    console.log('[ROULETTE-SPIN] Request data:', { Username, BetAmount, frontendBalance });
+    
+    // Use frontend balance if provided
+    const user = getOrCreateUser(Username, frontendBalance);
+    
+    // Sync server balance with frontend if provided
+    if (frontendBalance !== null && user.balance !== frontendBalance) {
+      console.log(`[BALANCE-SYNC] Syncing ${Username} roulette balance from server:$${user.balance} to frontend:$${frontendBalance}`);
+      updateUserBalance(Username, 0, frontendBalance);
+    }
+    
     const balanceBefore = user.balance;
     
     if (user.balance < BetAmount) return res.status(400).json({ error: 'Insufficient balance', balance: user.balance });
@@ -1541,7 +1583,20 @@ app.post('/api/dice/roll', dynatraceMiddleware(SERVICE_NAMES.dice), async (req, 
     startChildService(SERVICE_NAMES.dice, path.join('services','dice-service.js'));
     const Username = (req.body && (req.body.Username || req.body.userId || req.body.username)) || 'Anonymous';
     const BetAmount = Number((req.body && (req.body.BetAmount ?? req.body.betAmount)) || 10);
-    const user = getOrCreateUser(Username);
+    
+    // Extract balance from frontend request
+    const frontendBalance = req.body.balance || req.body.Balance || null;
+    console.log('[DICE-ROLL] Request data:', { Username, BetAmount, frontendBalance });
+    
+    // Use frontend balance if provided
+    const user = getOrCreateUser(Username, frontendBalance);
+    
+    // Sync server balance with frontend if provided
+    if (frontendBalance !== null && user.balance !== frontendBalance) {
+      console.log(`[BALANCE-SYNC] Syncing ${Username} dice balance from server:$${user.balance} to frontend:$${frontendBalance}`);
+      updateUserBalance(Username, 0, frontendBalance);
+    }
+    
     const balanceBefore = user.balance;
     
     if (user.balance < BetAmount) return res.status(400).json({ error: 'Insufficient balance', balance: user.balance });
@@ -1625,7 +1680,20 @@ app.post('/api/blackjack/deal', dynatraceMiddleware(SERVICE_NAMES.blackjack), as
     startChildService(SERVICE_NAMES.blackjack, path.join('services','blackjack-service.js'));
     const Username = (req.body && (req.body.Username || req.body.userId || req.body.username)) || 'Anonymous';
     const BetAmount = Number((req.body && req.body.BetAmount) || 10);
-    const user = getOrCreateUser(Username);
+    
+    // Extract balance from frontend request
+    const frontendBalance = req.body.balance || req.body.Balance || null;
+    console.log('[BLACKJACK-DEAL] Request data:', { Username, BetAmount, frontendBalance });
+    
+    // Use frontend balance if provided
+    const user = getOrCreateUser(Username, frontendBalance);
+    
+    // Sync server balance with frontend if provided
+    if (frontendBalance !== null && user.balance !== frontendBalance) {
+      console.log(`[BALANCE-SYNC] Syncing ${Username} blackjack balance from server:$${user.balance} to frontend:$${frontendBalance}`);
+      updateUserBalance(Username, 0, frontendBalance);
+    }
+    
     const balanceBefore = user.balance;
     
     if (user.balance < BetAmount) return res.status(400).json({ error: 'Insufficient balance', balance: user.balance });
@@ -1779,6 +1847,69 @@ app.post('/api/blackjack/double', dynatraceMiddleware(SERVICE_NAMES.blackjack), 
       res.status(502).json({ error: 'Service unavailable', details: e.message });
     }
   });
+});
+
+/**
+ * Blackjack Action Logging API - For logging UI actions and game events
+ */
+app.post('/api/blackjack/action', dynatraceMiddleware(SERVICE_NAMES.blackjack), async (req, res) => {
+  try {
+    const {
+      timestamp,
+      game,
+      action,
+      player,
+      email,
+      company,
+      persona,
+      booth,
+      balance,
+      currentBet,
+      ...additionalData
+    } = req.body;
+
+    // Create comprehensive log entry
+    const logEntry = {
+      timestamp,
+      service: 'vegas-blackjack-ui',
+      action,
+      player,
+      email,
+      company,
+      persona,
+      booth,
+      currentBalance: balance,
+      betAmount: currentBet,
+      gameData: additionalData,
+      userAgent: req.headers['user-agent'] || 'Unknown',
+      ip: req.ip || req.connection.remoteAddress
+    };
+
+    // Log to vegas-cheat-logs directory
+    await logGameActivity('blackjack', action, logEntry);
+
+    // Send telemetry for Dynatrace
+    logTelemetry('BLACKJACK_UI_ACTION', {
+      action,
+      player,
+      balance,
+      currentBet,
+      ...additionalData
+    });
+
+    res.json({
+      success: true,
+      message: 'Blackjack action logged successfully',
+      correlationId: generateCorrelationId()
+    });
+
+  } catch (error) {
+    console.error('❌ Error logging blackjack action:', error);
+    res.status(500).json({
+      error: 'Failed to log blackjack action',
+      details: error.message
+    });
+  }
 });
 
 /**
