@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegas Casino - Admin Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            border: 2px solid #ffd700;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #ffd700;
+        }
+        
+        .admin-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .admin-section h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-size: 14px;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 10px #ffd700;
+        }
+        
+        button {
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        button.danger {
+            background: linear-gradient(45deg, #ff4444, #ff6666);
+            color: #fff;
+        }
+        
+        button.success {
+            background: linear-gradient(45deg, #44ff44, #66ff66);
+            color: #000;
+        }
+        
+        .status-display {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+            min-height: 100px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .success { color: #44ff44; }
+        .error { color: #ff4444; }
+        .warning { color: #ffaa00; }
+        
+        .locked-users {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .user-card {
+            background: rgba(255, 68, 68, 0.2);
+            border: 1px solid #ff4444;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .user-card .username {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .user-card .reason {
+            color: #ff4444;
+            margin: 5px 0;
+        }
+        
+        .user-card .timestamp {
+            color: #aaa;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎰 Vegas Casino - Admin Console 🎰</h1>
+        
+        <div class="grid">
+            <!-- User Lockout Section -->
+            <div class="admin-section">
+                <h2>🚫 User Lockout Management</h2>
+                
+                <div class="form-group">
+                    <label for="lockoutUsername">Username:</label>
+                    <input type="text" id="lockoutUsername" placeholder="Enter username to lock/unlock">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lockoutReason">Reason:</label>
+                    <input type="text" id="lockoutReason" placeholder="Reason for lockout" value="Admin action">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lockoutDuration">Duration (minutes, 0 = indefinite):</label>
+                    <input type="number" id="lockoutDuration" value="60" min="0">
+                </div>
+                
+                <button onclick="lockoutUser()" class="danger">🚫 Lock User</button>
+                <button onclick="unlockUser()" class="success">✅ Unlock User</button>
+                <button onclick="checkUserStatus()">📊 Check Status</button>
+                
+                <div id="lockoutStatus" class="status-display"></div>
+            </div>
+            
+            <!-- System Monitoring Section -->
+            <div class="admin-section">
+                <h2>📊 System Monitoring</h2>
+                
+                <button onclick="getSystemMetrics()">📈 Get System Metrics</button>
+                <button onclick="triggerSelfHeal()">🔧 Trigger Self-Heal</button>
+                <button onclick="refreshLockedUsers()">👥 Refresh Locked Users</button>
+                
+                <div id="systemStatus" class="status-display"></div>
+            </div>
+        </div>
+        
+        <!-- Currently Locked Users Section -->
+        <div class="admin-section">
+            <h2>👥 Currently Locked Users</h2>
+            <button onclick="refreshLockedUsers()">🔄 Refresh List</button>
+            <div id="lockedUsersList" class="locked-users status-display"></div>
+        </div>
+        
+        <!-- Action Log Section -->
+        <div class="admin-section">
+            <h2>📋 Action Log</h2>
+            <button onclick="clearLog()">🗑️ Clear Log</button>
+            <div id="actionLog" class="status-display"></div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let actionLog = [];
+        let lockedUsers = new Map();
+        
+        // Utility functions
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleString();
+            const logEntry = `[${timestamp}] ${message}`;
+            actionLog.push({timestamp, message, type});
+            
+            const logElement = document.getElementById('actionLog');
+            const colorClass = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
+            logElement.innerHTML += `<div class="${colorClass}">${logEntry}</div>\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+            
+            console.log(logEntry);
+        }
+        
+        function clearLog() {
+            actionLog = [];
+            document.getElementById('actionLog').innerHTML = '';
+            log('Action log cleared', 'info');
+        }
+        
+        function displayStatus(elementId, data, type = 'info') {
+            const element = document.getElementById(elementId);
+            const colorClass = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
+            
+            if (typeof data === 'object') {
+                element.innerHTML = `<div class="${colorClass}">${JSON.stringify(data, null, 2)}</div>`;
+            } else {
+                element.innerHTML = `<div class="${colorClass}">${data}</div>`;
+            }
+        }
+        
+        // User lockout functions
+        async function lockoutUser() {
+            const username = document.getElementById('lockoutUsername').value.trim();
+            const reason = document.getElementById('lockoutReason').value.trim();
+            const duration = parseInt(document.getElementById('lockoutDuration').value) || 0;
+            
+            if (!username) {
+                log('Please enter a username', 'error');
+                displayStatus('lockoutStatus', 'Error: Username is required', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/admin/lockout-user', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        Username: username,
+                        Reason: reason,
+                        Duration: duration
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    log(`Successfully locked user: ${username} - ${reason}`, 'success');
+                    displayStatus('lockoutStatus', result, 'success');
+                    refreshLockedUsers();
+                } else {
+                    log(`Failed to lock user: ${result.error}`, 'error');
+                    displayStatus('lockoutStatus', result, 'error');
+                }
+            } catch (error) {
+                log(`Error locking user: ${error.message}`, 'error');
+                displayStatus('lockoutStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function unlockUser() {
+            const username = document.getElementById('lockoutUsername').value.trim();
+            
+            if (!username) {
+                log('Please enter a username', 'error');
+                displayStatus('lockoutStatus', 'Error: Username is required', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/admin/unlock-user', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({Username: username})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    log(`Successfully unlocked user: ${username}`, 'success');
+                    displayStatus('lockoutStatus', result, 'success');
+                    refreshLockedUsers();
+                } else {
+                    log(`Failed to unlock user: ${result.error}`, 'error');
+                    displayStatus('lockoutStatus', result, 'error');
+                }
+            } catch (error) {
+                log(`Error unlocking user: ${error.message}`, 'error');
+                displayStatus('lockoutStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function checkUserStatus() {
+            const username = document.getElementById('lockoutUsername').value.trim();
+            
+            if (!username) {
+                log('Please enter a username', 'error');
+                displayStatus('lockoutStatus', 'Error: Username is required', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/admin/lockout-status/${username}`);
+                const result = await response.json();
+                
+                log(`Checked status for user: ${username}`, 'info');
+                displayStatus('lockoutStatus', result, result.locked ? 'warning' : 'success');
+            } catch (error) {
+                log(`Error checking user status: ${error.message}`, 'error');
+                displayStatus('lockoutStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        // System monitoring functions
+        async function getSystemMetrics() {
+            try {
+                const response = await fetch('/api/admin/system-metrics');
+                const result = await response.json();
+                
+                log('Retrieved system metrics', 'info');
+                displayStatus('systemStatus', result, 'info');
+            } catch (error) {
+                log(`Error getting system metrics: ${error.message}`, 'error');
+                displayStatus('systemStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function triggerSelfHeal() {
+            try {
+                const response = await fetch('/api/admin/self-heal', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    log('Self-heal triggered successfully', 'success');
+                    displayStatus('systemStatus', result, 'success');
+                } else {
+                    log(`Self-heal failed: ${result.error}`, 'error');
+                    displayStatus('systemStatus', result, 'error');
+                }
+            } catch (error) {
+                log(`Error triggering self-heal: ${error.message}`, 'error');
+                displayStatus('systemStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function refreshLockedUsers() {
+            // This would need a specific endpoint to list all locked users
+            // For now, we'll show a placeholder
+            const lockedUsersElement = document.getElementById('lockedUsersList');
+            lockedUsersElement.innerHTML = `
+                <div class="warning">
+                    To see all locked users, you would need to check individual user statuses.
+                    The current API provides individual user status checking via:
+                    GET /api/admin/lockout-status/{username}
+                </div>
+                <div>
+                    <strong>Available API Endpoints:</strong><br>
+                    • POST /api/admin/lockout-user - Lock a user<br>
+                    • POST /api/admin/unlock-user - Unlock a user<br>
+                    • GET /api/admin/lockout-status/{username} - Check user status<br>
+                    • POST /api/admin/lockout-user-cheat - Lock user with cheat data<br>
+                    • GET /api/admin/system-metrics - Get system metrics<br>
+                    • POST /api/admin/self-heal - Trigger self-healing
+                </div>
+            `;
+        }
+        
+        // Initialize the admin console
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Vegas Casino Admin Console initialized', 'success');
+            refreshLockedUsers();
+            
+            // Auto-refresh system status every 30 seconds
+            setInterval(() => {
+                if (document.getElementById('systemStatus').innerHTML.trim()) {
+                    getSystemMetrics();
+                }
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

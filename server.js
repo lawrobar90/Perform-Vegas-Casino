@@ -2997,6 +2997,11 @@ app.use((error, req, res, next) => {
   res.status(500).json(errorResponse);
 });
 
+// Admin console route
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 // 404 handler for undefined routes
 app.use((req, res) => {
   const errorMsg = `Route not found: ${req.method} ${req.path}`;

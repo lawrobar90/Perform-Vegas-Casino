@@ -3997,7 +3997,10 @@
             diceGame.isRolling = true;
             document.getElementById('rollDiceBtn').disabled = true;
             
-            // Deduct bet from balance immediately
+            // Store the original balance BEFORE deduction for server call
+            diceGame.originalBalance = diceGame.balance;
+            
+            // Deduct bet from balance immediately for UI
             diceGame.balance -= diceGame.currentBet;
             
             // Update balance display immediately
@@ -4015,8 +4018,7 @@
             console.log('💰 Bet deducted, balance now:', diceGame.balance);
             updateDiceGameStatus('🎲 Rolling dice...', 'text-dt-yellow');
             
-            // Send dice roll request to server
-            sendDiceRoll();
+            // NOTE: Removed duplicate sendDiceRoll() call - only send final result
             
             // Animate dice rolling
             const dice1Element = document.getElementById('dice1');
@@ -4336,6 +4338,9 @@
         function sendDiceResult(result, dice1, dice2, total, winAmount = 0, lossAmount = 0) {
             const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
+            // Use the original balance before any deductions
+            const originalBalance = diceGame.originalBalance || (diceGame.balance + diceGame.currentBet);
+            
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
@@ -4345,22 +4350,23 @@
                 Booth: userData.booth || 'UI Demo',
                 OptIn: userData.optIn !== false,
                 BetAmount: diceGame.currentBet,
-                balance: diceGame.balance - winAmount + lossAmount, // Original balance
-                newBalance: diceGame.balance,
-                Balance: diceGame.balance,
+                balance: originalBalance, // Original balance before bet
+                newBalance: diceGame.balance, // Final balance after win/loss
+                Balance: diceGame.balance, // Final balance
                 BetType: diceGame.betType,
-                Game: 'Vegas Dice Roll',
-                Action: 'GameResult',
-                GameState: 'Completed',
+                Game: 'Vegas Dice',
+                Action: 'RollCompleted',
+                Status: 'Completed',
                 Result: result, // 'win' or 'lose'
-                Dice1: dice1,
-                Dice2: dice2,
-                DiceTotal: total,
-                WinAmount: winAmount,
+                dice1: dice1,
+                dice2: dice2,
+                sum: total,
+                win: winAmount > 0,
+                payout: winAmount,
+                payoutMultiplier: winAmount > 0 ? (winAmount / diceGame.currentBet) : 0,
+                WinningAmount: winAmount,
                 LossAmount: lossAmount,
                 WinFlag: winAmount > 0 ? 1 : 0,
-                LossFlag: lossAmount > 0 ? 1 : 0,
-                Payout: winAmount > 0 ? winAmount / diceGame.currentBet : 0,
                 Device: 'Browser-UI',
                 CheatActive: diceCheatState.active !== null,
                 CheatType: diceCheatState.active,
@@ -4372,7 +4378,13 @@
                 timestamp: new Date().toISOString()
             };
 
-            console.log('🎲 Sending dice result:', payload);
+            console.log('🎲 Sending dice result:', {
+                originalBalance: originalBalance,
+                finalBalance: diceGame.balance,
+                betAmount: diceGame.currentBet,
+                winAmount: winAmount,
+                payload: payload
+            });
 
             fetch('/api/dice/roll', {
                 method: 'POST',
