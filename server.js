@@ -6,7 +6,7 @@
  * Features:
  * - WebSocket-based real-time metric updates
  * - Telemetry simulation via /metrics route
- * - Game APIs for Roulette, Slots, Dice Roll, and Blackjack
+ * - Game APIs for Slots, Dice Roll, and Blackjack
  * - Dynatrace-style logging and monitoring
  */
 

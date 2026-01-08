@@ -702,14 +702,6 @@
                         </div>
                     </div>
                     
-                    <div class="game-card bg-dt-gray/50 rounded-xl p-6 border border-dt-cyan/20 hover:border-dt-cyan/50 transition-all duration-300 cursor-pointer transform hover:scale-105 hidden" 
-                         onclick="navigateTo('/roulette')">
-                        <div class="text-center">
-                            <div class="text-4xl mb-4">🎯</div>
-                            <h3 class="text-xl font-bold text-dt-cyan mb-2">Roulette</h3>
-                            <p class="text-sm text-dt-light-gray">Spin the wheel!</p>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- Welcome & Summary Section -->
@@ -1098,25 +1090,25 @@
                         <div class="bg-gray-800/50 backdrop-blur-sm border border-dt-cyan/30 rounded-xl p-4 mb-6">
                             <h4 class="text-center text-lg font-bold text-dt-yellow mb-4">💰 Place Your Bet</h4>
                             <div class="grid grid-cols-2 gap-3">
-                                <button onclick="placeBet(25)" class="betting-chip bg-gradient-to-br from-green-600 to-green-800 hover:from-green-500 hover:to-green-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                                <button onclick="placeBlackjackBet(25)" class="betting-chip bg-gradient-to-br from-green-600 to-green-800 hover:from-green-500 hover:to-green-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                                     <div class="text-xs">$25</div>
                                     <div class="text-lg">🟢</div>
                                 </button>
-                                <button onclick="placeBet(50)" class="betting-chip bg-gradient-to-br from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                                <button onclick="placeBlackjackBet(50)" class="betting-chip bg-gradient-to-br from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                                     <div class="text-xs">$50</div>
                                     <div class="text-lg">🔵</div>
                                 </button>
-                                <button onclick="placeBet(100)" class="betting-chip bg-gradient-to-br from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                                <button onclick="placeBlackjackBet(100)" class="betting-chip bg-gradient-to-br from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                                     <div class="text-xs">$100</div>
                                     <div class="text-lg">🔴</div>
                                 </button>
-                                <button onclick="placeBet(250)" class="betting-chip bg-gradient-to-br from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                                <button onclick="placeBlackjackBet(250)" class="betting-chip bg-gradient-to-br from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                                     <div class="text-xs">$250</div>
                                     <div class="text-lg">🟣</div>
                                 </button>
                             </div>
                             <div class="mt-3 flex justify-center">
-                                <button onclick="placeBet(500)" class="betting-chip bg-gradient-to-br from-yellow-600 to-yellow-800 hover:from-yellow-500 hover:to-yellow-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                                <button onclick="placeBlackjackBet(500)" class="betting-chip bg-gradient-to-br from-yellow-600 to-yellow-800 hover:from-yellow-500 hover:to-yellow-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                                     <div class="text-xs">$500</div>
                                     <div class="text-lg">🟡</div>
                                 </button>
@@ -1245,7 +1237,7 @@
                                 </div>
                             </div>
                             
-                            <button id="rollDiceBtn" onclick="rollDice()" class="bg-gradient-to-r from-dt-purple via-dt-blue to-dt-cyan hover:from-dt-cyan hover:to-dt-purple text-white font-bold py-4 px-8 rounded-xl text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-dt-cyan/50" disabled="">
+                            <button id="rollDiceBtn" class="bg-gradient-to-r from-dt-purple via-dt-blue to-dt-cyan hover:from-dt-cyan hover:to-dt-purple text-white font-bold py-4 px-8 rounded-xl text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-dt-cyan/50" disabled style="position: relative; z-index: 100; pointer-events: auto !important;">
                                 🎲 ROLL DICE 🎲
                             </button>
                         </div>
@@ -1385,412 +1377,6 @@
                 </div>
             </div>
             
-        </div>
-    </template>
-
-    <!-- ===== ROULETTE TEMPLATE ===== -->
-    <template id="roulette-template">
-        <div class="min-h-screen bg-gradient-to-b from-dt-dark via-dt-dark to-dt-gray p-6">
-            <!-- Top Navigation -->
-            <div class="flex items-center justify-between mb-8">
-                <div class="flex items-center space-x-4">
-                    <button onclick="navigateTo('/lobby')" class="bg-gradient-to-r from-dt-purple to-dt-blue px-4 py-2 rounded-lg text-white font-semibold hover:shadow-lg transition-all">
-                        ← Lobby
-                    </button>
-                    <div class="text-dt-light-gray">Welcome, <span id="rouletteUsername" class="text-dt-yellow font-bold">Player</span></div>
-                </div>
-                <div class="text-right">
-                    <div class="flex items-center space-x-4">
-                        <span id="rouletteBalance" class="text-dt-yellow font-bold">Balance: $5600</span>
-                        <button onclick="toggleRouletteCheatPanel()" class="bg-red-800/60 hover:bg-red-700/70 px-3 py-1 rounded text-sm text-white transition-colors">
-                            🎯 Cheats
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Game Title -->
-            <div class="text-center mb-8">
-                <h2 class="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-dt-yellow via-dt-cyan to-dt-yellow bg-clip-text">
-                    🎰 SMARTSCAPE ROULETTE 🎯
-                </h2>
-            </div>
-
-            <!-- Main Game Area -->
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Left Side: Roulette Wheel -->
-                    <div class="order-2 lg:order-1">
-                        <div class="mb-8">
-                            <div class="relative mx-auto w-80 h-80 md:w-96 md:h-96">
-                                <!-- Wheel Background with Proper Pockets -->
-                                <div id="rouletteWheel" class="w-full h-full rounded-full border-8 border-yellow-500 relative transition-transform duration-4000 ease-out bg-gradient-to-br from-amber-800 to-amber-900 shadow-2xl">
-                                    <!-- Outer Ring with Number Pockets -->
-                                    <div class="absolute inset-2 rounded-full overflow-hidden">
-                                        <!-- Green 0 Pocket -->
-                                        <div class="absolute w-full h-full">
-                                            <div class="absolute w-8 h-4 bg-green-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(0deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">0</div>
-                                            </div>
-                                            <!-- Red/Black alternating pockets -->
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(9.73deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">32</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(19.46deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">15</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(29.19deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">19</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(38.92deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">4</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(48.65deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">21</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(58.38deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">2</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(68.11deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">25</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(77.84deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">17</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(87.57deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">34</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(97.3deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">6</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(107.03deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">27</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(116.76deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">13</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(126.49deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">36</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(136.22deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">11</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(145.95deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">30</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(155.68deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">8</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(165.41deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">23</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(175.14deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">10</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(184.87deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">5</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(194.6deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">24</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(204.33deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">16</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(214.06deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">33</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(223.79deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">1</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(233.52deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">20</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(243.25deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">14</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(252.98deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">31</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(262.71deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">9</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(272.44deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">22</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(282.17deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">18</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(291.9deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">29</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(301.63deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">7</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(311.36deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">28</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(321.09deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">12</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(330.82deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">35</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-red-600 border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(340.55deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">3</div>
-                                            </div>
-                                            <div class="absolute w-8 h-4 bg-black border border-yellow-400" style="top: 2px; left: 50%; transform: translateX(-50%) rotate(350.28deg); transform-origin: center 150px;">
-                                                <div class="text-white text-xs font-bold text-center leading-4">26</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Center Result Display -->
-                                    <div class="absolute inset-0 rounded-full flex items-center justify-center">
-                                        <div class="w-20 h-20 bg-dt-dark/90 rounded-full border-4 border-dt-yellow flex items-center justify-center shadow-xl">
-                                            <div id="rouletteResult" class="text-3xl font-bold text-dt-yellow">?</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Ball -->
-                                    <div id="rouletteBall" class="absolute w-3 h-3 bg-white rounded-full shadow-lg transition-all duration-4000" style="top: 8px; left: 50%; transform: translateX(-50%);"></div>
-                                </div>
-                                <!-- Pointer -->
-                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
-                                    <div class="w-0 h-0 border-l-6 border-r-6 border-b-10 border-transparent border-b-dt-yellow drop-shadow-lg"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Basic Betting Options -->
-                        <div class="bg-gradient-to-b from-dt-dark to-dt-gray/80 rounded-xl border-2 border-dt-cyan/40 p-6">
-                            <h3 class="text-xl font-bold text-dt-cyan mb-4 text-center">Quick Bets</h3>
-                            
-                            <!-- Bet Amount Selection -->
-                            <div class="mb-4 text-center">
-                                <label class="block text-dt-light-gray text-sm mb-2">Chip Value</label>
-                                <select id="rouletteChipAmount" class="bg-dt-gray border border-dt-cyan/50 text-white px-4 py-2 rounded-lg">
-                                    <option value="5">$5</option>
-                                    <option value="10">$10</option>
-                                    <option value="25" selected>$25</option>
-                                    <option value="50">$50</option>
-                                    <option value="100">$100</option>
-                                </select>
-                            </div>
-
-                            <!-- Outside Bets -->
-                            <div class="grid grid-cols-2 gap-3 mb-4">
-                                <button onclick="placeBet('red')" class="bet-button bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">🔴 Red</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                                <button onclick="placeBet('black')" class="bet-button bg-gray-800/60 hover:bg-gray-700/70 border border-gray-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">⚫ Black</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                                <button onclick="placeBet('even')" class="bet-button bg-blue-800/60 hover:bg-blue-700/70 border border-blue-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">Even</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                                <button onclick="placeBet('odd')" class="bet-button bg-green-800/60 hover:bg-green-700/70 border border-green-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">Odd</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                                <button onclick="placeBet('low')" class="bet-button bg-purple-800/60 hover:bg-purple-700/70 border border-purple-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">1-18</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                                <button onclick="placeBet('high')" class="bet-button bg-indigo-800/60 hover:bg-indigo-700/70 border border-indigo-500/50 text-white px-3 py-2 rounded-lg transition-all text-sm">
-                                    <div class="font-bold">19-36</div>
-                                    <div class="text-xs">Pays 1:1</div>
-                                </button>
-                            </div>
-
-                            <!-- Spin Button -->
-                            <div class="text-center">
-                                <button id="spinRouletteBtn" onclick="spinRoulette()" disabled class="bg-gradient-to-r from-dt-purple to-dt-blue px-6 py-3 rounded-xl text-white font-bold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-                                    🎰 SPIN WHEEL 🎰
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Betting Table -->
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-gradient-to-b from-dt-dark to-dt-gray/80 rounded-xl border-2 border-dt-cyan/40 p-4">
-                            <h3 class="text-xl font-bold text-dt-cyan mb-4 text-center">Betting Table</h3>
-                            
-                            <!-- Green Numbers (0, 00) -->
-                            <div class="mb-4">
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="number-cell bg-green-800/60 hover:bg-green-700/70 border-2 border-green-500/50 text-white p-3 rounded-lg text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('0')" data-number="0">
-                                        <div class="text-lg">0</div>
-                                        <div class="text-xs">35:1</div>
-                                        <div class="bet-chips absolute -top-2 -right-2"></div>
-                                    </div>
-                                    <div class="number-cell bg-green-800/60 hover:bg-green-700/70 border-2 border-green-500/50 text-white p-3 rounded-lg text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('00')" data-number="00">
-                                        <div class="text-lg">00</div>
-                                        <div class="text-xs">35:1</div>
-                                        <div class="bet-chips absolute -top-2 -right-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Main Number Grid -->
-                            <div class="mb-4">
-                                <div class="grid grid-cols-3 gap-1" id="numberGrid">
-                                    <!-- First Row -->
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border-2 border-red-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('3')" data-number="3">
-                                        <div>3</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border-2 border-gray-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('6')" data-number="6">
-                                        <div>6</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border-2 border-red-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('9')" data-number="9">
-                                        <div>9</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    
-                                    <!-- Second Row -->
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border-2 border-gray-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('2')" data-number="2">
-                                        <div>2</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border-2 border-red-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('5')" data-number="5">
-                                        <div>5</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border-2 border-gray-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('8')" data-number="8">
-                                        <div>8</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    
-                                    <!-- Third Row -->
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border-2 border-red-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('1')" data-number="1">
-                                        <div>1</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border-2 border-gray-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('4')" data-number="4">
-                                        <div>4</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border-2 border-red-500/50 text-white p-2 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('7')" data-number="7">
-                                        <div>7</div>
-                                        <div class="bet-chips absolute -top-1 -right-1 text-xs"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Extended Number Grid (10-36) -->
-                            <div class="mb-4">
-                                <div class="grid grid-cols-6 gap-1 text-xs">
-                                    <!-- Numbers 10-36 in grid format -->
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('10')" data-number="10">10<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('11')" data-number="11">11<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('12')" data-number="12">12<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('13')" data-number="13">13<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('14')" data-number="14">14<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('15')" data-number="15">15<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('16')" data-number="16">16<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('17')" data-number="17">17<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('18')" data-number="18">18<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('19')" data-number="19">19<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('20')" data-number="20">20<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('21')" data-number="21">21<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('22')" data-number="22">22<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('23')" data-number="23">23<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('24')" data-number="24">24<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('25')" data-number="25">25<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('26')" data-number="26">26<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('27')" data-number="27">27<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('28')" data-number="28">28<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('29')" data-number="29">29<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('30')" data-number="30">30<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('31')" data-number="31">31<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('32')" data-number="32">32<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('33')" data-number="33">33<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('34')" data-number="34">34<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-black/60 hover:bg-gray-700/70 border border-gray-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('35')" data-number="35">35<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                    <div class="number-cell bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white p-1 rounded text-center font-bold cursor-pointer transition-all relative" onclick="placeNumberBet('36')" data-number="36">36<div class="bet-chips absolute -top-1 -right-1"></div></div>
-                                </div>
-                            </div>
-
-                            <!-- Current Bets Display -->
-                            <div class="mb-4 p-3 bg-dt-dark/50 rounded-lg">
-                                <div class="text-sm text-dt-light-gray mb-2">Active Bets</div>
-                                <div id="rouletteActiveBets" class="text-dt-yellow text-sm">No bets placed</div>
-                                <div class="text-xs text-dt-light-gray mt-2">
-                                    Total Bet: $<span id="rouletteTotalBet">0</span>
-                                </div>
-                            </div>
-
-                            <!-- Clear Bets Button -->
-                            <div class="text-center">
-                                <button onclick="clearAllBets()" class="bg-red-800/60 hover:bg-red-700/70 px-4 py-2 rounded-lg text-white text-sm transition-all">
-                                    🗑️ Clear All Bets
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Game Status -->
-                <div class="text-center mb-6">
-                    <div id="rouletteStatus" class="text-lg font-semibold text-dt-green">Place your bet to start spinning!</div>
-                    <div id="rouletteWin" class="text-xl font-bold text-dt-yellow mt-2"></div>
-                </div>
-
-                <!-- Cheat Status Display -->
-                <div class="text-center">
-                    <div id="rouletteCheatStatusDisplay" class="text-sm font-medium text-yellow-400"></div>
-                </div>
-            </div>
-
-            <!-- Cheat Panel -->
-            <div id="rouletteCheatPanel" class="fixed top-0 right-0 w-80 h-full bg-dt-dark/95 border-l border-dt-cyan/30 backdrop-blur-sm transform translate-x-full transition-transform duration-300 z-50">
-                <div class="p-6 h-full overflow-y-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-lg font-bold text-dt-cyan">🎯 Roulette Cheats</h3>
-                        <button id="rouletteCloseSidePanel" onclick="toggleRouletteCheatPanel()" class="text-dt-light-gray hover:text-white transition-colors">✕</button>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <button id="rouletteCheatMagnet" class="w-full cheat-button bg-green-900/30 hover:bg-green-800/50 border border-green-500/50 text-green-300 px-4 py-3 rounded-lg text-sm font-semibold transition-all text-left" onclick="activateRouletteCheat('magnet')">
-                            <div class="font-bold">🧲 Magnetic Ball</div>
-                            <div class="text-xs text-green-400 mt-1">+70% Win Rate | 30% Risk</div>
-                            <div class="text-xs text-gray-400 mt-1">Ball attracted to your bet</div>
-                        </button>
-                        
-                        <button id="rouletteCheatWheelControl" class="w-full cheat-button bg-green-900/30 hover:bg-green-800/50 border border-green-500/50 text-green-300 px-4 py-3 rounded-lg text-sm font-semibold transition-all text-left" onclick="activateRouletteCheat('wheelControl')">
-                            <div class="font-bold">⚙️ Wheel Control</div>
-                            <div class="text-xs text-green-400 mt-1">+85% Win Rate | 45% Risk</div>
-                            <div class="text-xs text-gray-400 mt-1">Control wheel mechanics</div>
-                        </button>
-                        
-                        <button onclick="deactivateRouletteCheat()" class="w-full bg-red-800/60 hover:bg-red-700/70 border border-red-500/50 text-white text-sm py-3 px-4 rounded-lg transition-all font-semibold">
-                            ❌ Deactivate Cheat
-                        </button>
-                    </div>
-                    
-                    <!-- Risk Meter -->
-                    <div class="mt-6 p-4 bg-red-900/20 rounded-lg border border-red-500/30">
-                        <div class="text-sm text-red-300 mb-2">Detection Risk</div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div id="rouletteRiskMeter" class="bg-red-500 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
-                        </div>
-                        <div class="text-xs text-red-400 mt-1">Higher risk = Higher rewards</div>
-                    </div>
-                    
-                    <div class="text-center text-xs text-gray-400 mt-4 pt-4 border-t border-gray-700/50">
-                        <div>Active Cheat: <span id="rouletteSidePanelCheatStatus" class="text-dt-yellow">None</span></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </template>
 
@@ -2220,8 +1806,7 @@
                     '/lobby': 'lobby',
                     '/slots': 'slots',
                     '/blackjack': 'blackjack',
-                    '/dice': 'dice',
-                    '/roulette': 'roulette'
+                    '/dice': 'dice'
                 };
                 this.currentRoute = '/';
                 this.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
@@ -2281,6 +1866,8 @@
                         // Initialize blackjack game state with global balance
                         this.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
                         blackjackGame.balance = this.balance;
+                        blackjackGame.gameState = 'betting'; // Ensure we're in betting state
+                        blackjackGame.currentBet = 0; // Reset any existing bet
                         initializeDeck();
                         updateBlackjackUI();
                         updateGameStatus('Place your bet to start!', 'text-dt-green');
@@ -2289,18 +1876,17 @@
                         // Update username and balance in top nav
                         this.updateUsername('blackjackUsername');
                         this.updateBalance('blackjackBalanceTop');
+                        console.log('🎲 Blackjack initialized with state:', blackjackGame.gameState);
                         break;
                     case 'dice':
                         // Initialize dice game state with global balance
                         this.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
-                        initializeDiceGame();
+                        // Initialize dice game with slight delay to ensure DOM is ready
+                        setTimeout(() => {
+                            initializeDiceGame();
+                            console.log('🎲 Dice game auto-initialized on template load');
+                        }, 100);
                         console.log('🎲 Dice game loaded');
-                        break;
-                    case 'roulette':
-                        // Initialize roulette game state with global balance
-                        this.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
-                        initializeRouletteGame();
-                        console.log('🎯 Roulette game loaded');
                         break;
                 }
             }
@@ -3227,8 +2813,19 @@
             return value;
         }
         
-        function placeBet(amount) {
-            if (blackjackGame.gameState !== 'betting') return;
+        function placeBlackjackBet(amount) {
+            console.log('🎲 DEBUG - placeBet called:', { 
+                amount, 
+                gameState: blackjackGame.gameState,
+                currentBet: blackjackGame.currentBet,
+                balance: blackjackGame.balance 
+            });
+            
+            if (blackjackGame.gameState !== 'betting') {
+                console.log('❌ Cannot bet - game state is:', blackjackGame.gameState);
+                updateGameStatus(`Cannot bet while game state is: ${blackjackGame.gameState}`, 'text-red-500');
+                return;
+            }
             
             // Sync with global balance
             blackjackGame.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
@@ -3242,15 +2839,6 @@
             blackjackGame.currentBet += amount;
             blackjackGame.balance -= amount;
             
-            // Check if total bet exceeds balance
-            if (blackjackGame.currentBet > parseInt(localStorage.getItem('vegasBalance') || '5600')) {
-                // Revert the bet if it would exceed original balance
-                blackjackGame.currentBet -= amount;
-                blackjackGame.balance += amount;
-                updateGameStatus('Total bet would exceed balance!', 'text-red-500');
-                return;
-            }
-            
             // Update global balance
             router.balance = blackjackGame.balance;
             localStorage.setItem('vegasBalance', router.balance.toString());
@@ -3261,6 +2849,11 @@
             
             // Enable deal button
             document.getElementById('dealBtn').disabled = false;
+            
+            console.log('✅ Bet placed successfully:', { 
+                newBet: blackjackGame.currentBet,
+                newBalance: blackjackGame.balance 
+            });
         }
         
         function dealCards() {
@@ -3879,7 +3472,7 @@
         
         // Dice Game State
         let diceGame = {
-            balance: 1000,
+            balance: parseInt(localStorage.getItem('vegasBalance') || '5600'),
             currentBet: 0,
             betType: null,
             payout: 0,
@@ -3891,6 +3484,182 @@
             totalWon: 0,
             isRolling: false
         };
+
+        // Debug function to force enable roll button
+        function forceEnableDiceButton() {
+            const rollBtn = document.getElementById('rollDiceBtn');
+            if (rollBtn) {
+                rollBtn.disabled = false;
+                rollBtn.style.opacity = '1';
+                rollBtn.style.cursor = 'pointer';
+                rollBtn.style.pointerEvents = 'auto';
+                console.log('🔧 Force enabled dice roll button');
+                return true;
+            }
+            console.log('❌ Roll button not found');
+            return false;
+        }
+
+        // Debug function to check dice state
+        function debugDiceState() {
+            const rollBtn = document.getElementById('rollDiceBtn');
+            console.log('🎲 DICE DEBUG STATE:', {
+                currentBet: diceGame.currentBet,
+                betType: diceGame.betType,
+                isRolling: diceGame.isRolling,
+                balance: diceGame.balance,
+                buttonExists: !!rollBtn,
+                buttonDisabled: rollBtn ? rollBtn.disabled : 'button not found',
+                buttonStyle: rollBtn ? {
+                    opacity: rollBtn.style.opacity,
+                    pointerEvents: rollBtn.style.pointerEvents,
+                    disabled: rollBtn.disabled
+                } : 'N/A',
+                shouldDisable: diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling
+            });
+            return diceGame;
+        }
+
+        // Test function to simulate full betting process
+        function testDiceBetting() {
+            console.log('🧪 Testing dice betting process...');
+            console.log('Step 1: Setting bet amount...');
+            setDiceBet(25);
+            setTimeout(() => {
+                console.log('Step 2: Placing bet type...');
+                placeDiceBet('pass', 2);
+                setTimeout(() => {
+                    console.log('Step 3: Checking final state...');
+                    debugDiceState();
+                }, 100);
+            }, 100);
+        }
+
+        // Global dice initialization function
+        function ensureDiceGameReady() {
+            // Check if we're on the dice page and initialize if needed
+            const currentPath = window.location.hash;
+            if (currentPath.includes('dice') || currentPath.includes('#/dice')) {
+                console.log('🎲 Ensuring dice game is ready...');
+                
+                // Wait for DOM elements to be available
+                const checkAndInit = () => {
+                    const rollBtn = document.getElementById('rollDiceBtn');
+                    if (rollBtn) {
+                        initializeDiceGame();
+                        console.log('🎲 Dice game ensured ready');
+                    } else {
+                        setTimeout(checkAndInit, 250);
+                    }
+                };
+                checkAndInit();
+            }
+        }
+
+        // Add to global scope for console debugging
+        // Force set bet for testing
+        window.testDiceBetting = function() {
+            console.log('🎯 Testing dice betting workflow...');
+            console.log('Step 1: Setting bet amount to $25');
+            setDiceBet(25);
+            setTimeout(() => {
+                console.log('Step 2: Setting bet type to PASS');
+                placeDiceBet('pass', 2);
+                setTimeout(() => {
+                    debugDiceState();
+                    console.log('🎲 Dice betting test complete - button should be enabled now');
+                }, 200);
+            }, 500);
+        };
+        
+        // Force roll dice for testing
+        window.forceRollDice = function() {
+            console.log('🎲 FORCE ROLLING DICE...');
+            if (diceGame.currentBet === 0) {
+                setDiceBet(25);
+            }
+            if (!diceGame.betType) {
+                placeDiceBet('pass', 2);
+            }
+            setTimeout(() => {
+                console.log('🎲 Calling rollDice() directly...');
+                rollDice();
+            }, 100);
+        };
+        
+        // Test complete workflow
+        window.testCompleteWorkflow = function() {
+            console.log('🎯 Testing COMPLETE dice workflow...');
+            testDiceBetting();
+            setTimeout(() => {
+                console.log('🎲 Now attempting to roll...');
+                const btn = document.getElementById('rollDiceBtn');
+                if (btn && !btn.disabled) {
+                    btn.click();
+                } else {
+                    console.log('❌ Button not ready, force rolling...');
+                    forceRollDice();
+                }
+            }, 1000);
+        };
+        
+        // Clear current bet (useful for resetting)
+        window.clearDiceBet = function() {
+            diceGame.currentBet = 0;
+            diceGame.betType = null;
+            document.querySelectorAll('.betting-chip').forEach(chip => {
+                chip.classList.remove('selected', 'ring-4', 'ring-white');
+            });
+            document.querySelectorAll('.bet-button').forEach(btn => {
+                btn.classList.remove('ring-4', 'ring-white');
+            });
+            updateDiceUI();
+            updateDiceGameStatus('Bet cleared! Select your betting chips to start over.', 'text-dt-cyan');
+            console.log('🎲 Dice bet cleared - start fresh!');
+        };
+        
+        // Keyboard shortcut to roll dice (Press 'R' key)
+        window.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+                const btn = document.getElementById('rollDiceBtn');
+                if (btn && !btn.disabled && diceGame.currentBet > 0 && diceGame.betType) {
+                    console.log('🎲 Keyboard shortcut (R) pressed - rolling dice!');
+                    rollDice();
+                }
+            }
+        });
+        
+        // Complete dice state diagnostic
+        window.fullDiceDiagnostic = function() {
+            console.log('🔍 === FULL DICE GAME DIAGNOSTIC ===');
+            console.log('1. Game Object:', diceGame);
+            console.log('2. Button Element:', document.getElementById('rollDiceBtn'));
+            console.log('3. Button Classes:', document.getElementById('rollDiceBtn')?.className);
+            console.log('4. Button Disabled:', document.getElementById('rollDiceBtn')?.disabled);
+            console.log('5. Button Style:', {
+                opacity: document.getElementById('rollDiceBtn')?.style.opacity,
+                cursor: document.getElementById('rollDiceBtn')?.style.cursor,
+                pointerEvents: document.getElementById('rollDiceBtn')?.style.pointerEvents
+            });
+            console.log('6. Should Disable Logic:', diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling);
+            console.log('7. All Bet Buttons:', Array.from(document.querySelectorAll('.bet-button')).map(btn => ({
+                id: btn.id,
+                text: btn.textContent.substring(0, 30) + '...',
+                onclick: btn.getAttribute('onclick')
+            })));
+            console.log('8. All Betting Chips:', Array.from(document.querySelectorAll('.betting-chip')).map(chip => ({
+                text: chip.textContent.replace(/\s+/g, ' ').trim(),
+                onclick: chip.getAttribute('onclick'),
+                classes: chip.className
+            })));
+            debugDiceState();
+        };
+        
+        window.forceEnableDiceButton = forceEnableDiceButton;
+        window.debugDiceState = debugDiceState;
+        window.testDiceBetting = testDiceBetting;
+        window.ensureDiceGameReady = ensureDiceGameReady;
+        window.diceGame = diceGame;
         
         // Dice Cheat Methods
         const diceCheatMethods = {
@@ -3923,15 +3692,78 @@
         
         // Initialize Dice Game
         function initializeDiceGame() {
-            diceGame.balance = router.balance;
+            // Sync balance from localStorage and router
+            const storedBalance = parseInt(localStorage.getItem('vegasBalance') || '5600');
+            diceGame.balance = router && router.balance ? router.balance : storedBalance;
+            
+            // Update balance display on initialization
+            const diceBalanceEl = document.getElementById('diceBalance');
+            if (diceBalanceEl) {
+                diceBalanceEl.textContent = `Balance: $${diceGame.balance}`;
+            }
+            
+            // Reset game state
+            diceGame.currentBet = 0;
+            diceGame.betType = null;
+            diceGame.isRolling = false;
+            
+            // Setup roll button event handler
+            const rollBtn = document.getElementById('rollDiceBtn');
+            if (rollBtn) {
+                // Remove any existing event listeners
+                rollBtn.onclick = null;
+                rollBtn.onmousedown = null;
+                rollBtn.ontouchstart = null;
+                
+                // Universal click handler function
+                const handleRollClick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Visual feedback for click
+                    rollBtn.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        rollBtn.style.transform = '';
+                    }, 150);
+                    
+                    console.log('🎲 Roll button CLICKED!', {
+                        disabled: rollBtn.disabled,
+                        currentBet: diceGame.currentBet,
+                        betType: diceGame.betType,
+                        isRolling: diceGame.isRolling,
+                        buttonStyle: {
+                            opacity: rollBtn.style.opacity,
+                            cursor: rollBtn.style.cursor,
+                            pointerEvents: rollBtn.style.pointerEvents
+                        }
+                    });
+                    
+                    if (rollBtn.disabled) {
+                        console.log('❌ Button is disabled, click ignored');
+                        updateDiceGameStatus('Button disabled - check bet amount and type!', 'text-red-500');
+                        return;
+                    }
+                    
+                    console.log('✅ Button enabled, calling rollDice()...');
+                    rollDice();
+                };
+                
+                // Add multiple event handlers for better compatibility
+                rollBtn.onclick = handleRollClick;
+                rollBtn.onmousedown = handleRollClick;
+                rollBtn.addEventListener('touchstart', handleRollClick, {passive: false});
+                
+                console.log('🎲 Roll button click handler set');
+            }
+            
             updateDiceUI();
-            updateDiceGameStatus('Choose your bet and roll the dice!', 'text-dt-cyan');
+            updateDiceGameStatus('Step 1: Select a betting chip ($25, $50, $100, $250) to set your bet amount!', 'text-dt-cyan');
             
-            // Update top navigation
-            document.getElementById('diceUsernameTop').textContent = router.username;
-            document.getElementById('diceBalanceTop').textContent = router.balance;
+            // Skip updating non-existent navigation elements
+            // These don't exist in the current dice game layout:
+            // - diceUsernameTop, diceBalanceTop
             
-            console.log('🎲 Dice game initialized');
+            console.log('🎲 Dice game initialized with balance:', diceGame.balance);
         }
         
         // Toggle Dice Cheat Panel
@@ -4052,22 +3884,57 @@
         function setDiceBet(amount) {
             if (diceGame.isRolling) return;
             
+            console.log('🎲 DEBUG - setDiceBet called:', { 
+                amount, 
+                currentBet: diceGame.currentBet, 
+                balance: diceGame.balance,
+                betType: diceGame.betType 
+            });
+            
             diceGame.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
             
             if (diceGame.balance >= (diceGame.currentBet + amount)) {
-                diceGame.currentBet += amount;
+                diceGame.currentBet += amount;  // Add to existing bet instead of replacing
+                
+                // Update chip selection visual - find all chips and highlight multiple if needed
+                document.querySelectorAll('.betting-chip').forEach(chip => {
+                    // Don't remove selection, keep accumulating visual feedback
+                    const chipAmount = chip.textContent.includes(`$${amount}`);
+                    if (chipAmount) {
+                        chip.classList.add('selected', 'ring-4', 'ring-white');
+                        // Add a temporary glow effect for the clicked chip
+                        chip.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.8)';
+                        setTimeout(() => {
+                            chip.style.boxShadow = '';
+                        }, 300);
+                    }
+                });
                 
                 updateDiceUI();
-                updateDiceGameStatus(`Bet increased by $${amount}. Total bet: $${diceGame.currentBet}. Choose bet type!`, 'text-dt-yellow');
+                updateDiceGameStatus(`💰 Bet: $${diceGame.currentBet} | Step 2: Choose bet type (Pass, Don't Pass, Field, etc.)`, 'text-dt-yellow');
+                
+                console.log('✅ Bet amount added:', { 
+                    addedAmount: amount,
+                    totalBet: diceGame.currentBet, 
+                    stillNeedBetType: !diceGame.betType 
+                });
             } else {
-                updateDiceGameStatus('Insufficient balance!', 'text-red-500');
+                updateDiceGameStatus('Insufficient balance for this bet!', 'text-red-500');
             }
         }
         
         // Place a specific bet type
         function placeDiceBet(betType, payoutRatio) {
+            console.log('🎯 DEBUG - placeDiceBet called:', { 
+                betType, 
+                payoutRatio,
+                currentBet: diceGame.currentBet,
+                hasAmount: diceGame.currentBet > 0 
+            });
+            
             if (diceGame.currentBet === 0) {
                 updateDiceGameStatus('Place a bet first!', 'text-red-500');
+                console.log('❌ Cannot place bet type - no amount set');
                 return;
             }
             
@@ -4079,24 +3946,74 @@
                 btn.classList.remove('ring-4', 'ring-white');
             });
             
-            const betButton = document.getElementById(`bet${betType.charAt(0).toUpperCase() + betType.slice(1)}`);
+            // Fix button ID mapping for different bet types
+            let buttonId = '';
+            switch(betType) {
+                case 'pass': buttonId = 'betPass'; break;
+                case 'dont_pass': buttonId = 'betDontPass'; break;
+                case 'field': buttonId = 'betField'; break;
+                case 'high': buttonId = 'betHigh'; break;
+                case 'low': buttonId = 'betLow'; break;
+                case 'snake_eyes': buttonId = 'betSnakeEyes'; break;
+                case 'boxcars': buttonId = 'betBoxcars'; break;
+                case 'seven_out': buttonId = 'betSevenOut'; break;
+                case 'doubles': buttonId = 'betDoubles'; break;
+                default: buttonId = `bet${betType.charAt(0).toUpperCase() + betType.slice(1)}`;
+            }
+            
+            const betButton = document.getElementById(buttonId);
             if (betButton) {
                 betButton.classList.add('ring-4', 'ring-white');
+                console.log(`✅ Highlighted button: ${buttonId}`);
+            } else {
+                console.warn(`⚠️ Button not found for betType: ${betType}, tried ID: ${buttonId}`);
             }
             
             updateDiceUI();
-            updateDiceGameStatus(`Network prediction set: $${diceGame.currentBet} on ${betType.toUpperCase()}. Ready to analyze!`, 'text-dt-green');
+            updateDiceGameStatus(`✅ Ready to roll! $${diceGame.currentBet} on ${betType.toUpperCase()}. Click Roll Dice!`, 'text-dt-green');
             
-            // Enable roll button
-            document.getElementById('rollDiceBtn').disabled = false;
+            console.log('✅ Bet type set - Roll button should be enabled:', { 
+                currentBet: diceGame.currentBet,
+                betType: diceGame.betType,
+                rollButtonDisabled: document.getElementById('rollDiceBtn').disabled
+            });
         }
         
         // Roll the dice
         function rollDice() {
-            if (diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling) return;
+            console.log('🎲 rollDice() function called!', {
+                currentBet: diceGame.currentBet,
+                betType: diceGame.betType,
+                isRolling: diceGame.isRolling,
+                shouldReturn: diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling
+            });
             
+            if (diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling) {
+                console.log('❌ rollDice() early return - conditions not met');
+                return;
+            }
+            
+            console.log('✅ rollDice() proceeding with dice roll...');
             diceGame.isRolling = true;
             document.getElementById('rollDiceBtn').disabled = true;
+            
+            // Deduct bet from balance immediately
+            diceGame.balance -= diceGame.currentBet;
+            
+            // Update balance display immediately
+            const diceBalanceEl = document.getElementById('diceBalance');
+            if (diceBalanceEl) {
+                diceBalanceEl.textContent = `Balance: $${diceGame.balance}`;
+            }
+            
+            // Store updated balance
+            router.balance = diceGame.balance;
+            localStorage.setItem('vegasBalance', router.balance.toString());
+            
+            updateDiceUI();
+            
+            console.log('💰 Bet deducted, balance now:', diceGame.balance);
+            updateDiceGameStatus('🎲 Rolling dice...', 'text-dt-yellow');
             
             // Send dice roll request to server
             sendDiceRoll();
@@ -4105,17 +4022,29 @@
             const dice1Element = document.getElementById('dice1');
             const dice2Element = document.getElementById('dice2');
             
-            dice1Element.classList.add('animate-spin');
-            dice2Element.classList.add('animate-spin');
+            // Get the inner text elements (the actual dice display)
+            const dice1Text = dice1Element ? dice1Element.querySelector('div') : null;
+            const dice2Text = dice2Element ? dice2Element.querySelector('div') : null;
+            
+            console.log('🎭 Starting dice animation...', {
+                dice1Element: !!dice1Element,
+                dice2Element: !!dice2Element,
+                dice1Text: !!dice1Text,
+                dice2Text: !!dice2Text
+            });
+            
+            if (dice1Element) dice1Element.classList.add('animate-spin');
+            if (dice2Element) dice2Element.classList.add('animate-spin');
             
             let rollCount = 0;
             const rollInterval = setInterval(() => {
-                dice1Element.textContent = Math.floor(Math.random() * 6) + 1;
-                dice2Element.textContent = Math.floor(Math.random() * 6) + 1;
+                if (dice1Text) dice1Text.textContent = Math.floor(Math.random() * 6) + 1;
+                if (dice2Text) dice2Text.textContent = Math.floor(Math.random() * 6) + 1;
                 rollCount++;
                 
                 if (rollCount > 10) {
                     clearInterval(rollInterval);
+                    console.log('🎯 Animation complete, finalizing roll...');
                     finalizeDiceRoll();
                 }
             }, 100);
@@ -4157,13 +4086,21 @@
             diceGame.totalRolls++;
             
             // Display final result
-            document.getElementById('dice1').textContent = dice1;
-            document.getElementById('dice2').textContent = dice2;
-            document.getElementById('diceTotal').textContent = diceGame.total;
+            const dice1El = document.getElementById('dice1');
+            const dice2El = document.getElementById('dice2');
+            const dice1Text = dice1El ? dice1El.querySelector('div') : null;
+            const dice2Text = dice2El ? dice2El.querySelector('div') : null;
+            const totalEl = document.getElementById('diceTotal');
+            
+            if (dice1Text) dice1Text.textContent = dice1;
+            if (dice2Text) dice2Text.textContent = dice2;
+            if (totalEl) totalEl.textContent = diceGame.total;
+            
+            console.log('🎲 Final dice result displayed:', { dice1, dice2, total: diceGame.total });
             
             // Remove spinning animation
-            document.getElementById('dice1').classList.remove('animate-spin');
-            document.getElementById('dice2').classList.remove('animate-spin');
+            if (dice1El) dice1El.classList.remove('animate-spin');
+            if (dice2El) dice2El.classList.remove('animate-spin');
             
             // Check for win
             setTimeout(() => {
@@ -4237,10 +4174,23 @@
                 updateDiceGameStatus(`💔 You lose $${diceGame.currentBet} 💔`, 'text-red-500');
             }
             
-            // Update global balance
+            // Update global balance and display
             router.balance = diceGame.balance;
             localStorage.setItem('vegasBalance', router.balance.toString());
-            router.updateBalance('diceBalanceTop');
+            
+            // Update the actual dice balance display
+            const diceBalanceEl = document.getElementById('diceBalance');
+            if (diceBalanceEl) {
+                diceBalanceEl.textContent = `Balance: $${diceGame.balance}`;
+            }
+            
+            console.log('💰 Balance updated:', {
+                newBalance: diceGame.balance,
+                stored: localStorage.getItem('vegasBalance')
+            });
+            
+            // CRITICAL: Reset rolling state BEFORE updating UI to enable button
+            diceGame.isRolling = false;
             
             updateDiceUI();
             
@@ -4257,9 +4207,15 @@
             diceGame.payout = 0;
             diceGame.isRolling = false;
             
-            document.getElementById('dice1').textContent = '?';
-            document.getElementById('dice2').textContent = '?';
-            document.getElementById('diceTotal').textContent = '-';
+            const dice1El = document.getElementById('dice1');
+            const dice2El = document.getElementById('dice2');
+            const dice1Text = dice1El ? dice1El.querySelector('div') : null;
+            const dice2Text = dice2El ? dice2El.querySelector('div') : null;
+            const totalEl = document.getElementById('diceTotal');
+            
+            if (dice1Text) dice1Text.textContent = '?';
+            if (dice2Text) dice2Text.textContent = '?';
+            if (totalEl) totalEl.textContent = '-';
             
             document.querySelectorAll('.bet-button').forEach(btn => {
                 btn.classList.remove('ring-4', 'ring-white');
@@ -4271,27 +4227,62 @@
         
         // Update dice game UI
         function updateDiceUI() {
-            document.getElementById('currentDiceBet').textContent = diceGame.currentBet;
-            document.getElementById('currentBetType').textContent = diceGame.betType || 'None';
-            document.getElementById('currentPayout').textContent = diceGame.betType ? `${diceGame.payout}:1` : '-';
+            // Update elements that actually exist in the HTML
+            const currentBetEl = document.getElementById('currentDiceBet');
+            const currentBetTypeEl = document.getElementById('currentBetType');
             
-            document.getElementById('totalRolls').textContent = diceGame.totalRolls;
-            document.getElementById('totalWins').textContent = diceGame.totalWins;
-            document.getElementById('winRate').textContent = diceGame.totalRolls > 0 ? 
-                `${Math.round((diceGame.totalWins / diceGame.totalRolls) * 100)}%` : '0%';
-            document.getElementById('totalWon').textContent = diceGame.totalWon;
+            if (currentBetEl) currentBetEl.textContent = diceGame.currentBet;
+            if (currentBetTypeEl) currentBetTypeEl.textContent = diceGame.betType || 'None';
+            
+            // Skip elements that don't exist in this HTML layout:
+            // - currentPayout, totalRolls, totalWins, winRate, totalWon
             
             // Update roll button
             const rollBtn = document.getElementById('rollDiceBtn');
-            rollBtn.disabled = diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling;
+            if (!rollBtn) {
+                console.error('❌ Roll dice button not found!');
+                return;
+            }
+            
+            const shouldDisable = diceGame.currentBet === 0 || !diceGame.betType || diceGame.isRolling;
+            
+            // Update button state with visual feedback
+            rollBtn.disabled = shouldDisable;
+            
+            if (shouldDisable) {
+                rollBtn.style.opacity = '0.5';
+                rollBtn.style.cursor = 'not-allowed';
+                rollBtn.style.pointerEvents = 'none';
+            } else {
+                rollBtn.style.opacity = '1';
+                rollBtn.style.cursor = 'pointer';
+                rollBtn.style.pointerEvents = 'auto';
+                rollBtn.style.backgroundColor = ''; // Clear any override
+                rollBtn.style.color = ''; // Clear any override
+                rollBtn.style.zIndex = '100'; // Ensure it's on top
+                rollBtn.style.position = 'relative'; // Ensure z-index works
+            }
+            
+            console.log('🎲 updateDiceUI - Button state:', {
+                currentBet: diceGame.currentBet,
+                betType: diceGame.betType,
+                isRolling: diceGame.isRolling,
+                shouldDisable: shouldDisable,
+                buttonDisabled: rollBtn.disabled,
+                buttonExists: !!rollBtn,
+                opacity: rollBtn.style.opacity,
+                cursor: rollBtn.style.cursor
+            });
         }
         
         // Update dice game status
         function updateDiceGameStatus(message, colorClass = 'text-dt-cyan') {
-            const statusElement = document.getElementById('diceGameStatus');
+            const statusElement = document.getElementById('diceResult');
             if (statusElement) {
                 statusElement.textContent = message;
-                statusElement.className = `text-center text-2xl font-bold ${colorClass} mb-6 min-h-[3rem] flex items-center justify-center transition-all duration-300`;
+                statusElement.className = `text-center text-xl md:text-2xl font-bold ${colorClass} mb-4 min-h-[2rem]`;
+            } else {
+                console.warn('⚠️ Status element not found: diceResult');
             }
         }
 
@@ -4398,588 +4389,27 @@
             });
         }
         
-        // ==================== END DICE GAME FUNCTIONALITY ====================
-
-        // ==================== ROULETTE GAME FUNCTIONALITY ====================
-        
-        let rouletteGame = {
-            balance: 5600,
-            bets: {}, // Store multiple bets: { betType: amount }
-            totalBet: 0,
-            isSpinning: false,
-            result: null,
-            totalSpins: 0,
-            totalWins: 0,
-            totalWon: 0
-        };
-
-        // Roulette cheat system
-        let rouletteCheatState = {
-            active: null,
-            winRateBoost: 0,
-            detectionRisk: 0
-        };
-
-        const rouletteCheatMethods = {
-            magnet: {
-                name: 'Magnetic Ball',
-                description: 'Ball attracted to your bet',
-                winRateBoost: 70,
-                detectionRisk: 30
-            },
-            wheelControl: {
-                name: 'Wheel Control', 
-                description: 'Control wheel mechanics',
-                winRateBoost: 85,
-                detectionRisk: 45
-            }
-        };
-
-        // Roulette numbers and colors
-        const rouletteNumbers = {
-            0: 'green', '00': 'green',
-            1: 'red', 2: 'black', 3: 'red', 4: 'black', 5: 'red', 6: 'black',
-            7: 'red', 8: 'black', 9: 'red', 10: 'black', 11: 'black', 12: 'red',
-            13: 'black', 14: 'red', 15: 'black', 16: 'red', 17: 'black', 18: 'red',
-            19: 'red', 20: 'black', 21: 'red', 22: 'black', 23: 'red', 24: 'black',
-            25: 'red', 26: 'black', 27: 'red', 28: 'black', 29: 'black', 30: 'red',
-            31: 'black', 32: 'red', 33: 'black', 34: 'red', 35: 'black', 36: 'red'
-        };
-
-        // Initialize roulette game
-        function initializeRouletteGame() {
-            rouletteGame.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
-            updateRouletteUI();
-            
-            // Update username and balance displays
-            const username = localStorage.getItem('vegasUsername') || 'Player';
-            document.getElementById('rouletteUsername').textContent = username;
-            document.getElementById('rouletteBalance').textContent = `Balance: $${rouletteGame.balance}`;
-            
-            console.log('🎯 Roulette game initialized with balance:', rouletteGame.balance);
-        }
-
-        // Toggle roulette cheat panel
-        function toggleRouletteCheatPanel() {
-            const panel = document.getElementById('rouletteCheatPanel');
-            panel.classList.toggle('translate-x-full');
-        }
-
-        // Activate roulette cheat
-        function activateRouletteCheat(cheatType) {
-            rouletteCheatState.active = cheatType;
-            const cheat = rouletteCheatMethods[cheatType];
-            rouletteCheatState.winRateBoost = cheat.winRateBoost;
-            rouletteCheatState.detectionRisk = cheat.detectionRisk;
-            
-            // Update UI
-            updateRouletteCheatUI();
-            
-            console.log(`🎯 Roulette cheat activated: ${cheat.name}`);
-        }
-
-        // Deactivate roulette cheat
-        function deactivateRouletteCheat() {
-            rouletteCheatState.active = null;
-            rouletteCheatState.winRateBoost = 0;
-            rouletteCheatState.detectionRisk = 0;
-            
-            updateRouletteCheatUI();
-            console.log('🎯 Roulette cheat deactivated');
-        }
-
-        // Update cheat UI
-        function updateRouletteCheatUI() {
-            const buttons = document.querySelectorAll('#rouletteCheatPanel .cheat-button');
-            buttons.forEach(btn => btn.classList.remove('ring-4', 'ring-yellow-400'));
-            
-            if (rouletteCheatState.active) {
-                const activeBtn = document.getElementById(`rouletteCheat${rouletteCheatState.active.charAt(0).toUpperCase() + rouletteCheatState.active.slice(1)}`);
-                if (activeBtn) activeBtn.classList.add('ring-4', 'ring-yellow-400');
-                
-                // Update side panel status
-                document.getElementById('rouletteSidePanelCheatStatus').textContent = 
-                    rouletteCheatMethods[rouletteCheatState.active].name;
-                
-                // Update risk meter
-                document.getElementById('rouletteRiskMeter').style.width = 
-                    `${rouletteCheatState.detectionRisk}%`;
-            } else {
-                document.getElementById('rouletteSidePanelCheatStatus').textContent = 'None';
-                document.getElementById('rouletteRiskMeter').style.width = '0%';
-            }
-        }
-
-        // Place a bet (for outside bets like red/black)
-        function placeBet(betType) {
-            if (rouletteGame.isSpinning) return;
-            
-            const chipAmount = parseInt(document.getElementById('rouletteChipAmount').value);
-            
-            // Sync balance from localStorage
-            rouletteGame.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
-            
-            if (rouletteGame.balance < chipAmount) {
-                updateRouletteStatus('Insufficient balance!', 'text-red-500');
-                return;
-            }
-            
-            // Add to existing bet or create new bet
-            if (!rouletteGame.bets[betType]) {
-                rouletteGame.bets[betType] = 0;
-            }
-            rouletteGame.bets[betType] += chipAmount;
-            rouletteGame.totalBet += chipAmount;
-            
-            updateRouletteUI();
-            updateRouletteStatus(`Added $${chipAmount} to ${betType.toUpperCase()}`, 'text-dt-yellow');
-            
-            // Enable spin button if there are bets
-            document.getElementById('spinRouletteBtn').disabled = rouletteGame.totalBet === 0;
-        }
-
-        // Place a number bet (for specific numbers)
-        function placeNumberBet(number) {
-            if (rouletteGame.isSpinning) return;
-            
-            const chipAmount = parseInt(document.getElementById('rouletteChipAmount').value);
-            
-            // Sync balance from localStorage
-            rouletteGame.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
-            
-            if (rouletteGame.balance < chipAmount) {
-                updateRouletteStatus('Insufficient balance!', 'text-red-500');
-                return;
-            }
-            
-            // Add to existing bet or create new bet
-            if (!rouletteGame.bets[number]) {
-                rouletteGame.bets[number] = 0;
-            }
-            rouletteGame.bets[number] += chipAmount;
-            rouletteGame.totalBet += chipAmount;
-            
-            // Update chip display on the number
-            updateChipDisplay(number);
-            
-            updateRouletteUI();
-            updateRouletteStatus(`Added $${chipAmount} to number ${number}`, 'text-dt-yellow');
-            
-            // Enable spin button if there are bets
-            document.getElementById('spinRouletteBtn').disabled = rouletteGame.totalBet === 0;
-        }
-
-        // Update chip display on betting table
-        function updateChipDisplay(number) {
-            const numberCell = document.querySelector(`[data-number="${number}"]`);
-            if (numberCell) {
-                const chipDisplay = numberCell.querySelector('.bet-chips');
-                const betAmount = rouletteGame.bets[number] || 0;
-                if (betAmount > 0) {
-                    chipDisplay.textContent = `$${betAmount}`;
-                    chipDisplay.classList.add('bg-dt-yellow', 'text-black', 'rounded-full', 'px-1');
-                } else {
-                    chipDisplay.textContent = '';
-                    chipDisplay.classList.remove('bg-dt-yellow', 'text-black', 'rounded-full', 'px-1');
-                }
-            }
-        }
-
-        // Clear all bets
-        function clearAllBets() {
-            if (rouletteGame.isSpinning) return;
-            
-            rouletteGame.bets = {};
-            rouletteGame.totalBet = 0;
-            
-            // Clear all chip displays
-            document.querySelectorAll('.bet-chips').forEach(chipDisplay => {
-                chipDisplay.textContent = '';
-                chipDisplay.classList.remove('bg-dt-yellow', 'text-black', 'rounded-full', 'px-1');
+        // Debug function to manually test button state
+        function debugDiceState() {
+            console.log('🎲 DICE DEBUG STATE:', {
+                currentBet: diceGame.currentBet,
+                betType: diceGame.betType,
+                isRolling: diceGame.isRolling,
+                buttonElement: document.getElementById('rollDiceBtn'),
+                buttonDisabled: document.getElementById('rollDiceBtn')?.disabled
             });
-            
-            // Clear bet button highlights
-            document.querySelectorAll('.bet-button').forEach(btn => {
-                btn.classList.remove('ring-4', 'ring-yellow-400');
-            });
-            
-            updateRouletteUI();
-            updateRouletteStatus('All bets cleared', 'text-dt-cyan');
-            
-            // Disable spin button
-            document.getElementById('spinRouletteBtn').disabled = true;
+            return diceGame;
         }
 
-        // Spin the roulette wheel
-        function spinRoulette() {
-            if (rouletteGame.totalBet === 0 || rouletteGame.isSpinning) return;
-            
-            rouletteGame.isSpinning = true;
-            document.getElementById('spinRouletteBtn').disabled = true;
-            
-            // Send spin request to server
-            sendRouletteSpinRequest();
-            
-            // Deduct total bet from balance
-            rouletteGame.balance -= rouletteGame.totalBet;
-            router.balance = rouletteGame.balance;
-            localStorage.setItem('vegasBalance', router.balance.toString());
-            
-            updateRouletteStatus('Spinning...', 'text-dt-orange');
-            
-            // Animate wheel spin
-            const wheel = document.getElementById('rouletteWheel');
-            const ball = document.getElementById('rouletteBall');
-            
-            // Generate result (apply cheat if active)
-            let result = generateRouletteResult();
-            
-            // Spin animation
-            const spins = 4 + Math.random() * 2; // 4-6 full rotations
-            const finalRotation = spins * 360;
-            
-            wheel.style.transform = `rotate(${finalRotation}deg)`;
-            ball.style.transform = `rotate(${-finalRotation * 1.2}deg)`;
-            
-            // Show result after animation
-            setTimeout(() => {
-                displayRouletteResult(result);
-            }, 4000);
-        }
-
-        // Generate roulette result
-        function generateRouletteResult() {
-            let possibleResults = Object.keys(rouletteNumbers);
-            
-            // Apply cheat logic if active
-            if (rouletteCheatState.active && Math.random() * 100 < rouletteCheatState.winRateBoost) {
-                return generateWinningRouletteResult();
-            }
-            
-            // Normal random result
-            return possibleResults[Math.floor(Math.random() * possibleResults.length)];
-        }
-
-        // Generate winning result based on current bet
-        function generateWinningRouletteResult() {
-            const betType = rouletteGame.betType;
-            let winningNumbers = [];
-            
-            switch(betType) {
-                case 'red':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => rouletteNumbers[num] === 'red');
-                    break;
-                case 'black':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => rouletteNumbers[num] === 'black');
-                    break;
-                case 'even':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => 
-                        !isNaN(num) && parseInt(num) > 0 && parseInt(num) % 2 === 0);
-                    break;
-                case 'odd':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => 
-                        !isNaN(num) && parseInt(num) > 0 && parseInt(num) % 2 === 1);
-                    break;
-                case 'low':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => 
-                        !isNaN(num) && parseInt(num) >= 1 && parseInt(num) <= 18);
-                    break;
-                case 'high':
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => 
-                        !isNaN(num) && parseInt(num) >= 19 && parseInt(num) <= 36);
-                    break;
-                case 'zero':
-                    return '0';
-                case '00':
-                    return '00';
-                default:
-                    // If betting on a specific number, return that number
-                    if (Object.keys(rouletteNumbers).includes(betType)) {
-                        return betType;
-                    }
-                    // Fallback to red numbers
-                    winningNumbers = Object.keys(rouletteNumbers).filter(num => rouletteNumbers[num] === 'red');
-            }
-            
-            return winningNumbers[Math.floor(Math.random() * winningNumbers.length)] || '0';
-        }
-
-        // Display roulette result and handle winnings
-        function displayRouletteResult(result) {
-            rouletteGame.result = result;
-            document.getElementById('rouletteResult').textContent = result;
-            rouletteGame.totalSpins++;
-            
-            let totalWinAmount = 0;
-            let totalLossAmount = 0;
-            let winningBets = [];
-            
-            // Check each bet to see if it won
-            Object.keys(rouletteGame.bets).forEach(betType => {
-                const betAmount = rouletteGame.bets[betType];
-                const won = checkRouletteWin(betType, result);
-                
-                if (won) {
-                    let winAmount = calculateRouletteWinAmount(betType, betAmount);
-                    
-                    // Apply cheat bonus if active
-                    if (rouletteCheatState.active === 'wheelControl') {
-                        winAmount = Math.floor(winAmount * 1.5); // 50% bonus
-                    }
-                    
-                    totalWinAmount += winAmount;
-                    winningBets.push(`${betType}: +$${winAmount}`);
-                } else {
-                    totalLossAmount += betAmount;
-                }
-            });
-            
-            // Update balance and stats
-            rouletteGame.balance += totalWinAmount;
-            if (totalWinAmount > 0) {
-                rouletteGame.totalWins++;
-                rouletteGame.totalWon += totalWinAmount;
-            }
-            
-            // Send result to server
-            if (totalWinAmount > 0) {
-                const netWinAmount = totalWinAmount - rouletteGame.totalBet;
-                sendRouletteResult('win', result, netWinAmount, 0);
-            } else {
-                sendRouletteResult('lose', result, 0, rouletteGame.totalBet);
-            }
-            
-            // Display result message
-            if (totalWinAmount > 0) {
-                updateRouletteStatus(`🎉 YOU WIN! +$${totalWinAmount} 🎉`, 'text-dt-green');
-                document.getElementById('rouletteWin').innerHTML = `
-                    <div>🎊 Result: ${result} 🎊</div>
-                    <div class="text-sm mt-1">${winningBets.join(', ')}</div>
-                `;
-            } else {
-                updateRouletteStatus(`Result: ${result} - You lose $${rouletteGame.totalBet}`, 'text-red-500');
-                document.getElementById('rouletteWin').textContent = '';
-            }
-            
-            // Show cheat status if active
-            if (rouletteCheatState.active) {
-                document.getElementById('rouletteCheatStatusDisplay').textContent = 
-                    `⚠️ Cheat Active: ${rouletteCheatMethods[rouletteCheatState.active].name}`;
-            }
-            
-            // Update global balance
-            router.balance = rouletteGame.balance;
-            localStorage.setItem('vegasBalance', router.balance.toString());
-            router.updateBalance('rouletteBalance');
-            
-            updateRouletteUI();
-            
-            // Reset for next spin
-            setTimeout(() => {
-                resetRouletteRound();
-            }, 4000);
-        }
-
-        // Check if bet won
-        function checkRouletteWin(betType, result) {
-            const resultNum = parseInt(result);
-            const resultColor = rouletteNumbers[result];
-            
-            switch(betType) {
-                case 'red': return resultColor === 'red';
-                case 'black': return resultColor === 'black';
-                case 'even': return !isNaN(resultNum) && resultNum > 0 && resultNum % 2 === 0;
-                case 'odd': return !isNaN(resultNum) && resultNum > 0 && resultNum % 2 === 1;
-                case 'low': return !isNaN(resultNum) && resultNum >= 1 && resultNum <= 18;
-                case 'high': return !isNaN(resultNum) && resultNum >= 19 && resultNum <= 36;
-                case 'zero': return result === '0';
-                case '00': return result === '00';
-                default: return result === betType; // Direct number bet
+        // Force enable button for testing
+        function forceEnableDiceButton() {
+            const btn = document.getElementById('rollDiceBtn');
+            if (btn) {
+                btn.disabled = false;
+                console.log('🎲 Button force enabled for testing');
             }
         }
 
-        // Calculate win amount based on bet type
-        function calculateRouletteWinAmount(betType, betAmount) {
-            switch(betType) {
-                case 'red':
-                case 'black':
-                case 'even':
-                case 'odd':
-                case 'low':
-                case 'high':
-                    return betAmount * 2; // 1:1 payout (return bet + win)
-                case 'zero':
-                case '00':
-                    return betAmount * 36; // 35:1 payout (return bet + 35x win)
-                default:
-                    // Single number bets
-                    if (Object.keys(rouletteNumbers).includes(betType)) {
-                        return betAmount * 36; // 35:1 payout
-                    }
-                    return betAmount * 2; // Default 1:1
-            }
-        }
-
-        // Reset for next round
-        function resetRouletteRound() {
-            rouletteGame.bets = {};
-            rouletteGame.totalBet = 0;
-            rouletteGame.isSpinning = false;
-            
-            // Clear all chip displays
-            document.querySelectorAll('.bet-chips').forEach(chipDisplay => {
-                chipDisplay.textContent = '';
-                chipDisplay.classList.remove('bg-dt-yellow', 'text-black', 'rounded-full', 'px-1');
-            });
-            
-            // Clear bet button highlights
-            document.querySelectorAll('.bet-button').forEach(btn => {
-                btn.classList.remove('ring-4', 'ring-yellow-400');
-            });
-            
-            // Reset wheel rotation
-            document.getElementById('rouletteWheel').style.transform = 'rotate(0deg)';
-            document.getElementById('rouletteBall').style.transform = 'rotate(0deg)';
-            document.getElementById('rouletteResult').textContent = '?';
-            
-            updateRouletteUI();
-            updateRouletteStatus('Place your bets for the next spin!', 'text-dt-green');
-            document.getElementById('rouletteWin').textContent = '';
-            document.getElementById('rouletteCheatStatusDisplay').textContent = '';
-            
-            // Disable spin button until bets are placed
-            document.getElementById('spinRouletteBtn').disabled = true;
-        }
-
-        // Update roulette UI
-        function updateRouletteUI() {
-            document.getElementById('rouletteBalance').textContent = `Balance: $${rouletteGame.balance}`;
-            
-            // Update active bets display
-            if (rouletteGame.totalBet > 0) {
-                const betsList = Object.keys(rouletteGame.bets).map(betType => {
-                    return `${betType}: $${rouletteGame.bets[betType]}`;
-                }).join(', ');
-                document.getElementById('rouletteActiveBets').textContent = betsList;
-            } else {
-                document.getElementById('rouletteActiveBets').textContent = 'No bets placed';
-            }
-            
-            document.getElementById('rouletteTotalBet').textContent = rouletteGame.totalBet;
-        }
-
-        // Update roulette status message
-        function updateRouletteStatus(message, className = 'text-dt-green') {
-            const statusElement = document.getElementById('rouletteStatus');
-            statusElement.textContent = message;
-            statusElement.className = `text-lg font-semibold ${className}`;
-        }
-
-        // Send roulette spin request to server
-        function sendRouletteSpinRequest() {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
-            
-            const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                BetAmount: rouletteGame.totalBet,
-                balance: rouletteGame.balance + rouletteGame.totalBet, // Send balance before deduction
-                Balance: rouletteGame.balance + rouletteGame.totalBet,
-                Bets: rouletteGame.bets, // Send all bets
-                TotalBets: Object.keys(rouletteGame.bets).length,
-                Game: 'Vegas Roulette',
-                Action: 'Spin',
-                GameState: 'Started',
-                Device: 'Browser-UI',
-                CheatActive: rouletteCheatState.active !== null,
-                CheatType: rouletteCheatState.active,
-                CheatDetails: rouletteCheatState.active ? {
-                    type: rouletteCheatState.active,
-                    description: rouletteCheatMethods[rouletteCheatState.active]?.description || ''
-                } : null,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
-            };
-
-            console.log('🎯 Sending roulette spin request:', payload);
-
-            fetch('/api/roulette/spin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'User-Agent': 'Vegas-Casino-UI'
-                },
-                body: JSON.stringify(payload)
-            }).then(response => response.json())
-            .then(data => {
-                console.log('🎯 Roulette spin response:', data);
-            }).catch(error => {
-                console.error('❌ Error sending roulette spin:', error);
-            });
-        }
-
-        // Send roulette result to server
-        function sendRouletteResult(result, number, winAmount = 0, lossAmount = 0) {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
-            
-            const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                BetAmount: rouletteGame.totalBet,
-                balance: rouletteGame.balance - winAmount + lossAmount, // Original balance
-                newBalance: rouletteGame.balance,
-                Balance: rouletteGame.balance,
-                Bets: rouletteGame.bets, // Send all bets that were placed
-                TotalBets: Object.keys(rouletteGame.bets).length,
-                Game: 'Vegas Roulette',
-                Action: 'GameResult',
-                GameState: 'Completed',
-                Result: result, // 'win' or 'lose'
-                WinningNumber: number,
-                NumberColor: rouletteNumbers[number] || 'unknown',
-                WinAmount: winAmount,
-                LossAmount: lossAmount,
-                WinFlag: winAmount > 0 ? 1 : 0,
-                LossFlag: lossAmount > 0 ? 1 : 0,
-                Payout: winAmount > 0 ? winAmount / rouletteGame.totalBet : 0,
-                Device: 'Browser-UI',
-                CheatActive: rouletteCheatState.active !== null,
-                CheatType: rouletteCheatState.active,
-                CheatDetails: rouletteCheatState.active ? {
-                    type: rouletteCheatState.active,
-                    description: rouletteCheatMethods[rouletteCheatState.active]?.description || ''
-                } : null,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                timestamp: new Date().toISOString()
-            };
-
-            console.log('🎯 Sending roulette result:', payload);
-
-            fetch('/api/roulette/spin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'User-Agent': 'Vegas-Casino-UI'
-                },
-                body: JSON.stringify(payload)
-            }).then(response => response.json())
-            .then(data => {
-                console.log('🎯 Roulette result response:', data);
-            }).catch(error => {
-                console.error('❌ Error sending roulette result:', error);
-            });
-        }
-        
-        // ==================== END ROULETTE GAME FUNCTIONALITY ====================
         
         // Initialize router
         const router = new VegasRouter();
@@ -4992,6 +4422,14 @@
             setTimeout(() => {
                 checkLockoutStatus();
             }, 1000); // Small delay to ensure router is fully initialized
+            
+            // Add hash change listener for dice game
+            window.addEventListener('hashchange', () => {
+                setTimeout(ensureDiceGameReady, 300);
+            });
+            
+            // Initialize dice game if starting on dice page
+            setTimeout(ensureDiceGameReady, 1500);
         });
     </script>
 </body>

@@ -12,17 +12,7 @@ PERSONA="QA-Tester"
 BOOTH="Testing-Lab"
 
 echo ""
-echo "🎲 Testing Roulette Cheat Logging..."
-curl -s -X POST "http://localhost:8080/api/roulette/spin" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "Game": "Vegas Roulette",
-    "Username": "'$USERNAME'",
-    "CustomerName": "'$USERNAME'",
-    "Email": "'$EMAIL'",
-    "CompanyName": "'$COMPANY'",
-    "Persona": "'$PERSONA'",
-    "Booth": "'$BOOTH'",
+echo "🎲 Roulette game removed - skipping test..."
     "OptIn": true,
     "BetAmount": 25,
     "BetType": "multiple",
@@ -32,15 +22,6 @@ curl -s -X POST "http://localhost:8080/api/roulette/spin" \
     "CheatDetails": {
       "name": "Ball Trajectory Control",
       "cost": 150,
-      "winBoost": 45,
-      "detectionRisk": 20,
-      "description": "Magnetic influence on ball landing position",
-      "probabilityBoost": 0.45
-    }
-  }' > /dev/null && echo "✅ Roulette cheat request sent" || echo "❌ Roulette cheat request failed"
-
-sleep 2
-
 echo ""
 echo "🃏 Testing Blackjack Cheat Logging..."
 curl -s -X POST "http://localhost:8080/api/blackjack/deal" \

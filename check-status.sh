@@ -112,7 +112,6 @@ check_services() {
         "8080:Main Casino"
         "8081:Blackjack" 
         "8082:Poker"
-        "8083:Roulette"
         "8084:Slots"
     )
     
