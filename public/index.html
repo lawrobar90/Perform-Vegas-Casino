@@ -658,7 +658,7 @@
                     <h1 class="text-xl font-bold text-dt-cyan">Dynatrace Vegas</h1>
                     <div class="flex items-center space-x-4">
                         <span id="userWelcome" class="text-dt-light-gray"></span>
-                        <span id="userBalance" class="text-dt-yellow font-bold">Balance: $5600</span>
+                        <span id="userBalance" class="text-dt-yellow font-bold">Balance: $1000</span>
                         <button 
                             onclick="signOut()" 
                             class="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 text-sm"
@@ -763,7 +763,7 @@
                     <div class="flex items-center space-x-4">
                         <span id="slotsUsername" class="text-dt-cyan font-medium">Welcome, Player!</span>
                         <div class="flex items-center space-x-2">
-                            <span id="slotsBalance" class="text-dt-yellow font-bold">Balance: $5600</span>
+                            <span id="slotsBalance" class="text-dt-yellow font-bold">Balance: $1000</span>
                             <button onclick="addMoney()" class="bg-gradient-to-r from-dt-green to-dt-yellow hover:from-dt-yellow hover:to-dt-green text-white font-bold py-1 px-3 rounded text-sm transition-all duration-300">
                                 +$500
                             </button>
@@ -935,7 +935,7 @@
                     <div class="flex items-center space-x-4">
                         <span id="blackjackUsername" class="text-dt-cyan font-medium">Welcome, Player!</span>
                         <div class="flex items-center space-x-2">
-                            <span id="blackjackBalanceTop" class="text-dt-yellow font-bold">Balance: $5600</span>
+                            <span id="blackjackBalanceTop" class="text-dt-yellow font-bold">Balance: $1000</span>
                             <button onclick="addMoney()" class="bg-gradient-to-r from-dt-green to-dt-yellow hover:from-dt-yellow hover:to-dt-green text-white font-bold py-1 px-3 rounded text-sm transition-all duration-300">
                                 +$500
                             </button>
@@ -1072,7 +1072,7 @@
                             <h4 class="text-center text-lg font-bold text-dt-cyan mb-4">📊 Game Stats</h4>
                             <div class="space-y-3">
                                 <div class="bg-gradient-to-br from-dt-green/20 to-dt-cyan/20 border border-dt-green/30 rounded-lg p-3 text-center">
-                                    <div class="text-dt-green text-xl font-bold" id="blackjackBalance">$5600</div>
+                                    <div class="text-dt-green text-xl font-bold" id="blackjackBalance">$1000</div>
                                     <div class="text-dt-gray text-sm">Balance</div>
                                 </div>
                                 <div class="bg-gradient-to-br from-dt-yellow/20 to-dt-orange/20 border border-dt-yellow/30 rounded-lg p-3 text-center">
@@ -1809,7 +1809,7 @@
                     '/dice': 'dice'
                 };
                 this.currentRoute = '/';
-                this.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
+                this.balance = parseInt(localStorage.getItem('vegasBalance') || '1000');
             }
             
             init() {
@@ -1821,6 +1821,10 @@
             handleRoute() {
                 const hash = window.location.hash.slice(1) || '/';
                 const template = this.routes[hash] || 'entrance';
+                
+                // Check lockout status before loading any template
+                checkLockoutStatus();
+                
                 this.loadTemplate(template);
             }
             
@@ -2035,18 +2039,20 @@
         
         // Check lockout status on page load
         function checkLockoutStatus() {
-            const currentUser = localStorage.getItem('vegasUsername');
-            if (!currentUser) return;
+            const currentUser = localStorage.getItem('vegasUsername') || 'Lawrence'; // Use Lawrence as default for testing
+            console.log('🔍 Checking lockout status for user:', currentUser);
             
             // Check server for lockout status
             fetch(`/api/admin/lockout-status/${currentUser}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log('🔍 Lockout status check:', data);
+                    console.log('🔍 Lockout status check result:', data);
                     if (data.locked) {
-                        console.log('🚨 User is already locked, showing lockout screen');
+                        console.log('🚨 User is locked, showing lockout screen');
                         showLockoutScreen(data);
+                        return;
                     }
+                    console.log('✅ User is not locked, allowing access');
                 })
                 .catch(error => {
                     console.warn('⚠️ Failed to check lockout status:', error);
@@ -2151,7 +2157,7 @@
             localStorage.removeItem('vegasBalance');
             
             // Reset balance
-            router.balance = 5600;
+            router.balance = 1000;
             
             // Navigate back to entrance
             navigateTo('/');
@@ -2188,7 +2194,7 @@
             const betAmount = parseInt(document.getElementById('slotsBetAmount').value);
             
             // Sync balance from localStorage to ensure accuracy
-            router.balance = parseInt(localStorage.getItem('vegasBalance') || '5600');
+            router.balance = parseInt(localStorage.getItem('vegasBalance') || '1000');
             console.log('🎰 Spin started with balance:', router.balance, 'Bet:', betAmount);
             
             if (router.balance < betAmount) {
@@ -3472,7 +3478,7 @@
         
         // Dice Game State
         let diceGame = {
-            balance: parseInt(localStorage.getItem('vegasBalance') || '5600'),
+            balance: parseInt(localStorage.getItem('vegasBalance') || '1000'),
             currentBet: 0,
             betType: null,
             payout: 0,
@@ -3693,7 +3699,7 @@
         // Initialize Dice Game
         function initializeDiceGame() {
             // Sync balance from localStorage and router
-            const storedBalance = parseInt(localStorage.getItem('vegasBalance') || '5600');
+            const storedBalance = parseInt(localStorage.getItem('vegasBalance') || '1000');
             diceGame.balance = router && router.balance ? router.balance : storedBalance;
             
             // Update balance display on initialization
