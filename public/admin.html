@@ -125,6 +125,37 @@
         .error { color: #ff4444; }
         .warning { color: #ffaa00; }
         
+        .status-details h4, .status-details h5 {
+            color: #ffd700;
+            margin: 10px 0 5px 0;
+        }
+        
+        .status-details p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .url-info {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        .access-test {
+            font-family: monospace;
+            font-size: 13px;
+        }
+        
+        .warning {
+            background: rgba(255, 165, 0, 0.2) !important;
+            border-left: 4px solid orange !important;
+            padding: 10px !important;
+            margin: 10px 0 !important;
+            border-radius: 0 5px 5px 0 !important;
+        }
+        
         .locked-users {
             max-height: 300px;
             overflow-y: auto;
@@ -238,12 +269,14 @@
             log('Action log cleared', 'info');
         }
         
-        function displayStatus(elementId, data, type = 'info') {
+        function displayStatus(elementId, data, type = 'info', isHtml = false) {
             const element = document.getElementById(elementId);
             const colorClass = type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
             
-            if (typeof data === 'object') {
-                element.innerHTML = `<div class="${colorClass}">${JSON.stringify(data, null, 2)}</div>`;
+            if (isHtml) {
+                element.innerHTML = `<div class="${colorClass}">${data}</div>`;
+            } else if (typeof data === 'object') {
+                element.innerHTML = `<div class="${colorClass}"><pre>${JSON.stringify(data, null, 2)}</pre></div>`;
             } else {
                 element.innerHTML = `<div class="${colorClass}">${data}</div>`;
             }
@@ -333,11 +366,69 @@
                 const response = await fetch(`/api/admin/lockout-status/${username}`);
                 const result = await response.json();
                 
+                // Enhanced status display with URL information
+                const statusHtml = `
+                    <div class="status-details">
+                        <h4>🔍 User Status: ${username}</h4>
+                        <p><strong>Locked:</strong> ${result.locked ? '🔴 YES' : '🟢 NO'}</p>
+                        ${result.locked ? `
+                            <p><strong>Reason:</strong> ${result.reason}</p>
+                            <p><strong>Locked At:</strong> ${new Date(result.timestamp).toLocaleString()}</p>
+                            <p><strong>Duration:</strong> ${result.duration === 0 ? 'Indefinite' : result.duration + ' minutes'}</p>
+                        ` : ''}
+                        <div class="url-info">
+                            <h5>🌐 URL Access Information:</h5>
+                            <p><strong>Current URL:</strong> ${window.location.origin}</p>
+                            <p><strong>Admin Console:</strong> ${window.location.href}</p>
+                            <p><strong>Casino URL:</strong> ${window.location.origin}/</p>
+                            <div class="warning" style="margin-top: 10px; padding: 10px; background: rgba(255, 165, 0, 0.2); border-left: 4px solid orange;">
+                                ⚠️ <strong>Important:</strong> Server-side lockout is active, but client-side enforcement may not be implemented. 
+                                Users can still access the casino interface directly. The lockout primarily affects API calls and server responses.
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
                 log(`Checked status for user: ${username}`, 'info');
-                displayStatus('lockoutStatus', result, result.locked ? 'warning' : 'success');
+                displayStatus('lockoutStatus', statusHtml, result.locked ? 'error' : 'success', true);
+                
+                // Also test if user can access casino API
+                await testUserAccess(username);
+                
             } catch (error) {
                 log(`Error checking user status: ${error.message}`, 'error');
                 displayStatus('lockoutStatus', `Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testUserAccess(username) {
+            try {
+                // Test if the user can make API calls to the casino
+                const testResponse = await fetch('/api/user/lockout-check', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ Username: username })
+                });
+                
+                const testResult = await testResponse.json();
+                
+                const accessHtml = `
+                    <div class="access-test" style="margin-top: 15px; padding: 10px; background: rgba(0, 100, 200, 0.2); border-left: 4px solid cyan;">
+                        <h5>🧪 API Access Test Results:</h5>
+                        <p><strong>Lockout Required:</strong> ${testResult.lockoutRequired ? '🔴 YES' : '🟢 NO'}</p>
+                        <p><strong>Can Access Casino APIs:</strong> ${testResult.lockoutRequired ? '❌ BLOCKED' : '✅ ALLOWED'}</p>
+                        ${testResult.lockoutRequired ? `
+                            <p style="color: #ff6b6b;"><strong>Status:</strong> User should be redirected or blocked from casino access</p>
+                        ` : `
+                            <p style="color: #51cf66;"><strong>Status:</strong> User has full access to casino functions</p>
+                        `}
+                    </div>
+                `;
+                
+                document.getElementById('lockoutStatus').innerHTML += accessHtml;
+                
+            } catch (error) {
+                console.error('Error testing user access:', error);
             }
         }
         
@@ -379,25 +470,74 @@
         }
         
         async function refreshLockedUsers() {
-            // This would need a specific endpoint to list all locked users
-            // For now, we'll show a placeholder
             const lockedUsersElement = document.getElementById('lockedUsersList');
+            
+            // Show loading state
             lockedUsersElement.innerHTML = `
-                <div class="warning">
-                    To see all locked users, you would need to check individual user statuses.
-                    The current API provides individual user status checking via:
-                    GET /api/admin/lockout-status/{username}
-                </div>
-                <div>
-                    <strong>Available API Endpoints:</strong><br>
-                    • POST /api/admin/lockout-user - Lock a user<br>
-                    • POST /api/admin/unlock-user - Unlock a user<br>
-                    • GET /api/admin/lockout-status/{username} - Check user status<br>
-                    • POST /api/admin/lockout-user-cheat - Lock user with cheat data<br>
-                    • GET /api/admin/system-metrics - Get system metrics<br>
-                    • POST /api/admin/self-heal - Trigger self-healing
+                <div class="info">
+                    🔄 Refreshing locked users list...
                 </div>
             `;
+            
+            try {
+                // Get system metrics which may contain user information
+                const response = await fetch('/api/admin/system-metrics');
+                const systemData = await response.json();
+                
+                // Create enhanced locked users display
+                let lockedUsersHtml = `
+                    <div class="locked-users-header">
+                        <h4>🔒 Lockout System Information</h4>
+                        <div class="warning">
+                            <strong>⚠️ Current Limitation:</strong> The lockout system stores data server-side but doesn't prevent 
+                            direct browser access to the casino. Users can still reach the interface at:
+                            <br><strong>Casino URL:</strong> <code>${window.location.origin}/</code>
+                            <br><strong>Admin URL:</strong> <code>${window.location.origin}/admin.html</code>
+                        </div>
+                        
+                        <div class="system-info">
+                            <h5>📊 System Status:</h5>
+                            <p><strong>Server:</strong> ${systemData.system?.platform || 'Unknown'} (Node.js ${systemData.system?.nodeVersion || 'N/A'})</p>
+                            <p><strong>Sessions:</strong> Active: ${systemData.sessions?.active || 0}, Locked Out: ${systemData.sessions?.lockedOut || 0}</p>
+                            <p><strong>Memory:</strong> ${Math.round((systemData.memory?.rss || 0) / 1024 / 1024)}MB RSS</p>
+                        </div>
+                        
+                        <div class="lockout-endpoints">
+                            <h5>🔗 Available Lockout Endpoints:</h5>
+                            <ul style="text-align: left; color: #ccc;">
+                                <li><code>POST /api/admin/lockout-user</code> - Lock a user</li>
+                                <li><code>POST /api/admin/unlock-user</code> - Unlock a user</li>
+                                <li><code>GET /api/admin/lockout-status/{username}</code> - Check user status</li>
+                                <li><code>POST /api/user/lockout-check</code> - Client-side lockout check</li>
+                                <li><code>POST /api/admin/lockout-user-cheat</code> - Lock user for cheating</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="implementation-note" style="margin-top: 15px;">
+                            <h5>💡 Implementation Notes:</h5>
+                            <div style="background: rgba(100, 100, 255, 0.2); padding: 10px; border-radius: 5px; font-size: 13px;">
+                                <p><strong>Current State:</strong> Server-side lockout tracking ✅ Active</p>
+                                <p><strong>Missing:</strong> Client-side enforcement and URL-based access control</p>
+                                <p><strong>Recommendation:</strong> Add middleware to check lockout status on page load and API calls</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                lockedUsersElement.innerHTML = lockedUsersHtml;
+                
+            } catch (error) {
+                lockedUsersElement.innerHTML = `
+                    <div class="error">
+                        ❌ Error loading locked users information: ${error.message}
+                        <br><br>
+                        <strong>Available Manual Actions:</strong>
+                        <br>• Use "Check Status" button above to verify individual user lockout status
+                        <br>• Check server logs for lockout activities
+                        <br>• Verify API endpoints are responding correctly
+                    </div>
+                `;
+            }
         }
         
         // Initialize the admin console
