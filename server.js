@@ -2179,7 +2179,7 @@ async function simulateRealUserGameplay(customer, game, bet) {
 
     return new Promise((resolve) => {
         const options = {
-            hostname: 'localhost',
+            hostname: '127.0.0.1',
             port: 8080,
             method: 'POST',
             headers: {
