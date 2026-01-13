@@ -323,16 +323,44 @@ app.use('/api/admin/lockout-user-cheat', express.text({type: '*/*'}));
 app.use('/api/admin/lockout-user-cheat', (req, res, next) => {
   if (req.body && typeof req.body === 'string') {
     try {
-      console.log('📥 Raw text from Dynatrace:', req.body);
+      console.log('📥 Raw text from Dynatrace:', req.body.substring(0, 200) + '...');
       
-      // Fix Python-style JSON to proper JSON
-      let fixedJson = req.body
-        .replace(/'/g, '"')          // Single quotes to double quotes
-        .replace(/False/g, 'false')   // Python False to JSON false
-        .replace(/True/g, 'true')     // Python True to JSON true
-        .replace(/None/g, 'null');    // Python None to JSON null
+      // Handle complex Python-style JSON with nested JSON strings
+      // First, temporarily protect nested JSON strings by encoding them
+      let tempJson = req.body;
       
-      console.log('📥 Fixed JSON:', fixedJson);
+      // Find and encode all JSON strings within single quotes to protect them
+      const jsonStringPattern = /'(\{[^}]*\})'/g;
+      const protectedStrings = new Map();
+      let protectCounter = 0;
+      
+      tempJson = tempJson.replace(jsonStringPattern, (match, jsonContent) => {
+        const placeholder = `__PROTECTED_JSON_${protectCounter}__`;
+        protectedStrings.set(placeholder, `"${jsonContent.replace(/"/g, '\\"')}"`);
+        protectCounter++;
+        return placeholder;
+      });
+      
+      // Now safely convert Python syntax to JSON
+      let fixedJson = tempJson
+        .replace(/'/g, '"')                    // Single quotes to double quotes
+        .replace(/False/g, 'false')            // Python False to JSON false
+        .replace(/True/g, 'true')              // Python True to JSON true
+        .replace(/None/g, 'null')              // Python None to JSON null
+        .replace(/\bNone\b/g, 'null')          // Word boundary None
+        .replace(/:\s*None\b/g, ': null')      // Handle ": None" patterns
+        .replace(/\[\s*None\b/g, '[null')      // Handle "[ None" patterns  
+        .replace(/,\s*None\b/g, ', null')      // Handle ", None" patterns
+        .replace(/None\s*,/g, 'null,')         // Handle "None," patterns
+        .replace(/None\s*\]/g, 'null]')        // Handle "None ]" patterns
+        .replace(/None\s*}/g, 'null}');        // Handle "None }" patterns
+      
+      // Restore protected JSON strings
+      protectedStrings.forEach((value, placeholder) => {
+        fixedJson = fixedJson.replace(placeholder, value);
+      });
+      
+      console.log('📥 Fixed JSON (first 200 chars):', fixedJson.substring(0, 200) + '...');
       req.body = JSON.parse(fixedJson);
       console.log('📥 Parsed body:', JSON.stringify(req.body, null, 2));
     } catch (e) {
@@ -798,8 +826,8 @@ async function logGameActivity(game, action, playerData, gameDetails) {
     const logLine = JSON.stringify(logEntry) + '\n';
     await appendFile(logFilePath, logLine);
     
-    // IMPORTANT: Also log to console for Dynatrace OneAgent to capture
-    console.log(`VEGAS_GAME_ACTIVITY: ${JSON.stringify(logEntry)}`);
+    // Log clean JSON to console for OneAgent (no prefix for clean parsing)
+    console.log(JSON.stringify(logEntry));
     
     // Simple console logging for visibility
     console.log(`[GAME-LOG] ${game.toUpperCase()}: ${action} by ${playerData.customerName || playerData.Username} - Bet: $${gameDetails.betAmount || 0}, Win: $${gameDetails.winAmount || 0}`);
@@ -2535,17 +2563,50 @@ app.post('/api/admin/lockout-user', (req, res) => {
 function pythonDictToJson(pythonStr) {
   if (typeof pythonStr !== 'string') return pythonStr;
   
-  // Replace Python syntax with JSON syntax
-  let jsonStr = pythonStr
-    .replace(/'/g, '"')           // Single quotes to double quotes
-    .replace(/None/g, 'null')      // Python None to JSON null
-    .replace(/True/g, 'true')      // Python True to JSON true
-    .replace(/False/g, 'false');   // Python False to JSON false
-  
   try {
+    // Handle complex Python-style JSON with nested JSON strings
+    let tempJson = pythonStr;
+    
+    // Find and encode all JSON strings within single quotes to protect them
+    const jsonStringPattern = /'(\{[^}]*\})'/g;
+    const protectedStrings = new Map();
+    let protectCounter = 0;
+    
+    tempJson = tempJson.replace(jsonStringPattern, (match, jsonContent) => {
+      const placeholder = `__PROTECTED_JSON_${protectCounter}__`;
+      protectedStrings.set(placeholder, `"${jsonContent.replace(/"/g, '\\"')}"`);
+      protectCounter++;
+      return placeholder;
+    });
+    
+    // Now safely convert Python syntax to JSON
+    let jsonStr = tempJson
+      .replace(/'/g, '"')                    // Single quotes to double quotes
+      .replace(/False/g, 'false')            // Python False to JSON false
+      .replace(/True/g, 'true')              // Python True to JSON true
+      .replace(/None/g, 'null')              // Python None to JSON null
+      .replace(/\bNone\b/g, 'null')          // Word boundary None
+      .replace(/:\s*None\b/g, ': null')      // Handle ": None" patterns
+      .replace(/\[\s*None\b/g, '[null')      // Handle "[ None" patterns  
+      .replace(/,\s*None\b/g, ', null')      // Handle ", None" patterns
+      .replace(/None\s*,/g, 'null,')         // Handle "None," patterns
+      .replace(/None\s*\]/g, 'null]')        // Handle "None ]" patterns
+      .replace(/None\s*}/g, 'null}');        // Handle "None }" patterns
+    
+    // Restore protected JSON strings
+    protectedStrings.forEach((value, placeholder) => {
+      jsonStr = jsonStr.replace(placeholder, value);
+    });
+    
     return JSON.parse(jsonStr);
   } catch (e) {
     console.log('⚠️ Failed to parse as JSON after Python conversion:', e.message);
+    console.log('🔍 Problem area around character', e.message.match(/position (\d+)/)?.[1] || 'unknown');
+    const pos = parseInt(e.message.match(/position (\d+)/)?.[1] || '0');
+    if (pos > 0) {
+      const context = pythonStr.substring(Math.max(0, pos - 50), pos + 50);
+      console.log('🔍 Context around error:', context);
+    }
     return pythonStr;
   }
 }

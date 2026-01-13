@@ -1,0 +1,87 @@
+{
+  "scenarios": {
+    "realistic-gaming": {
+      "description": "Realistic casino gaming behavior matching real users",
+      "users": 50,
+      "duration": "10m",
+      "rampUp": "2m",
+      "gameDistribution": {
+        "slots": 60,
+        "dice": 20, 
+        "blackjack": 20
+      },
+      "betPatterns": {
+        "conservative": 40,
+        "aggressive": 35,
+        "cheat_enabled": 25
+      },
+      "thinkTime": {
+        "min": 1,
+        "max": 5,
+        "average": 3
+      }
+    },
+    "peak-traffic": {
+      "description": "Peak gaming hours simulation",
+      "users": 200,
+      "duration": "30m", 
+      "rampUp": "5m",
+      "gameDistribution": {
+        "slots": 70,
+        "dice": 15,
+        "blackjack": 15
+      },
+      "betPatterns": {
+        "conservative": 30,
+        "aggressive": 50,
+        "cheat_enabled": 20
+      },
+      "thinkTime": {
+        "min": 0.5,
+        "max": 3,
+        "average": 1.5
+      }
+    },
+    "cheat-detection": {
+      "description": "High cheat usage for detection testing",
+      "users": 25,
+      "duration": "15m",
+      "rampUp": "1m",
+      "gameDistribution": {
+        "slots": 80,
+        "dice": 10,
+        "blackjack": 10
+      },
+      "betPatterns": {
+        "conservative": 10,
+        "aggressive": 20,
+        "cheat_enabled": 70
+      },
+      "thinkTime": {
+        "min": 0.5,
+        "max": 2,
+        "average": 1
+      }
+    }
+  },
+  "userProfiles": {
+    "conservative": {
+      "betAmounts": [10, 25, 50],
+      "sessionLength": "long",
+      "cheatProbability": 0.05,
+      "gamePreference": "slots"
+    },
+    "aggressive": {
+      "betAmounts": [50, 100, 250, 500],
+      "sessionLength": "medium", 
+      "cheatProbability": 0.15,
+      "gamePreference": "mixed"
+    },
+    "cheat_enabled": {
+      "betAmounts": [25, 50, 100],
+      "sessionLength": "short",
+      "cheatProbability": 0.80,
+      "gamePreference": "slots"
+    }
+  }
+}

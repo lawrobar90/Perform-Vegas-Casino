@@ -1,0 +1,39 @@
+{
+  "testInfo": {
+    "name": "VegasCasino_realistic-gaming_25users_20260111_213607",
+    "description": "Vegas Casino LoadRunner test with real user simulation",
+    "scenario": "realistic-gaming",
+    "generated": "2026-01-11T21:36:07.633Z",
+    "baseUrl": "http://localhost:8080"
+  },
+  "loadProfile": {
+    "virtualUsers": 25,
+    "duration": "5m",
+    "rampUpTime": "2m",
+    "thinkTime": {
+      "min": 1,
+      "max": 5,
+      "distribution": "uniform"
+    }
+  },
+  "gameSimulation": {
+    "cheatsEnabled": 1,
+    "initialBalance": 5000,
+    "gameDistribution": {
+      "slots": 60,
+      "dice": 20,
+      "blackjack": 20
+    }
+  },
+  "dynatraceIntegration": {
+    "requestTagging": true,
+    "businessEvents": true,
+    "realUserCorrelation": true,
+    "identicalPayloads": true
+  },
+  "files": {
+    "script": "VegasCasino_realistic-gaming_25users_20260111_213607.c",
+    "users": "users.csv",
+    "config": "test-config.json"
+  }
+}

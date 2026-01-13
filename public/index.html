@@ -658,10 +658,35 @@
                     <h1 class="text-xl font-bold text-dt-cyan">Dynatrace Vegas</h1>
                     <div class="flex items-center space-x-4">
                         <span id="userWelcome" class="text-dt-light-gray"></span>
-                        <span id="userBalance" class="text-dt-yellow font-bold">Balance: $1000</span>
+                        
+                        <!-- Wallet Section -->
+                        <div class="flex items-center space-x-3 bg-dt-gray/30 rounded-lg px-4 py-2 border border-dt-cyan/20">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-2xl">💰</span>
+                                <div>
+                                    <div class="text-xs text-dt-light-gray">Gaming Balance</div>
+                                    <span id="userBalance" class="text-dt-yellow font-bold text-lg">$1000</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-1">
+                                <button 
+                                    onclick="openWalletModal('withdraw')" 
+                                    class="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium py-1 px-3 rounded text-xs transition-all duration-300"
+                                >
+                                    💸 Withdraw
+                                </button>
+                                <button 
+                                    onclick="openWalletModal('deposit')" 
+                                    class="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-medium py-1 px-3 rounded text-xs transition-all duration-300"
+                                >
+                                    💳 Deposit
+                                </button>
+                            </div>
+                        </div>
+                        
                         <button 
                             onclick="signOut()" 
-                            class="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 text-sm"
+                            class="bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-500 hover:to-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 text-sm"
                         >
                             🚪 Sign Out
                         </button>
@@ -1450,22 +1475,180 @@
         </div>
     </template>
 
-                        </div>
-                    </div>
+    <!-- Wallet Modal -->
+    <div id="walletModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-dt-dark border-2 border-dt-cyan rounded-xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-95">
+            <div class="flex items-center justify-between mb-6">
+                <h2 id="walletModalTitle" class="text-2xl font-bold text-dt-cyan">💰 Casino Wallet</h2>
+                <button onclick="closeWalletModal()" class="text-dt-light-gray hover:text-white text-2xl">&times;</button>
+            </div>
+            
+            <div class="mb-6">
+                <div class="bg-dt-gray/30 rounded-lg p-4 mb-4 border border-dt-cyan/20 text-center">
+                    <div class="text-sm text-dt-light-gray mb-1">Current Balance</div>
+                    <div id="modalCurrentBalance" class="text-2xl font-bold text-dt-yellow">$1000</div>
                 </div>
             </div>
+            
+            <div id="walletModalContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
         </div>
-    </template>
+    </div>
 
     <script>
         console.log('🚀 Vegas Casino SPA Starting...');
         
-        // Initialize Socket.IO connection for lockout notifications
-        const socket = io();
+        // Test function - should work immediately
+        console.log('🧪 JavaScript is loading...');
+        window.simpleTest = function() {
+            console.log('✅ Simple test works!');
+            alert('Simple test works!');
+        };
+
+        // Manual lockout test (working)
+        window.testLockout = function() {
+            alert('Lockout test - showing red warning screen');
+            showRealLockoutScreen({
+                locked: true,
+                username: 'Lawro', 
+                reason: 'Test lockout',
+                timestamp: new Date().toISOString()
+            });
+        };
+
+        // Show professional lockout screen with real data
+        function showRealLockoutScreen(lockoutData) {
+            // Prevent multiple lockout screens
+            if (window.isLockoutScreenShowing) {
+                console.log('🔒 Lockout screen already showing, skipping...');
+                return;
+            }
+            
+            console.log('🚨 INSTANT LOCKOUT ENFORCEMENT - Creating real-time overlay');
+            window.isLockoutScreenShowing = true;
+            
+            // Create instant overlay that appears on top of current content
+            const overlay = document.createElement('div');
+            overlay.id = 'lockoutOverlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #8B0000 100%);
+                color: white;
+                z-index: 999999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, sans-serif;
+                animation: lockoutFadeIn 0.5s ease-out;
+            `;
+            
+            overlay.innerHTML = `
+                <div style="text-align: center; max-width: 600px; padding: 40px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 2px solid #ff0000;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🚨</div>
+                    <h1 style="font-size: 3rem; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">ACCOUNT LOCKED</h1>
+                    <div style="background: rgba(139,0,0,0.5); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <h2 style="color: #ffcccc; margin-bottom: 15px;">⚡ REAL-TIME SECURITY ENFORCEMENT ⚡</h2>
+                        <div style="text-align: left; font-size: 1.1rem; line-height: 1.8;">
+                            <p><strong>User:</strong> <span style="color: #ff6666;">${lockoutData.username || 'Unknown'}</span></p>
+                            <p><strong>Reason:</strong> <span style="color: #ff6666;">${lockoutData.reason || 'Security violation detected'}</span></p>
+                            <p><strong>Time:</strong> <span style="color: #ff6666;">${new Date(lockoutData.timestamp || Date.now()).toLocaleString()}</span></p>
+                            <p><strong>Status:</strong> <span style="color: #ff3333; font-weight: bold;">IMMEDIATELY ENFORCED</span></p>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.9rem; color: #ffcccc; line-height: 1.6;">
+                        <p><strong>🚨 SESSION TERMINATED INSTANTLY</strong></p>
+                        <p>This real-time lockout was triggered by Dynatrace's fraud detection system.</p>
+                        <p><strong>No refresh required - enforcement is immediate!</strong></p>
+                    </div>
+                    <div style="margin-top: 20px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px;">
+                        <p>⚡ Real-time Security • 🎯 Instant Enforcement • 🛡️ Dynatrace Powered</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add CSS animation for fade-in
+            if (!document.getElementById('lockoutAnimationCSS')) {
+                const style = document.createElement('style');
+                style.id = 'lockoutAnimationCSS';
+                style.textContent = `
+                    @keyframes lockoutFadeIn {
+                        from { opacity: 0; transform: scale(0.9); }
+                        to { opacity: 1; transform: scale(1); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Append overlay to body for immediate display
+            document.body.appendChild(overlay);
+        }
+
+        // Check lockout status when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 Page loaded - performing lockout check');
+            checkOriginalLockoutStatus();
+            
+            // Initialize wallet balance displays
+            setTimeout(() => {
+                updateAllBalanceDisplays();
+            }, 500);
+        });
+
+        // Also check if DOM is already loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkOriginalLockoutStatus);
+        } else {
+            checkOriginalLockoutStatus();
+        }
         
-        // Lockout state management
-        let isUserLocked = false;
-        let lockoutData = null;
+        // Replace my simple lockout checker with integrated version
+        function checkOriginalLockoutStatus() {
+            // Get username from URL or default to 'Lawro' for demo
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('user') || 'Lawro';
+            
+            console.log('🔍 Checking lockout status for:', username);
+            
+            fetch('/api/admin/lockout-status/' + username)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('📋 Lockout check result:', data);
+                    
+                    if (data.locked) {
+                        console.log('🚨 User is locked - showing lockout screen');
+                        showRealLockoutScreen(data);
+                    } else {
+                        console.log('✅ User is not locked - starting Vegas Casino normally');
+                        // Start the original Vegas Casino router system
+                        window.router = new VegasRouter();
+                        router.init();
+                    }
+                })
+                .catch(error => {
+                    console.error('❌ Error checking lockout status:', error);
+                    // Fallback: start normal casino
+                    window.router = new VegasRouter();
+                    router.init();
+                });
+        }
+        
+        console.log('✅ Lockout system initialized');
+        
+        // ===== ORIGINAL VEGAS CASINO CODE CONTINUES =====
+        
+        // Initialize Socket.IO connection for lockout notifications (with error handling)
+        let socket;
+        try {
+            socket = io();
+        } catch (error) {
+            console.warn('Socket.IO initialization failed:', error);
+            socket = { on: () => {}, emit: () => {} }; // Mock socket for fallback
+        }
         
         // Slots Game Data - Dynatrace Observability Platform Symbols
         const slotSymbols = [
@@ -1946,16 +2129,32 @@
             console.log('🚨 Received lockout notification:', lockoutInfo);
             
             // Check if this lockout is for the current user
-            const currentUser = localStorage.getItem('vegasUsername');
+            const currentUser = localStorage.getItem('vegasUsername') || 'Lawro';
             if (lockoutInfo.username === currentUser) {
-                console.log(`🔒 Current user ${currentUser} has been locked out`);
-                showLockoutScreen(lockoutInfo);
+                console.log(`🔒 Current user ${currentUser} has been locked out - INSTANT enforcement`);
+                showRealLockoutScreen(lockoutInfo);
             }
         });
         
         socket.on('disconnect', () => {
             console.log('📡 Disconnected from Vegas Casino server');
         });
+
+        // Add periodic lockout checking for real-time detection (every 5 seconds)
+        setInterval(async () => {
+            try {
+                const currentUser = localStorage.getItem('vegasUsername') || 'Lawro';
+                const response = await fetch('/api/admin/lockout-status/' + currentUser);
+                const data = await response.json();
+                
+                if (data.locked && !window.isLockoutScreenShowing) {
+                    console.log('🚨 Periodic check detected lockout - showing INSTANT screen');
+                    showRealLockoutScreen(data);
+                }
+            } catch (error) {
+                console.error('❌ Periodic lockout check failed:', error);
+            }
+        }, 5000);
         
         // Show lockout screen
         function showLockoutScreen(lockoutInfo) {
@@ -1969,6 +2168,7 @@
             const lockoutTemplate = document.getElementById('lockout-template');
             
             if (appContainer && lockoutTemplate) {
+                console.log('✅ Found app container and lockout template');
                 appContainer.innerHTML = lockoutTemplate.innerHTML;
                 
                 // Populate lockout data
@@ -1976,6 +2176,25 @@
                 
                 // Create matrix rain effect for lockout screen
                 createLockoutMatrixRain();
+            } else {
+                console.error('❌ Missing elements:', { 
+                    appContainer: !!appContainer, 
+                    lockoutTemplate: !!lockoutTemplate 
+                });
+                
+                // Fallback: Create simple lockout screen
+                if (appContainer) {
+                    appContainer.innerHTML = `
+                        <div class="min-h-screen flex items-center justify-center bg-red-900">
+                            <div class="text-center text-white p-8">
+                                <h1 class="text-4xl font-bold mb-4">🚨 ACCOUNT LOCKED 🚨</h1>
+                                <p class="text-xl mb-4">User: ${lockoutInfo.username || 'Unknown'}</p>
+                                <p class="text-lg mb-4">Reason: ${lockoutInfo.reason || 'Security violation'}</p>
+                                <p class="text-sm">Contact administrator to unlock your account</p>
+                            </div>
+                        </div>
+                    `;
+                }
             }
         }
         
@@ -2039,12 +2258,21 @@
         
         // Check lockout status on page load
         function checkLockoutStatus() {
-            const currentUser = localStorage.getItem('vegasUsername') || 'Lawrence'; // Use Lawrence as default for testing
+            // Get the current user from multiple possible sources
+            const currentUser = localStorage.getItem('vegasUsername') || 
+                               (JSON.parse(localStorage.getItem('vegas.customerData') || '{}').customerName) ||
+                               'Lawro'; // Default to Lawro for testing
+            
             console.log('🔍 Checking lockout status for user:', currentUser);
+            console.log('🔍 localStorage vegasUsername:', localStorage.getItem('vegasUsername'));
+            console.log('🔍 localStorage vegas.customerData:', localStorage.getItem('vegas.customerData'));
             
             // Check server for lockout status
-            fetch(`/api/admin/lockout-status/${currentUser}`)
-                .then(response => response.json())
+            fetch('/api/admin/lockout-status/' + currentUser)
+                .then(response => {
+                    console.log('🔍 Lockout API response status:', response.status);
+                    return response.json();
+                })
                 .then(data => {
                     console.log('🔍 Lockout status check result:', data);
                     if (data.locked) {
@@ -2056,8 +2284,31 @@
                 })
                 .catch(error => {
                     console.warn('⚠️ Failed to check lockout status:', error);
+                    // Don't block access if we can't check lockout status
                 });
         }
+        
+        // Force lockout check for current user (debugging)
+        window.forceLockoutCheck = function() {
+            console.log('🔧 Forcing lockout check...');
+            checkLockoutStatus();
+        };
+        
+        // Manual lockout display test
+        window.showTestLockout = function() {
+            const testData = {
+                locked: true,
+                username: 'Lawro',
+                reason: 'Test lockout screen',
+                timestamp: new Date().toISOString(),
+                cheatData: {
+                    violations: 5,
+                    winningsConfiscated: 15000,
+                    balanceAdjustment: 'Reset to $1000'
+                }
+            };
+            showLockoutScreen(testData);
+        };
         
         // Global functions
         function navigateTo(route) {
@@ -2161,6 +2412,267 @@
             
             // Navigate back to entrance
             navigateTo('/');
+        }
+        
+        // ===== WALLET SYSTEM =====
+        
+        function openWalletModal(action) {
+            const modal = document.getElementById('walletModal');
+            const modalTitle = document.getElementById('walletModalTitle');
+            const modalContent = document.getElementById('walletModalContent');
+            const modalBalance = document.getElementById('modalCurrentBalance');
+            
+            // Update current balance
+            modalBalance.textContent = `$${router.balance}`;
+            
+            if (action === 'withdraw') {
+                modalTitle.innerHTML = '💸 Withdraw Funds';
+                modalContent.innerHTML = `
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-dt-light-gray mb-2">
+                                🏦 Withdraw to Bank Account
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-dt-light-gray">$</span>
+                                <input 
+                                    type="number" 
+                                    id="withdrawAmount" 
+                                    placeholder="0.00" 
+                                    min="10" 
+                                    max="${router.balance}"
+                                    class="w-full pl-8 pr-4 py-3 bg-dt-gray/30 border border-dt-cyan/30 rounded-lg text-white placeholder-dt-light-gray focus:border-dt-cyan focus:outline-none"
+                                />
+                            </div>
+                            <div class="text-xs text-dt-light-gray mt-1">
+                                Minimum withdrawal: $10 • Maximum: $${router.balance}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dt-gray/20 rounded-lg p-4 border border-yellow-500/30">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-yellow-500">⚠️</span>
+                                <span class="text-sm font-medium text-yellow-400">Withdrawal Notice</span>
+                            </div>
+                            <div class="text-xs text-dt-light-gray">
+                                Funds will be transferred to your registered bank account. 
+                                Processing time: 1-3 business days.
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3 pt-4">
+                            <button 
+                                onclick="closeWalletModal()" 
+                                class="flex-1 bg-dt-gray/50 hover:bg-dt-gray/70 text-white py-3 px-4 rounded-lg transition-all duration-300 border border-dt-cyan/30"
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onclick="processWithdrawal()" 
+                                class="flex-1 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white py-3 px-4 rounded-lg transition-all duration-300 font-medium"
+                            >
+                                💸 Withdraw
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (action === 'deposit') {
+                modalTitle.innerHTML = '💳 Deposit Funds';
+                modalContent.innerHTML = `
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-dt-light-gray mb-2">
+                                💳 Deposit Amount
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-dt-light-gray">$</span>
+                                <input 
+                                    type="number" 
+                                    id="depositAmount" 
+                                    placeholder="0.00" 
+                                    min="10" 
+                                    max="10000"
+                                    class="w-full pl-8 pr-4 py-3 bg-dt-gray/30 border border-dt-cyan/30 rounded-lg text-white placeholder-dt-light-gray focus:border-dt-cyan focus:outline-none"
+                                />
+                            </div>
+                            <div class="text-xs text-dt-light-gray mt-1">
+                                Minimum deposit: $10 • Maximum: $10,000
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dt-gray/20 rounded-lg p-4 border border-dt-cyan/30">
+                            <div class="text-sm font-medium text-dt-cyan mb-2">💳 Payment Method</div>
+                            <select 
+                                id="paymentMethod" 
+                                class="w-full py-2 px-3 bg-dt-gray/30 border border-dt-cyan/30 rounded-lg text-white focus:border-dt-cyan focus:outline-none"
+                            >
+                                <option value="bank">🏦 Bank Transfer (Instant)</option>
+                                <option value="card">💳 Credit/Debit Card</option>
+                                <option value="crypto">₿ Cryptocurrency</option>
+                            </select>
+                        </div>
+                        
+                        <div class="bg-dt-gray/20 rounded-lg p-4 border border-green-500/30">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-green-500">🛡️</span>
+                                <span class="text-sm font-medium text-green-400">Secure Transaction</span>
+                            </div>
+                            <div class="text-xs text-dt-light-gray">
+                                All deposits are processed securely through encrypted channels. 
+                                Funds are available immediately.
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3 pt-4">
+                            <button 
+                                onclick="closeWalletModal()" 
+                                class="flex-1 bg-dt-gray/50 hover:bg-dt-gray/70 text-white py-3 px-4 rounded-lg transition-all duration-300 border border-dt-cyan/30"
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onclick="processDeposit()" 
+                                class="flex-1 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white py-3 px-4 rounded-lg transition-all duration-300 font-medium"
+                            >
+                                💳 Deposit
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Show modal with animation
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+        }
+        
+        function closeWalletModal() {
+            const modal = document.getElementById('walletModal');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        
+        function processWithdrawal() {
+            const amount = parseFloat(document.getElementById('withdrawAmount').value);
+            
+            if (!amount || amount < 10) {
+                alert('❌ Minimum withdrawal amount is $10');
+                return;
+            }
+            
+            if (amount > router.balance) {
+                alert('❌ Insufficient funds for withdrawal');
+                return;
+            }
+            
+            // Process withdrawal
+            router.balance -= amount;
+            localStorage.setItem('vegasBalance', router.balance.toString());
+            
+            // Update all balance displays
+            updateAllBalanceDisplays();
+            
+            // Show success message
+            showWalletNotification(`💸 Successfully withdrawn $${amount}`, 'success');
+            
+            // Close modal
+            closeWalletModal();
+        }
+        
+        function processDeposit() {
+            const amount = parseFloat(document.getElementById('depositAmount').value);
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            
+            if (!amount || amount < 10) {
+                alert('❌ Minimum deposit amount is $10');
+                return;
+            }
+            
+            if (amount > 10000) {
+                alert('❌ Maximum deposit amount is $10,000');
+                return;
+            }
+            
+            // Process deposit
+            router.balance += amount;
+            localStorage.setItem('vegasBalance', router.balance.toString());
+            
+            // Update all balance displays
+            updateAllBalanceDisplays();
+            
+            // Show success message
+            const paymentMethodText = paymentMethod === 'bank' ? 'Bank Transfer' : 
+                                    paymentMethod === 'card' ? 'Credit Card' : 'Cryptocurrency';
+            showWalletNotification(`💳 Successfully deposited $${amount} via ${paymentMethodText}`, 'success');
+            
+            // Close modal
+            closeWalletModal();
+        }
+        
+        function updateAllBalanceDisplays() {
+            // Update main balance displays
+            const balanceElements = ['userBalance', 'walletBalance', 'modalCurrentBalance'];
+            balanceElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = `$${router.balance}`;
+                }
+            });
+            
+            // Update game-specific balances based on current route
+            if (window.location.hash.includes('slots')) {
+                router.updateBalance('slotsBalance');
+            } else if (window.location.hash.includes('blackjack')) {
+                blackjackGame.balance = router.balance;
+                updateBlackjackUI();
+                router.updateBalance('blackjackBalanceTop');
+            } else if (window.location.hash.includes('dice')) {
+                diceGame.balance = router.balance;
+                const diceBalanceEl = document.getElementById('diceBalance');
+                if (diceBalanceEl) diceBalanceEl.textContent = `Balance: $${router.balance}`;
+            }
+        }
+        
+        function showWalletNotification(message, type = 'success') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-60 px-6 py-4 rounded-lg shadow-lg transform transition-all duration-300 translate-x-full`;
+            
+            if (type === 'success') {
+                notification.className += ' bg-green-600 text-white border border-green-500';
+            } else {
+                notification.className += ' bg-red-600 text-white border border-red-500';
+            }
+            
+            notification.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <span class="text-lg">${type === 'success' ? '✅' : '❌'}</span>
+                    <span class="font-medium">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+                notification.classList.add('translate-x-0');
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
         }
         
         function addMoney() {
@@ -4429,26 +4941,91 @@
         }
 
         
-        // Initialize router
-        const router = new VegasRouter();
+        // Initialize router - DISABLED: Now handled by lockout system
+        // const router = new VegasRouter();
         
-        document.addEventListener('DOMContentLoaded', () => {
-            router.init();
-            console.log('✅ Vegas Casino SPA Ready!');
-            
-            // Check if current user is locked out
-            setTimeout(() => {
-                checkLockoutStatus();
-            }, 1000); // Small delay to ensure router is fully initialized
-            
-            // Add hash change listener for dice game
-            window.addEventListener('hashchange', () => {
-                setTimeout(ensureDiceGameReady, 300);
-            });
-            
-            // Initialize dice game if starting on dice page
-            setTimeout(ensureDiceGameReady, 1500);
-        });
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     console.log('🚀 DOMContentLoaded fired');
+        //     
+        //     try {
+        //         router.init();
+        //         console.log('✅ Router initialized successfully');
+        //     } catch (error) {
+        //         console.error('❌ Router initialization failed:', error);
+        //     }
+        //     
+        //     console.log('✅ Vegas Casino SPA Ready!');
+        //     
+        //     // Check if current user is locked out immediately
+        //     try {
+        //         console.log('🔍 Starting lockout check...');
+        //         checkLockoutStatus();
+        //     } catch (error) {
+        //         console.error('❌ Lockout check failed:', error);
+        //     }
+        //     
+        //     // Also check lockout status every 30 seconds
+        //     setInterval(() => {
+        //         try {
+        //             checkLockoutStatus();
+        //         } catch (error) {
+        //             console.error('❌ Periodic lockout check failed:', error);
+        //         }
+        //     }, 30000);
+        //     
+        //     // Add hash change listener for dice game
+        //     window.addEventListener('hashchange', () => {
+        //         setTimeout(ensureDiceGameReady, 300);
+        //     });
+        //     
+        //     // Initialize dice game if starting on dice page
+        //     setTimeout(ensureDiceGameReady, 1500);
+        // });
+
+        // Manual lockout test function (for debugging)
+        window.testLockout = function(username = 'Lawro') {
+            console.log('🧪 Testing lockout for:', username);
+            fetch('/api/admin/lockout-status/' + username)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('🧪 Test result:', data);
+                    if (data.locked) {
+                        showLockoutScreen(data);
+                    } else {
+                        console.log('✅ User is not locked');
+                    }
+                });
+        };
+
+        // Force lockout check for current user (debugging)
+        window.forceLockoutCheck = function() {
+            console.log('🔧 Forcing lockout check...');
+            checkLockoutStatus();
+        };
+        
+        // Test function - should work immediately
+        console.log('🧪 JavaScript is loading...');
+        window.simpleTest = function() {
+            console.log('✅ Simple test works!');
+            alert('Simple test works!');
+        };
+
+        // Manual lockout display test
+        window.showTestLockout = function() {
+            const testData = {
+                locked: true,
+                username: 'Lawro',
+                reason: 'Test lockout screen',
+                timestamp: new Date().toISOString(),
+                cheatData: {
+                    violations: 5,
+                    winningsConfiscated: 15000,
+                    balanceAdjustment: 'Reset to $1000'
+                }
+            };
+            console.log('🧪 Showing test lockout screen with data:', testData);
+            showLockoutScreen(testData);
+        };
     </script>
 </body>
 </html>
