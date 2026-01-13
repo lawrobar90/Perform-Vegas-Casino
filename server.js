@@ -2135,6 +2135,17 @@ const loadTestCustomers = [
     }
 ];
 
+// Helper function to get appropriate action for each game type
+function getActionForGame(game) {
+    const actionMap = {
+        'slots': 'spin',
+        'roulette': 'spin', 
+        'dice': 'roll',
+        'blackjack': 'deal'
+    };
+    return actionMap[game] || 'play';
+}
+
 async function simulateRealUserGameplay(customer, game, bet) {
     const correlationId = `load_test_${Date.now()}_${customer.id}_${Math.floor(Math.random() * 1000000000)}`;
     
@@ -2153,7 +2164,10 @@ async function simulateRealUserGameplay(customer, game, bet) {
         CompanyName: customer.company_name,
         Persona: customer.persona,
         Booth: customer.booth,
-        OptIn: true
+        OptIn: true,
+        // Add game and action fields for proper logging and analytics
+        Game: game,
+        Action: getActionForGame(game)
     };
 
     // Add cheat data if simulating cheat
