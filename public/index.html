@@ -116,18 +116,25 @@
         }
         
         .reel-symbol.spinning {
-            animation: casino-reel-blur 0.1s ease-in-out infinite;
-            filter: blur(2px) brightness(1.1);
+            animation: casino-reel-spin 0.15s linear infinite;
+            transform-origin: center;
         }
         
-        @keyframes casino-reel-blur {
-            0%, 100% { 
-                filter: blur(1px) brightness(1);
-                opacity: 1;
+        @keyframes casino-reel-spin {
+            0% { 
+                transform: translateY(0%) scaleY(1);
+            }
+            25% {
+                transform: translateY(-25%) scaleY(0.9);
             }
             50% { 
-                filter: blur(3px) brightness(1.2);
-                opacity: 0.8;
+                transform: translateY(-50%) scaleY(0.8);
+            }
+            75% {
+                transform: translateY(-75%) scaleY(0.9);
+            }
+            100% { 
+                transform: translateY(-100%) scaleY(1);
             }
         }
         
@@ -135,15 +142,22 @@
         
         /* New symbols dropping down */
         .reel-symbol.dropping {
-            animation: reel-settle 0.3s ease-out;
+            animation: reel-settle 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         
         @keyframes reel-settle {
             0% { 
+                transform: translateY(-30px) scale(0.8);
                 opacity: 0;
+                filter: blur(2px);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.05);
+                opacity: 0.8;
                 filter: blur(1px);
             }
             100% { 
+                transform: translateY(0px) scale(1);
                 opacity: 1;
                 filter: blur(0px);
             }
@@ -171,10 +185,41 @@
         }
         
         .slot-reels-grid {
-            background: linear-gradient(135deg, rgba(21, 21, 21, 0.8), rgba(45, 45, 45, 0.6));
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(21, 21, 21, 0.9), rgba(45, 45, 45, 0.7));
             border-radius: 1rem;
             padding: 1rem;
-            border: 2px solid rgba(0, 212, 255, 0.3);
+            border: 3px solid rgba(0, 212, 255, 0.4);
+            box-shadow: 
+                inset 0 0 20px rgba(0, 212, 255, 0.2),
+                0 0 30px rgba(0, 212, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slot-reels-grid::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(0, 212, 255, 0.05) 50%,
+                transparent 70%
+            );
+            animation: slot-shine 4s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes slot-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .slot-reel {
@@ -184,6 +229,32 @@
             justify-content: center;
             min-height: 80px;
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .slot-reel:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .reel-symbol {
+            font-size: 2.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .reel-symbol:not(.spinning):not(.dropping) {
+            animation: symbol-idle 4s ease-in-out infinite;
+        }
+        
+        @keyframes symbol-idle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.02) rotate(1deg); }
         }
         
         .payline-reel {
@@ -2725,25 +2796,41 @@
             spinButton.disabled = true;
             spinButton.textContent = '🎰 SPINNING...';
             
+            // Add anticipation effect to the slot machine
+            const slotMachine = document.querySelector('.slot-machine-container');
+            slotMachine.style.transform = 'scale(1.02)';
+            slotMachine.style.transition = 'transform 0.2s ease-out';
+            
+            setTimeout(() => {
+                slotMachine.style.transform = 'scale(1)';
+            }, 200);
+            
             // Clear previous results
             document.getElementById('slotsResult').textContent = '';
             document.getElementById('slotsWin').textContent = '';
             document.getElementById('cheatStatusDisplay').textContent = '';
             
-            // Start reel animations - symbols moving down
+            // Start reel animations with staggered timing for realistic effect
             const reelSymbols = document.querySelectorAll('.reel-symbol');
-            reelSymbols.forEach(symbol => {
-                symbol.classList.add('spinning');
+            reelSymbols.forEach((symbol, index) => {
+                // Add staggered delay for each reel column
+                const columnIndex = index % 3;
+                setTimeout(() => {
+                    symbol.classList.add('spinning');
+                }, columnIndex * 100);
             });
             
             // Generate results after enhanced animation
             setTimeout(() => {
                 const results = generateSlotResults();
                 
-                // Remove spinning animation and add drop-in effect
-                reelSymbols.forEach(symbol => {
-                    symbol.classList.remove('spinning');
-                    symbol.classList.add('dropping');
+                // Stop reels with staggered timing (like real slot machines)
+                reelSymbols.forEach((symbol, index) => {
+                    const columnIndex = index % 3;
+                    setTimeout(() => {
+                        symbol.classList.remove('spinning');
+                        symbol.classList.add('dropping');
+                    }, columnIndex * 200);
                 });
                 
                 // Update 3x3 grid display with new symbols dropping in
@@ -2768,7 +2855,7 @@
                     reelSymbols.forEach(symbol => {
                         symbol.classList.remove('dropping');
                     });
-                }, 800);
+                }, 1200);
                 
                 // Calculate and display results
                 const winResult = calculateSlotWin(results.payline, betAmount);
