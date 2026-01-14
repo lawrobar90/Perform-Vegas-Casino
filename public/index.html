@@ -4320,27 +4320,76 @@
                 detectionRisk: cheat.detectionRisk
             };
             
-            // Update UI
-            document.getElementById('diceCheatStatus').textContent = cheat.name;
-            document.getElementById('diceCheatStatus').className = 'text-green-400';
+            // Update UI - use correct element IDs
+            const statusElement = document.getElementById('diceSidePanelCheatStatus');
+            if (statusElement) {
+                statusElement.textContent = cheat.name;
+                statusElement.className = 'text-green-400';
+            }
+            
+            // Update status display if it exists
+            const cheatStatusDisplay = document.getElementById('diceCheatStatusDisplay');
+            if (cheatStatusDisplay) {
+                cheatStatusDisplay.textContent = `Active: ${cheat.name}`;
+                cheatStatusDisplay.className = 'text-center text-sm text-green-400 mb-4 min-h-[1rem]';
+            }
             
             // Update risk meter
             const riskMeter = document.getElementById('diceRiskMeter');
-            riskMeter.style.width = `${cheat.detectionRisk * 100}%`;
+            if (riskMeter) {
+                riskMeter.style.width = `${cheat.detectionRisk * 100}%`;
+            }
             
-            // Update button states
+            // Update button states - use correct dice cheat button IDs
             document.querySelectorAll('#diceCheatSidePanel .cheat-button').forEach(btn => {
                 btn.classList.remove('bg-green-600/60', 'border-green-400/70');
                 btn.classList.add('bg-green-900/30', 'border-green-500/50');
             });
             
-            const activeBtn = document.getElementById(`cheat${cheatType.charAt(0).toUpperCase() + cheatType.slice(1)}`);
+            const activeBtn = document.getElementById(`diceCheat${cheatType.charAt(0).toUpperCase() + cheatType.slice(1)}`);
             if (activeBtn) {
                 activeBtn.classList.remove('bg-green-900/30', 'border-green-500/50');
                 activeBtn.classList.add('bg-green-600/60', 'border-green-400/70');
             }
             
             console.log(`🎯 Dice cheat activated: ${cheat.name}`);
+        }
+        
+        // Deactivate Dice Cheat
+        function deactivateDiceCheat() {
+            diceCheatState = {
+                active: null,
+                winRateBoost: 0,
+                detectionRisk: 0
+            };
+            
+            // Update UI
+            const statusElement = document.getElementById('diceSidePanelCheatStatus');
+            if (statusElement) {
+                statusElement.textContent = 'None';
+                statusElement.className = 'text-dt-yellow';
+            }
+            
+            // Clear status display
+            const cheatStatusDisplay = document.getElementById('diceCheatStatusDisplay');
+            if (cheatStatusDisplay) {
+                cheatStatusDisplay.textContent = '';
+                cheatStatusDisplay.className = 'text-center text-sm text-dt-orange mb-4 min-h-[1rem]';
+            }
+            
+            // Reset risk meter
+            const riskMeter = document.getElementById('diceRiskMeter');
+            if (riskMeter) {
+                riskMeter.style.width = '0%';
+            }
+            
+            // Reset all button states
+            document.querySelectorAll('#diceCheatSidePanel .cheat-button').forEach(btn => {
+                btn.classList.remove('bg-green-600/60', 'border-green-400/70');
+                btn.classList.add('bg-green-900/30', 'border-green-500/50');
+            });
+            
+            console.log('❌ Dice cheat deactivated');
         }
         
         // Lucky Rolls Cheat - Better outcomes
