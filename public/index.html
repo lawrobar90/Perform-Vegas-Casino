@@ -801,6 +801,7 @@
                                     id="boothSelect" 
                                     class="w-full px-4 py-3 rounded-lg bg-dt-dark text-white border border-dt-cyan/30 focus:border-dt-cyan focus:outline-none"
                                 >
+                                    <option value="">Select demo type...</option>
                                     <option value="Healthcare Demo">Perform Training Lab</option>
                                     <option value="Demo Booth 1">Demo Booth</option>
                                     <option value="Partner Demo">Partner Demo</option>
@@ -2573,6 +2574,11 @@
                 return;
             }
 
+            if (!booth) {
+                alert('ERROR: BOOTH/DEMO TYPE SELECTION REQUIRED');
+                return;
+            }
+
             // Data consent validation
             if (!dataConsentRadio) {
                 alert('ERROR: DATA CAPTURE CONSENT SELECTION REQUIRED');
@@ -2603,7 +2609,7 @@
             
             // Store user data
             const userData = {
-                customerName: username,
+                customerName: username,  // This should match what the game functions expect
                 email: email,
                 companyName: companyName,
                 persona: finalPersona,
