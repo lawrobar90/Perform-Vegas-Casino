@@ -2470,12 +2470,12 @@
         function checkLockoutStatus() {
             // Get the current user from multiple possible sources
             const currentUser = localStorage.getItem('vegasUsername') || 
-                               (JSON.parse(localStorage.getItem('vegas.customerData') || '{}').customerName) ||
+                               (JSON.parse(localStorage.getItem('vegasUserData') || '{}').customerName) ||
                                'Lawro'; // Default to Lawro for testing
             
             console.log('🔍 Checking lockout status for user:', currentUser);
             console.log('🔍 localStorage vegasUsername:', localStorage.getItem('vegasUsername'));
-            console.log('🔍 localStorage vegas.customerData:', localStorage.getItem('vegas.customerData'));
+            console.log('🔍 localStorage vegasUserData:', localStorage.getItem('vegasUserData'));
             
             // Check server for lockout status
             fetch('/api/admin/lockout-status/' + currentUser)
@@ -2580,17 +2580,19 @@
             
             // Store user data
             const userData = {
-                name: username,
+                customerName: username,
                 email: email,
                 companyName: companyName,
                 persona: finalPersona,
                 booth: booth,
-                dataConsent: dataConsent,
+                optIn: dataConsent,
                 registeredAt: new Date().toISOString()
             };
             
+            console.log('🔍 enterCasino() - Storing userData:', userData);
             localStorage.setItem('vegasUserData', JSON.stringify(userData));
             localStorage.setItem('vegasUsername', username);
+            console.log('🔍 enterCasino() - After storing, localStorage contains:', localStorage.getItem('vegasUserData'));
             
             // Navigate to lobby
             navigateTo('/lobby');
@@ -3138,7 +3140,7 @@
         
         function sendSlotResult(payline, betAmount, winAmount, newBalance, originalBalance) {
             // Send game result to server
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             console.log('🎰 SendSlotResult Debug:', {
                 betAmount,
@@ -3147,6 +3149,9 @@
                 originalBalance,
                 'calculation check': `${originalBalance} - ${betAmount} + ${winAmount} = ${originalBalance - betAmount + winAmount}`
             });
+            
+            console.log('🔍 userData from localStorage:', userData);
+            console.log('🔍 Raw vegasUserData from localStorage:', localStorage.getItem('vegasUserData'));
             
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
@@ -4168,7 +4173,7 @@
 
         // Send blackjack deal request to server
         function sendBlackjackDeal() {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
