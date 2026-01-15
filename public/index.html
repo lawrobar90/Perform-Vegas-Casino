@@ -3181,6 +3181,14 @@
             
             console.log('🔍 userData from localStorage:', userData);
             console.log('🔍 Raw vegasUserData from localStorage:', localStorage.getItem('vegasUserData'));
+            console.log('🔍 Individual userData properties:', {
+                'userData.email': userData.email,
+                'userData.companyName': userData.companyName,
+                'userData.persona': userData.persona,
+                'userData.booth': userData.booth,
+                'userData.name': userData.name,
+                'userData.customerName': userData.customerName
+            });
             
             const payload = {
                 Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
