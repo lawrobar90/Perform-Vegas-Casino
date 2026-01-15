@@ -3152,36 +3152,34 @@
             });
             
             const payload = {
+                timestamp: new Date().toISOString(),
+                level: cheatState.active ? "SECURITY_ALERT" : "INFO",
+                event_type: "CASINO_GAME_ACTIVITY",
                 game: 'slots',
                 action: 'spin',
-                betAmount: betAmount,
-                winAmount: winAmount,
-                payline: payline.map(s => s.name),
-                cheat: cheatState.active ? {
-                    type: cheatState.active,
-                    boost: cheatState.winRateBoost,
-                    risk: cheatState.detectionRisk
-                } : null,
-                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                balance: originalBalance, // Original balance before bet
-                newBalance: newBalance, // New balance after win/loss calculation
-                // Add required fields for server logging
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                Balance: newBalance, // New balance after calculation
-                BetAmount: betAmount,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CheatActive: cheatState.active ? true : false,
-                CheatType: cheatState.active || null,
-                CheatDetails: cheatState.active ? {
-                    winBoost: cheatState.winRateBoost / 100,
-                    frequency: cheatState.detectionRisk / 100
-                } : null
+                customer_name: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                email: userData.email || 'user@demo.com',
+                company_name: userData.companyName || 'Demo Company',
+                persona: userData.persona || 'Demo User',
+                booth: userData.booth || 'UI Demo',
+                bet_amount: betAmount,
+                win_amount: winAmount,
+                balance_before: originalBalance,
+                balance_after: newBalance,
+                result: payline.map(s => s.name),
+                multiplier: winAmount > 0 ? Math.floor(winAmount / betAmount) : 0,
+                cheat_active: cheatState.active ? true : false,
+                cheat_type: cheatState.active || null,
+                cheat_win_boost_applied: cheatState.active,
+                cheat_original_win: cheatState.active ? 0 : winAmount,
+                cheat_boosted_win: cheatState.active ? winAmount : 0,
+                correlation_id: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                user_agent: "Vegas-Casino-Browser",
+                ip_address: "ui-client",
+                opt_in: userData.optIn !== false,
+                severity: cheatState.active ? "HIGH" : "LOW",
+                category: cheatState.active ? "FRAUD_DETECTION" : "GAME_ACTIVITY",
+                requires_investigation: cheatState.active
             };
             
             // Send to actual server API
