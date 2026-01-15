@@ -3204,15 +3204,15 @@
             });
             
             const payload = {
-                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
+                Username: userData.name || userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 BetAmount: betAmount,
                 correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
+                CustomerName: userData.name || userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
                 Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
+                OptIn: userData.dataConsent !== false,
                 Game: 'slots',
                 Action: 'spin',
                 CheatActive: cheatState.active ? true : false,
