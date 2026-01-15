@@ -3152,34 +3152,38 @@
             });
             
             const payload = {
-                timestamp: new Date().toISOString(),
-                level: cheatState.active ? "SECURITY_ALERT" : "INFO",
-                event_type: "CASINO_GAME_ACTIVITY",
+                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                BetAmount: betAmount,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                Email: userData.email || 'user@demo.com',
+                CompanyName: userData.companyName || 'Demo Company',
+                Persona: userData.persona || 'Demo User',
+                Booth: userData.booth || 'UI Demo',
+                OptIn: userData.optIn !== false,
+                Game: 'slots',
+                Action: 'spin',
+                CheatActive: cheatState.active ? true : false,
+                CheatType: cheatState.active || null,
+                CheatDetails: cheatState.active ? {
+                    winBoost: cheatState.winRateBoost / 100,
+                    frequency: cheatState.detectionRisk / 100
+                } : null,
+                Balance: newBalance,
+                // Keep the load test format but also include additional fields for compatibility
                 game: 'slots',
                 action: 'spin',
-                customer_name: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                email: userData.email || 'user@demo.com',
-                company_name: userData.companyName || 'Demo Company',
-                persona: userData.persona || 'Demo User',
-                booth: userData.booth || 'UI Demo',
-                bet_amount: betAmount,
-                win_amount: winAmount,
-                balance_before: originalBalance,
-                balance_after: newBalance,
-                result: payline.map(s => s.name),
-                multiplier: winAmount > 0 ? Math.floor(winAmount / betAmount) : 0,
-                cheat_active: cheatState.active ? true : false,
-                cheat_type: cheatState.active || null,
-                cheat_win_boost_applied: cheatState.active,
-                cheat_original_win: cheatState.active ? 0 : winAmount,
-                cheat_boosted_win: cheatState.active ? winAmount : 0,
-                correlation_id: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                user_agent: "Vegas-Casino-Browser",
-                ip_address: "ui-client",
-                opt_in: userData.optIn !== false,
-                severity: cheatState.active ? "HIGH" : "LOW",
-                category: cheatState.active ? "FRAUD_DETECTION" : "GAME_ACTIVITY",
-                requires_investigation: cheatState.active
+                betAmount: betAmount,
+                winAmount: winAmount,
+                payline: payline.map(s => s.name),
+                cheat: cheatState.active ? {
+                    type: cheatState.active,
+                    boost: cheatState.winRateBoost,
+                    risk: cheatState.detectionRisk
+                } : null,
+                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                balance: originalBalance,
+                newBalance: newBalance
             };
             
             // Send to actual server API
@@ -4171,23 +4175,20 @@
             
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                BetAmount: blackjackGame.currentBet,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
                 Booth: userData.booth || 'UI Demo',
                 OptIn: userData.optIn !== false,
-                BetAmount: blackjackGame.currentBet,
-                balance: blackjackGame.balance, // Send current balance
-                Balance: blackjackGame.balance,
-                Game: 'Vegas Blackjack',
-                Action: 'Deal',
-                GameState: 'Started',
-                Device: 'Browser-UI',
+                Game: 'blackjack',
+                Action: 'deal',
                 CheatActive: false,
                 CheatType: null,
                 CheatDetails: null,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
+                Balance: blackjackGame.balance
             };
 
             console.log('🃏 Sending blackjack deal request:', payload);
@@ -5160,27 +5161,24 @@
             
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                BetAmount: diceGame.currentBet,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
                 Booth: userData.booth || 'UI Demo',
                 OptIn: userData.optIn !== false,
-                BetAmount: diceGame.currentBet,
-                balance: diceGame.balance + diceGame.currentBet, // Send balance before deduction
-                Balance: diceGame.balance + diceGame.currentBet,
-                BetType: diceGame.betType,
-                Game: 'Vegas Dice Roll',
-                Action: 'Roll',
-                GameState: 'Started',
-                Device: 'Browser-UI',
+                Game: 'dice',
+                Action: 'roll',
                 CheatActive: diceCheatState.active !== null,
                 CheatType: diceCheatState.active,
                 CheatDetails: diceCheatState.active ? {
                     type: diceCheatState.active,
                     description: diceCheatMethods[diceCheatState.active]?.description || ''
                 } : null,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
+                BetType: diceGame.betType,
+                Balance: diceGame.balance + diceGame.currentBet
             };
 
             console.log('🎲 Sending dice roll request:', payload);
@@ -5209,39 +5207,24 @@
             
             const payload = {
                 Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                BetAmount: diceGame.currentBet,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
                 Booth: userData.booth || 'UI Demo',
                 OptIn: userData.optIn !== false,
-                BetAmount: diceGame.currentBet,
-                balance: originalBalance, // Original balance before bet
-                newBalance: diceGame.balance, // Final balance after win/loss
-                Balance: diceGame.balance, // Final balance
-                BetType: diceGame.betType,
-                Game: 'Vegas Dice',
-                Action: 'RollCompleted',
-                Status: 'Completed',
-                Result: result, // 'win' or 'lose'
-                dice1: dice1,
-                dice2: dice2,
-                sum: total,
-                win: winAmount > 0,
-                payout: winAmount,
-                payoutMultiplier: winAmount > 0 ? (winAmount / diceGame.currentBet) : 0,
-                WinningAmount: winAmount,
-                LossAmount: lossAmount,
-                WinFlag: winAmount > 0 ? 1 : 0,
-                Device: 'Browser-UI',
+                Game: 'dice',
+                Action: 'roll',
                 CheatActive: diceCheatState.active !== null,
                 CheatType: diceCheatState.active,
                 CheatDetails: diceCheatState.active ? {
                     type: diceCheatState.active,
                     description: diceCheatMethods[diceCheatState.active]?.description || ''
                 } : null,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                timestamp: new Date().toISOString()
+                BetType: diceGame.betType,
+                Balance: diceGame.balance
             };
 
             console.log('🎲 Sending dice result:', {

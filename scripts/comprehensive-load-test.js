@@ -177,22 +177,20 @@ class VegasCasinoLoadTester {
         const pattern = this.betPatterns[customer.behavior.betPattern];
         const desiredBet = pattern[Math.floor(Math.random() * pattern.length)];
         
-        // Check if customer has sufficient balance
+        // Check if customer has sufficient balance - add $500 if low
         if (customer.balance < desiredBet) {
             console.log(`💰 ${customer.customer_name} insufficient balance: $${customer.balance} < $${desiredBet}`);
             
-            // Auto-replenish balance to continue load test
-            const replenishAmount = Math.max(2000, desiredBet * 10); // Give enough for continued play
-            customer.balance += replenishAmount;
-            console.log(`🔄 Auto-replenished ${customer.customer_name} balance by $${replenishAmount} -> New balance: $${customer.balance}`);
-        }
-        
-        // Also ensure minimum balance after bet
-        const minBalanceAfterBet = 500; // Keep at least $500 after bet
-        if (customer.balance - desiredBet < minBalanceAfterBet) {
-            const topUpAmount = 1500; // Add more buffer
-            customer.balance += topUpAmount;
-            console.log(`💳 Topped up ${customer.customer_name} balance by $${topUpAmount} for continued play -> Balance: $${customer.balance}`);
+            // Add $500 as requested
+            customer.balance += 500;
+            console.log(`🔄 Added $500 to ${customer.customer_name} -> New balance: $${customer.balance}`);
+            
+            // If still insufficient after $500, add enough for the bet
+            if (customer.balance < desiredBet) {
+                const additionalAmount = desiredBet - customer.balance + 100; // Add a bit extra
+                customer.balance += additionalAmount;
+                console.log(`💳 Added additional $${additionalAmount} to cover bet -> Balance: $${customer.balance}`);
+            }
         }
         
         return desiredBet;
