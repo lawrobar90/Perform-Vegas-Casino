@@ -2535,6 +2535,16 @@
             const booth = document.getElementById('boothSelect').value;
             const dataConsentRadio = document.querySelector('input[name="dataConsent"]:checked');
             
+            console.log('🔍 Form field values at enterCasino():', {
+                username,
+                email,
+                companyName,
+                personaSelect,
+                customPersona,
+                booth,
+                dataConsent: dataConsentRadio ? dataConsentRadio.value : 'not selected'
+            });
+            
             // Basic validation
             if (!username) {
                 alert('ERROR: CUSTOMER NAME REQUIRED');
