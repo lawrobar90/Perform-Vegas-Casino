@@ -3183,10 +3183,10 @@
             console.log('🔍 Raw vegasUserData from localStorage:', localStorage.getItem('vegasUserData'));
             
             const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
                 BetAmount: betAmount,
                 correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
@@ -4205,10 +4205,10 @@
             const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
                 BetAmount: blackjackGame.currentBet,
                 correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
@@ -4244,8 +4244,8 @@
             const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
+                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
                 Email: userData.email || 'user@demo.com',
                 CompanyName: userData.companyName || 'Demo Company',
                 Persona: userData.persona || 'Demo User',
