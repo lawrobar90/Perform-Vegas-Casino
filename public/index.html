@@ -3169,7 +3169,20 @@
         
         function sendSlotResult(payline, betAmount, winAmount, newBalance, originalBalance) {
             // Send game result to server
-            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
+            let userData = {};
+            try {
+                const rawData = localStorage.getItem('vegasUserData');
+                console.log('🔍 Raw localStorage vegasUserData:', rawData);
+                if (rawData) {
+                    userData = JSON.parse(rawData);
+                    console.log('🔍 Parsed userData:', userData);
+                } else {
+                    console.log('🔍 No vegasUserData in localStorage');
+                }
+            } catch (e) {
+                console.error('🚨 Error parsing vegasUserData:', e);
+                userData = {};
+            }
             
             console.log('🎰 SendSlotResult Debug:', {
                 betAmount,
