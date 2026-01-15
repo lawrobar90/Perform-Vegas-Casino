@@ -1487,7 +1487,7 @@ app.post('/api/slots/spin', dynatraceMiddleware(SERVICE_NAMES.slots), async (req
       Booth: req.body.Booth,
       OptIn: req.body.OptIn,
       // Game analytics data
-      Game: 'Vegas Slots Machine',
+      Game: 'slots',
       BetAmount: BetAmount,
       WinFlag: winAmount > 0 ? 1 : 0,
       WinningAmount: winAmount,
