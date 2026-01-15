@@ -2583,10 +2583,23 @@
 
             // Determine final persona value
             const finalPersona = personaSelect === 'Other' ? customPersona : personaSelect;
+            if (!personaSelect) {
+                alert('ERROR: PERSONA SELECTION REQUIRED');
+                return;
+            }
             if (personaSelect === 'Other' && !customPersona) {
                 alert('ERROR: CUSTOM PERSONA REQUIRED');
                 return;
             }
+            
+            console.log('🔍 Final values before storing:', {
+                username,
+                email, 
+                companyName,
+                finalPersona,
+                booth,
+                dataConsent
+            });
             
             // Store user data
             const userData = {
