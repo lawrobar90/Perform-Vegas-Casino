@@ -3138,7 +3138,7 @@
         
         function sendSlotResult(payline, betAmount, winAmount, newBalance, originalBalance) {
             // Send game result to server
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             console.log('🎰 SendSlotResult Debug:', {
                 betAmount,
@@ -4162,7 +4162,7 @@
 
         // Send blackjack deal request to server
         function sendBlackjackDeal() {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             const payload = {
                 CustomerName: userData.name || localStorage.getItem('vegasUsername') || '',
@@ -4203,7 +4203,7 @@
 
         // Send blackjack result to server
         function sendBlackjackResult(result, winAmount = 0, lossAmount = 0) {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             const payload = {
                 CustomerName: userData.name || localStorage.getItem('vegasUsername') || '',
@@ -5149,7 +5149,7 @@
 
         // Send dice roll request to server
         function sendDiceRoll() {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             const payload = {
                 CustomerName: userData.name || localStorage.getItem('vegasUsername') || '',
@@ -5194,7 +5194,7 @@
 
         // Send dice result to server
         function sendDiceResult(result, dice1, dice2, total, winAmount = 0, lossAmount = 0) {
-            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
             
             // Use the original balance before any deductions
             const originalBalance = diceGame.originalBalance || (diceGame.balance + diceGame.currentBet);
