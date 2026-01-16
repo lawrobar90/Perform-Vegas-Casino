@@ -4174,7 +4174,7 @@
                 OptIn: userData.optIn !== false,
                 BetAmount: blackjackGame.currentBet,
                 Balance: blackjackGame.balance, // Send current balance
-                Game: 'Vegas Blackjack',
+                Game: 'blackjack',
                 Action: 'Deal',
                 GameState: 'Started',
                 Device: 'Browser-UI',
@@ -4216,7 +4216,7 @@
                 BetAmount: blackjackGame.currentBet,
                 Balance: blackjackGame.balance - winAmount + lossAmount, // Original balance before win/loss
                 NewBalance: blackjackGame.balance,
-                Game: 'Vegas Blackjack',
+                Game: 'blackjack',
                 Action: 'GameResult',
                 GameState: 'Completed',
                 Result: result, // 'win', 'lose', 'push', 'blackjack'
@@ -5162,7 +5162,7 @@
                 BetAmount: diceGame.currentBet,
                 Balance: diceGame.balance + diceGame.currentBet, // Send balance before deduction
                 BetType: diceGame.betType,
-                Game: 'Vegas Dice Roll',
+                Game: 'dice',
                 Action: 'Roll',
                 GameState: 'Started',
                 Device: 'Browser-UI',
@@ -5211,7 +5211,7 @@
                 Balance: originalBalance, // Original balance before bet
                 NewBalance: diceGame.balance, // Final balance after win/loss
                 BetType: diceGame.betType,
-                Game: 'Vegas Dice',
+                Game: 'dice',
                 Action: 'RollCompleted',
                 Status: 'Completed',
                 Result: result, // 'win' or 'lose'
