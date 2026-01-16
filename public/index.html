@@ -3159,15 +3159,15 @@
                     boost: cheatState.winRateBoost,
                     risk: cheatState.detectionRisk
                 } : null,
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerSegment: userData.persona || 'Demo User',
+                CustomerName: userData.name || localStorage.getItem('vegasUsername') || '',
+                CustomerSegment: userData.persona || '',
                 Balance: originalBalance, // Original balance before bet
                 NewBalance: newBalance, // New balance after win/loss calculation
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
+                Email: userData.email || '',
+                CompanyName: userData.companyName || '',
                 CustomerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                Booth: userData.booth || 'Demo Booth',
-                OptIn: userData.optIn !== false,
+                Booth: userData.booth || '',
+                OptIn: userData.dataConsent === true,
                 CorrelationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 CheatActive: cheatState.active ? true : false,
                 CheatType: cheatState.active || null,
@@ -5152,13 +5152,13 @@
             const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             const payload = {
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerSegment: userData.persona || 'Demo User',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
+                CustomerName: userData.name || localStorage.getItem('vegasUsername') || '',
+                CustomerSegment: userData.persona || '',
+                Email: userData.email || '',
+                CompanyName: userData.companyName || '',
                 CustomerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                Booth: userData.booth || 'Demo Booth',
-                OptIn: userData.optIn !== false,
+                Booth: userData.booth || '',
+                OptIn: userData.dataConsent === true,
                 BetAmount: diceGame.currentBet,
                 Balance: diceGame.balance + diceGame.currentBet, // Send balance before deduction
                 BetType: diceGame.betType,
