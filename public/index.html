@@ -801,14 +801,16 @@
                                     id="boothSelect" 
                                     class="w-full px-4 py-3 rounded-lg bg-dt-dark text-white border border-dt-cyan/30 focus:border-dt-cyan focus:outline-none"
                                 >
-                                    <option value="">Select demo type...</option>
-                                    <option value="Healthcare Demo">Perform Training Lab</option>
-                                    <option value="Demo Booth 1">Demo Booth</option>
+                                    <option value="Demo Booth 1">Demo Booth 1</option>
+                                    <option value="Demo Booth 2">Demo Booth 2</option>
+                                    <option value="Demo Booth 3">Demo Booth 3</option>
                                     <option value="Partner Demo">Partner Demo</option>
                                     <option value="Customer Demo">Customer Demo</option>
                                     <option value="Internal Demo">Internal Demo</option>
                                     <option value="Technical Demo">Technical Demo</option>
                                     <option value="POC Demo">POC Demo</option>
+                                    <option value="Healthcare Demo">Healthcare Demo</option>
+                                    <option value="Financial Demo">Financial Demo</option>
                                 </select>
                             </div>
 
@@ -2471,12 +2473,12 @@
         function checkLockoutStatus() {
             // Get the current user from multiple possible sources
             const currentUser = localStorage.getItem('vegasUsername') || 
-                               (JSON.parse(localStorage.getItem('vegasUserData') || '{}').customerName) ||
+                               (JSON.parse(localStorage.getItem('vegas.customerData') || '{}').customerName) ||
                                'Lawro'; // Default to Lawro for testing
             
             console.log('🔍 Checking lockout status for user:', currentUser);
             console.log('🔍 localStorage vegasUsername:', localStorage.getItem('vegasUsername'));
-            console.log('🔍 localStorage vegasUserData:', localStorage.getItem('vegasUserData'));
+            console.log('🔍 localStorage vegas.customerData:', localStorage.getItem('vegas.customerData'));
             
             // Check server for lockout status
             fetch('/api/admin/lockout-status/' + currentUser)
@@ -2536,16 +2538,6 @@
             const booth = document.getElementById('boothSelect').value;
             const dataConsentRadio = document.querySelector('input[name="dataConsent"]:checked');
             
-            console.log('🔍 Form field values at enterCasino():', {
-                username,
-                email,
-                companyName,
-                personaSelect,
-                customPersona,
-                booth,
-                dataConsent: dataConsentRadio ? dataConsentRadio.value : 'not selected'
-            });
-            
             // Basic validation
             if (!username) {
                 alert('ERROR: CUSTOMER NAME REQUIRED');
@@ -2574,11 +2566,6 @@
                 return;
             }
 
-            if (!booth) {
-                alert('ERROR: BOOTH/DEMO TYPE SELECTION REQUIRED');
-                return;
-            }
-
             // Data consent validation
             if (!dataConsentRadio) {
                 alert('ERROR: DATA CAPTURE CONSENT SELECTION REQUIRED');
@@ -2589,39 +2576,24 @@
 
             // Determine final persona value
             const finalPersona = personaSelect === 'Other' ? customPersona : personaSelect;
-            if (!personaSelect) {
-                alert('ERROR: PERSONA SELECTION REQUIRED');
-                return;
-            }
             if (personaSelect === 'Other' && !customPersona) {
                 alert('ERROR: CUSTOM PERSONA REQUIRED');
                 return;
             }
             
-            console.log('🔍 Final values before storing:', {
-                username,
-                email, 
-                companyName,
-                finalPersona,
-                booth,
-                dataConsent
-            });
-            
             // Store user data
             const userData = {
-                customerName: username,  // This should match what the game functions expect
+                name: username,
                 email: email,
                 companyName: companyName,
                 persona: finalPersona,
                 booth: booth,
-                optIn: dataConsent,
+                dataConsent: dataConsent,
                 registeredAt: new Date().toISOString()
             };
             
-            console.log('🔍 enterCasino() - Storing userData:', userData);
             localStorage.setItem('vegasUserData', JSON.stringify(userData));
             localStorage.setItem('vegasUsername', username);
-            console.log('🔍 enterCasino() - After storing, localStorage contains:', localStorage.getItem('vegasUserData'));
             
             // Navigate to lobby
             navigateTo('/lobby');
@@ -3169,20 +3141,7 @@
         
         function sendSlotResult(payline, betAmount, winAmount, newBalance, originalBalance) {
             // Send game result to server
-            let userData = {};
-            try {
-                const rawData = localStorage.getItem('vegasUserData');
-                console.log('🔍 Raw localStorage vegasUserData:', rawData);
-                if (rawData) {
-                    userData = JSON.parse(rawData);
-                    console.log('🔍 Parsed userData:', userData);
-                } else {
-                    console.log('🔍 No vegasUserData in localStorage');
-                }
-            } catch (e) {
-                console.error('🚨 Error parsing vegasUserData:', e);
-                userData = {};
-            }
+            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             console.log('🎰 SendSlotResult Debug:', {
                 betAmount,
@@ -3192,37 +3151,7 @@
                 'calculation check': `${originalBalance} - ${betAmount} + ${winAmount} = ${originalBalance - betAmount + winAmount}`
             });
             
-            console.log('🔍 userData from localStorage:', userData);
-            console.log('🔍 Raw vegasUserData from localStorage:', localStorage.getItem('vegasUserData'));
-            console.log('🔍 Individual userData properties:', {
-                'userData.email': userData.email,
-                'userData.companyName': userData.companyName,
-                'userData.persona': userData.persona,
-                'userData.booth': userData.booth,
-                'userData.name': userData.name,
-                'userData.customerName': userData.customerName
-            });
-            
             const payload = {
-                Username: userData.name || userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                BetAmount: betAmount,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.name || userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.dataConsent !== false,
-                Game: 'slots',
-                Action: 'spin',
-                CheatActive: cheatState.active ? true : false,
-                CheatType: cheatState.active || null,
-                CheatDetails: cheatState.active ? {
-                    winBoost: cheatState.winRateBoost / 100,
-                    frequency: cheatState.detectionRisk / 100
-                } : null,
-                Balance: newBalance,
-                // Keep the load test format but also include additional fields for compatibility
                 game: 'slots',
                 action: 'spin',
                 betAmount: betAmount,
@@ -3234,8 +3163,23 @@
                     risk: cheatState.detectionRisk
                 } : null,
                 customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                balance: originalBalance,
-                newBalance: newBalance
+                customerSegment: userData.persona || 'Demo User',
+                balance: originalBalance, // Original balance before bet
+                newBalance: newBalance, // New balance after win/loss calculation
+                email: userData.email || 'user@demo.com',
+                companyName: userData.companyName || 'Demo Company',
+                customerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                booth: userData.booth || 'UI Demo',
+                optIn: userData.optIn !== false,
+                balance: newBalance, // New balance after calculation
+                betAmount: betAmount,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                cheatActive: cheatState.active ? true : false,
+                cheatType: cheatState.active || null,
+                cheatDetails: cheatState.active ? {
+                    winBoost: cheatState.winRateBoost / 100,
+                    frequency: cheatState.detectionRisk / 100
+                } : null
             };
             
             // Send to actual server API
@@ -4223,24 +4167,26 @@
 
         // Send blackjack deal request to server
         function sendBlackjackDeal() {
-            const userData = JSON.parse(localStorage.getItem('vegasUserData') || '{}');
+            const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             const payload = {
-                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
-                BetAmount: blackjackGame.currentBet,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                Game: 'blackjack',
-                Action: 'deal',
-                CheatActive: false,
-                CheatType: null,
-                CheatDetails: null,
-                Balance: blackjackGame.balance
+                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                customerSegment: userData.persona || 'Demo User',
+                email: userData.email || 'user@demo.com',
+                companyName: userData.companyName || 'Demo Company',
+                customerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                booth: userData.booth || 'UI Demo',
+                optIn: userData.optIn !== false,
+                betAmount: blackjackGame.currentBet,
+                balance: blackjackGame.balance, // Send current balance
+                game: 'Vegas Blackjack',
+                action: 'Deal',
+                gameState: 'Started',
+                device: 'Browser-UI',
+                cheatActive: false,
+                cheatType: null,
+                cheatDetails: null,
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
             };
 
             console.log('🃏 Sending blackjack deal request:', payload);
@@ -4265,33 +4211,32 @@
             const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             const payload = {
-                Username: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
-                CustomerName: userData.customerName || userData.name || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                BetAmount: blackjackGame.currentBet,
+                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                customerSegment: userData.persona || 'Demo User',
+                email: userData.email || 'user@demo.com',
+                companyName: userData.companyName || 'Demo Company',
+                customerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                booth: userData.booth || 'UI Demo',
+                optIn: userData.optIn !== false,
+                betAmount: blackjackGame.currentBet,
                 balance: blackjackGame.balance - winAmount + lossAmount, // Original balance before win/loss
                 newBalance: blackjackGame.balance,
-                Balance: blackjackGame.balance,
-                Game: 'Vegas Blackjack',
-                Action: 'GameResult',
-                GameState: 'Completed',
-                Result: result, // 'win', 'lose', 'push', 'blackjack'
-                PlayerTotal: blackjackGame.playerTotal,
-                DealerTotal: calculateHandValue(blackjackGame.dealerHand),
-                WinAmount: winAmount,
-                LossAmount: lossAmount,
-                WinFlag: winAmount > 0 ? 1 : 0,
-                LossFlag: lossAmount > 0 ? 1 : 0,
-                BlackjackFlag: result === 'blackjack' ? 1 : 0,
-                PushFlag: result === 'push' ? 1 : 0,
-                Device: 'Browser-UI',
-                CheatActive: false,
-                CheatType: null,
-                CheatDetails: null,
+                game: 'Vegas Blackjack',
+                action: 'GameResult',
+                gameState: 'Completed',
+                result: result, // 'win', 'lose', 'push', 'blackjack'
+                playerTotal: blackjackGame.playerTotal,
+                dealerTotal: calculateHandValue(blackjackGame.dealerHand),
+                winAmount: winAmount,
+                lossAmount: lossAmount,
+                winFlag: winAmount > 0 ? 1 : 0,
+                lossFlag: lossAmount > 0 ? 1 : 0,
+                blackjackFlag: result === 'blackjack' ? 1 : 0,
+                pushFlag: result === 'push' ? 1 : 0,
+                device: 'Browser-UI',
+                cheatActive: false,
+                cheatType: null,
+                cheatDetails: null,
                 correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                 timestamp: new Date().toISOString()
             };
@@ -5212,25 +5157,27 @@
             const userData = JSON.parse(localStorage.getItem('vegas.customerData') || '{}');
             
             const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                BetAmount: diceGame.currentBet,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                Game: 'dice',
-                Action: 'roll',
-                CheatActive: diceCheatState.active !== null,
-                CheatType: diceCheatState.active,
-                CheatDetails: diceCheatState.active ? {
+                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                customerSegment: userData.persona || 'Demo User',
+                email: userData.email || 'user@demo.com',
+                companyName: userData.companyName || 'Demo Company',
+                customerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                booth: userData.booth || 'UI Demo',
+                optIn: userData.optIn !== false,
+                betAmount: diceGame.currentBet,
+                balance: diceGame.balance + diceGame.currentBet, // Send balance before deduction
+                betType: diceGame.betType,
+                game: 'Vegas Dice Roll',
+                action: 'Roll',
+                gameState: 'Started',
+                device: 'Browser-UI',
+                cheatActive: diceCheatState.active !== null,
+                cheatType: diceCheatState.active,
+                cheatDetails: diceCheatState.active ? {
                     type: diceCheatState.active,
                     description: diceCheatMethods[diceCheatState.active]?.description || ''
                 } : null,
-                BetType: diceGame.betType,
-                Balance: diceGame.balance + diceGame.currentBet
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
             };
 
             console.log('🎲 Sending dice roll request:', payload);
@@ -5258,25 +5205,39 @@
             const originalBalance = diceGame.originalBalance || (diceGame.balance + diceGame.currentBet);
             
             const payload = {
-                Username: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                BetAmount: diceGame.currentBet,
-                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                CustomerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
-                Email: userData.email || 'user@demo.com',
-                CompanyName: userData.companyName || 'Demo Company',
-                Persona: userData.persona || 'Demo User',
-                Booth: userData.booth || 'UI Demo',
-                OptIn: userData.optIn !== false,
-                Game: 'dice',
-                Action: 'roll',
-                CheatActive: diceCheatState.active !== null,
-                CheatType: diceCheatState.active,
-                CheatDetails: diceCheatState.active ? {
+                customerName: userData.customerName || localStorage.getItem('vegasUsername') || 'Anonymous',
+                customerSegment: userData.persona || 'Demo User',
+                email: userData.email || 'user@demo.com',
+                companyName: userData.companyName || 'Demo Company',
+                customerId: 'customer_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                booth: userData.booth || 'UI Demo',
+                optIn: userData.optIn !== false,
+                betAmount: diceGame.currentBet,
+                balance: originalBalance, // Original balance before bet
+                newBalance: diceGame.balance, // Final balance after win/loss
+                betType: diceGame.betType,
+                game: 'Vegas Dice',
+                action: 'RollCompleted',
+                status: 'Completed',
+                result: result, // 'win' or 'lose'
+                dice1: dice1,
+                dice2: dice2,
+                sum: total,
+                win: winAmount > 0,
+                payout: winAmount,
+                payoutMultiplier: winAmount > 0 ? (winAmount / diceGame.currentBet) : 0,
+                winningAmount: winAmount,
+                lossAmount: lossAmount,
+                winFlag: winAmount > 0 ? 1 : 0,
+                device: 'Browser-UI',
+                cheatActive: diceCheatState.active !== null,
+                cheatType: diceCheatState.active,
+                cheatDetails: diceCheatState.active ? {
                     type: diceCheatState.active,
                     description: diceCheatMethods[diceCheatState.active]?.description || ''
                 } : null,
-                BetType: diceGame.betType,
-                Balance: diceGame.balance
+                correlationId: 'ui_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+                timestamp: new Date().toISOString()
             };
 
             console.log('🎲 Sending dice result:', {
